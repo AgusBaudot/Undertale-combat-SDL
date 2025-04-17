@@ -1,0 +1,105 @@
+C:\Users\Consultoria\Dropbox\Facultad\UTN\Proyecto Base\bin\Debug\assets\fondo.png
+C:\Users\Consultoria\Dropbox\Facultad\UTN\Proyecto Base\obj\Debug\MyGame.csproj.AssemblyReference.cache
+C:\Users\Consultoria\Dropbox\Facultad\UTN\Proyecto Base\obj\Debug\MyGame.csproj.SuggestedBindingRedirects.cache
+C:\Users\Consultoria\Dropbox\Facultad\UTN\Proyecto Base\obj\Debug\MyGame.csproj.CoreCompileInputs.cache
+C:\Users\Consultoria\Dropbox\Facultad\UTN\Proyecto Base\obj\Debug\MyGame.csproj.CopyComplete
+C:\Users\Consultoria\Dropbox\Facultad\UTN\Proyecto Base\obj\Debug\MyGame.exe
+C:\Users\Consultoria\Dropbox\Facultad\UTN\Proyecto Base\obj\Debug\MyGame.pdb
+C:\Users\Consultoria\Dropbox\Facultad\UTN\Proyecto Base\bin\Debug\MyGame.exe.config
+C:\Users\Consultoria\Dropbox\Facultad\UTN\Proyecto Base\bin\Debug\MyGame.exe
+C:\Users\Consultoria\Dropbox\Facultad\UTN\Proyecto Base\bin\Debug\MyGame.pdb
+C:\Users\Consultoria\Dropbox\Facultad\UTN\Proyecto Base\bin\Debug\assets\arial.ttf
+C:\Users\Consultoria\Dropbox\Facultad\UTN\Proyecto Base\bin\Debug\assets\asteroid.png
+C:\Users\Consultoria\Dropbox\Facultad\UTN\Proyecto Base\bin\Debug\assets\player.png
+C:\Users\Admin\Dropbox\Facultad\UTN\Proyecto Base\bin\Debug\assets\fondo.png
+C:\Users\Admin\Dropbox\Facultad\UTN\Proyecto Base\bin\Debug\MyGame.exe.config
+C:\Users\Admin\Dropbox\Facultad\UTN\Proyecto Base\bin\Debug\MyGame.exe
+C:\Users\Admin\Dropbox\Facultad\UTN\Proyecto Base\bin\Debug\MyGame.pdb
+C:\Users\Admin\Dropbox\Facultad\UTN\Proyecto Base\obj\Debug\MyGame.csproj.AssemblyReference.cache
+C:\Users\Admin\Dropbox\Facultad\UTN\Proyecto Base\obj\Debug\MyGame.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Dropbox\Facultad\UTN\Proyecto Base\obj\Debug\MyGame.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Dropbox\Facultad\UTN\Proyecto Base\obj\Debug\MyGame.csproj.CopyComplete
+C:\Users\Admin\Dropbox\Facultad\UTN\Proyecto Base\obj\Debug\MyGame.exe
+C:\Users\Admin\Dropbox\Facultad\UTN\Proyecto Base\obj\Debug\MyGame.pdb
+C:\Users\Admin\Dropbox\Facultad\UTN\Proyecto Base\bin\Debug\assets\arial.ttf
+C:\Users\Admin\Dropbox\Facultad\UTN\Proyecto Base\bin\Debug\assets\player.png
+C:\Users\Consultoria\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\bin\Debug\assets\fondo.png
+C:\Users\Consultoria\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\bin\Debug\assets\player.png
+C:\Users\Consultoria\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\bin\Debug\assets\arial.ttf
+C:\Users\Consultoria\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\bin\Debug\MyGame.exe.config
+C:\Users\Consultoria\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\bin\Debug\MyGame.exe
+C:\Users\Consultoria\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\bin\Debug\MyGame.pdb
+C:\Users\Consultoria\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\obj\Debug\MyGame.csproj.AssemblyReference.cache
+C:\Users\Consultoria\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\obj\Debug\MyGame.csproj.SuggestedBindingRedirects.cache
+C:\Users\Consultoria\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\obj\Debug\MyGame.csproj.CoreCompileInputs.cache
+C:\Users\Consultoria\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\obj\Debug\MyGame.csproj.CopyComplete
+C:\Users\Consultoria\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\obj\Debug\MyGame.exe
+C:\Users\Consultoria\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\obj\Debug\MyGame.pdb
+C:\Users\Admin\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\bin\Debug\assets\fondo.png
+C:\Users\Admin\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\bin\Debug\MyGame.exe.config
+C:\Users\Admin\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\bin\Debug\MyGame.exe
+C:\Users\Admin\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\bin\Debug\MyGame.pdb
+C:\Users\Admin\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\obj\Debug\MyGame.csproj.AssemblyReference.cache
+C:\Users\Admin\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\obj\Debug\MyGame.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\obj\Debug\MyGame.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\obj\Debug\MyGame.csproj.CopyComplete
+C:\Users\Admin\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\obj\Debug\MyGame.exe
+C:\Users\Admin\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\obj\Debug\MyGame.pdb
+C:\Users\Admin\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\bin\Debug\assets\player.png
+C:\Users\Admin\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\bin\Debug\assets\fuenteJuegoNaves.ttf
+C:\Users\Admin\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\bin\Debug\assets\inicio.png
+C:\Users\Admin\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\bin\Debug\assets\bullet.png
+C:\Users\Admin\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\bin\Debug\assets\enemy.png
+C:\Users\Admin\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\bin\Debug\assets\littleidea.mp3
+C:\Users\Admin\Dropbox\Facultad\UTN\PROGRAMACION 1\Proyecto Base\bin\Debug\assets\musica.wav
+C:\Users\Admin\Dropbox\Facultad\Proyecto Base\bin\Debug\assets\fondo.png
+C:\Users\Admin\Dropbox\Facultad\Proyecto Base\bin\Debug\assets\player.png
+C:\Users\Admin\Dropbox\Facultad\Proyecto Base\bin\Debug\MyGame.exe.config
+C:\Users\Admin\Dropbox\Facultad\Proyecto Base\bin\Debug\MyGame.exe
+C:\Users\Admin\Dropbox\Facultad\Proyecto Base\bin\Debug\MyGame.pdb
+C:\Users\Admin\Dropbox\Facultad\Proyecto Base\obj\Debug\MyGame.csproj.AssemblyReference.cache
+C:\Users\Admin\Dropbox\Facultad\Proyecto Base\obj\Debug\MyGame.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Dropbox\Facultad\Proyecto Base\obj\Debug\MyGame.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Dropbox\Facultad\Proyecto Base\obj\Debug\MyGame.csproj.CopyComplete
+C:\Users\Admin\Dropbox\Facultad\Proyecto Base\obj\Debug\MyGame.exe
+C:\Users\Admin\Dropbox\Facultad\Proyecto Base\obj\Debug\MyGame.pdb
+C:\Users\p865\Desktop\Proyecto Base\Proyecto Base\bin\Debug\assets\fondo.png
+C:\Users\p865\Desktop\Proyecto Base\Proyecto Base\bin\Debug\assets\player.png
+C:\Users\p865\Desktop\Proyecto Base\Proyecto Base\bin\Debug\MyGame.exe.config
+C:\Users\p865\Desktop\Proyecto Base\Proyecto Base\bin\Debug\MyGame.exe
+C:\Users\p865\Desktop\Proyecto Base\Proyecto Base\bin\Debug\MyGame.pdb
+C:\Users\p865\Desktop\Proyecto Base\Proyecto Base\obj\Debug\MyGame.csproj.AssemblyReference.cache
+C:\Users\p865\Desktop\Proyecto Base\Proyecto Base\obj\Debug\MyGame.csproj.CoreCompileInputs.cache
+C:\Users\p865\Desktop\Proyecto Base\Proyecto Base\obj\Debug\MyGame.csproj.Up2Date
+C:\Users\p865\Desktop\Proyecto Base\Proyecto Base\obj\Debug\MyGame.exe
+C:\Users\p865\Desktop\Proyecto Base\Proyecto Base\obj\Debug\MyGame.pdb
+C:\Users\p764\Desktop\Clase 1\bin\Debug\assets\fondo.png
+C:\Users\p764\Desktop\Clase 1\bin\Debug\assets\player.png
+C:\Users\p764\Desktop\Clase 1\bin\Debug\MyGame.exe.config
+C:\Users\p764\Desktop\Clase 1\bin\Debug\MyGame.exe
+C:\Users\p764\Desktop\Clase 1\bin\Debug\MyGame.pdb
+C:\Users\p764\Desktop\Clase 1\obj\Debug\MyGame.csproj.AssemblyReference.cache
+C:\Users\p764\Desktop\Clase 1\obj\Debug\MyGame.csproj.CoreCompileInputs.cache
+C:\Users\p764\Desktop\Clase 1\obj\Debug\MyGame.csproj.Up2Date
+C:\Users\p764\Desktop\Clase 1\obj\Debug\MyGame.exe
+C:\Users\p764\Desktop\Clase 1\obj\Debug\MyGame.pdb
+C:\Users\mamui\Downloads\Clase 1\Clase 1\bin\Debug\assets\fondo.png
+C:\Users\mamui\Downloads\Clase 1\Clase 1\bin\Debug\assets\player.png
+C:\Users\mamui\Downloads\Clase 1\Clase 1\bin\Debug\MyGame.exe.config
+C:\Users\mamui\Downloads\Clase 1\Clase 1\bin\Debug\MyGame.exe
+C:\Users\mamui\Downloads\Clase 1\Clase 1\bin\Debug\MyGame.pdb
+C:\Users\mamui\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.csproj.AssemblyReference.cache
+C:\Users\mamui\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.csproj.CoreCompileInputs.cache
+C:\Users\mamui\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.csproj.CopyComplete
+C:\Users\mamui\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.exe
+C:\Users\mamui\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.pdb
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\fondo.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\player.png
+D:\My games\Visual\Undertale-combat\bin\Debug\MyGame.exe.config
+D:\My games\Visual\Undertale-combat\bin\Debug\MyGame.exe
+D:\My games\Visual\Undertale-combat\bin\Debug\MyGame.pdb
+D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.csproj.AssemblyReference.cache
+D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.csproj.CoreCompileInputs.cache
+D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.csproj.CopyComplete
+D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.exe
+D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.pdb
