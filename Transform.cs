@@ -27,5 +27,6 @@ namespace MyGame
         {
             position += translation;
         }
+
     }
 }

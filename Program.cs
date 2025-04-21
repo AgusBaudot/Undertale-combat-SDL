@@ -14,6 +14,7 @@ namespace MyGame
         
         static private Image fondo = Engine.LoadImage("assets/fondo.png");
         static private Player player1;
+        static private CombatArea combatArea;
         static private int width, height;
 
         static void Main(string[] args)
@@ -22,6 +23,7 @@ namespace MyGame
             height = 720;
             Engine.Initialize(width, height);
             player1 = new Player(width/2, height/2);
+            combatArea = new CombatArea();
 
             while (true)
             {
@@ -40,6 +42,7 @@ namespace MyGame
         {
             Engine.Clear();
             Engine.Draw(fondo, 0, 0);
+            combatArea.Render();
             player1.Render();
             Engine.Show();
         }

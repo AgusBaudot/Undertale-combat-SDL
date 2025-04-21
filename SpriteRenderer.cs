@@ -11,7 +11,8 @@ namespace MyGame
     {
         private Transform transform;
         private Image sprite;
-        private float scaledWidth, scaledHeight;
+        private float scaledWidth { get; /*private*/ set; }
+        private float scaledHeight { get; /*private*/ set; }
 
         public SpriteRenderer(Transform transform, Image sprite)
         {

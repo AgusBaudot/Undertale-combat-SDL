@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using Tao.Sdl;
@@ -10,12 +11,16 @@ namespace MyGame
     public class PlayerController
     {
         private Transform transform;
+        private CombatArea moveArea;
         private int speed = 3;
         private Vector2 input;
+        private Vector2 playerScale;
 
-        public PlayerController(Transform transform)
+        public PlayerController(Transform transform, float w, float h)
         {
             this.transform = transform;
+            this.moveArea = new CombatArea();
+            playerScale = new Vector2(w, h);
         }
         public void Inputs()
         {
@@ -51,6 +56,27 @@ namespace MyGame
         private void Move()
         {
             transform.Translate(input.normalized * speed);
+            Limits();
+        }
+
+        private void Limits()
+        {
+            if (transform.position.x + playerScale.x >= moveArea.transform.position.x + moveArea.scale.x/2) 
+            {
+                transform.position = new Vector2 (moveArea.transform.position.x + moveArea.scale.x/2 - playerScale.x , transform.position.y);
+            }
+            if (transform.position.x - playerScale.x <= moveArea.transform.position.x - moveArea.scale.x/2)
+            {
+                transform.position = new Vector2(moveArea.transform.position.x - moveArea.scale.x/2 + playerScale.x , transform.position.y);
+            }
+            if (transform.position.y + playerScale.y >= moveArea.transform.position.y + moveArea.scale.y/2)
+            {
+                transform.position = new Vector2(transform.position.x, moveArea.transform.position.y + moveArea.scale.y / 2 - playerScale.y);
+            }
+            if (transform.position.y - playerScale.y <= moveArea.transform.position.y - moveArea.scale.y/2)
+            {
+                transform.position = new Vector2(transform.position.x, moveArea.transform.position.y - moveArea.scale.y / 2 + playerScale.y);
+            }
         }
     }
 }
