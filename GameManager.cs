@@ -10,7 +10,7 @@ namespace MyGame
     public class GameManager
     {
         private static GameManager Instance;
-        private GameState currentState;
+        private GameState currentState = 0;
 
         public static GameManager GetInstance()
         {

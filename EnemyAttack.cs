@@ -11,6 +11,5 @@ namespace MyGame
         private Vector2 speed;
         private Transform transform;
         private bool isRenderer;
-        
     }
 }

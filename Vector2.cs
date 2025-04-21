@@ -41,10 +41,7 @@ namespace MyGame
             return new Vector2(a.x + b.x, a.y + b.y);
         }
 
-        public static float Distance(Vector2 a, Vector2 b)
-        {
-            return (a - b).magnitude;
-        }
+        public static float Distance(Vector2 a, Vector2 b) => (a - b).magnitude;
 
         public override string ToString()
         {

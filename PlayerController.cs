@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -14,13 +15,14 @@ namespace MyGame
         private CombatArea moveArea;
         private int speed = 3;
         private Vector2 input;
-        private Vector2 playerScale;
+        private Vector2 playerSize;
+        private GameManager instance;
 
         public PlayerController(Transform transform, float w, float h)
         {
             this.transform = transform;
-            this.moveArea = new CombatArea();
-            playerScale = new Vector2(w, h);
+            moveArea = new CombatArea();
+            playerSize = new Vector2(w, h);
         }
         public void Inputs()
         {
@@ -28,54 +30,76 @@ namespace MyGame
             input = Vector2.zero;
             if (Engine.GetKey(Engine.KEY_A))
             {
-                //transform.Translate(Vector2.left * speed);
                 input += Vector2.left;
             }
 
             if (Engine.GetKey(Engine.KEY_D))
             {
-                //transform.Translate(Vector2.right * speed);
                 input += Vector2.right;
             }
 
             if (Engine.GetKey(Engine.KEY_W))
             {
-                //transform.Translate(Vector2.up * speed);
                 input += Vector2.up;
             }
 
             if (Engine.GetKey(Engine.KEY_S))
             {
-                //transform.Translate(Vector2.down * speed);
                 input += Vector2.down;
             }
             #endregion
             Move();
+            //instance = GameManager.GetInstance();
+            //Engine.Debug(instance.GetGameState().ToString());
+            //if (Engine.GetKey(Engine.KEY_P))
+            //{
+            //    instance.OnGameStateChanged((GameState)0);
+            //}
+            //if (Engine.GetKey(Engine.KEY_O))
+            //{
+            //    instance.OnGameStateChanged((GameState)1);
+            //}
+            //if (Engine.GetKey(Engine.KEY_I))
+            //{
+            //    instance.OnGameStateChanged((GameState)2);
+            //}
+            //if (Engine.GetKey(Engine.KEY_U))
+            //{
+            //    instance.OnGameStateChanged((GameState)3);
+            //}
+            //if (Engine.GetKey(Engine.KEY_Y))
+            //{
+            //    instance.OnGameStateChanged((GameState)4);
+            //}
+            //if (Engine.GetKey(Engine.KEY_T))
+            //{
+            //    instance.OnGameStateChanged((GameState)5);
+            //}
         }
 
         private void Move()
         {
             transform.Translate(input.normalized * speed);
-            Limits();
+            CalculateLimits();
         }
 
-        private void Limits()
+        private void CalculateLimits()
         {
-            if (transform.position.x + playerScale.x >= moveArea.transform.position.x + moveArea.scale.x/2) 
+            if (transform.position.x + playerSize.x >= moveArea.bgTransform.position.x + moveArea.GetAreaLimits().x/2) 
             {
-                transform.position = new Vector2 (moveArea.transform.position.x + moveArea.scale.x/2 - playerScale.x , transform.position.y);
+                transform.position = new Vector2 (moveArea.bgTransform.position.x + moveArea.GetAreaLimits().x/2 - playerSize.x , transform.position.y);
             }
-            if (transform.position.x - playerScale.x <= moveArea.transform.position.x - moveArea.scale.x/2)
+            if (transform.position.x - playerSize.x <= moveArea.bgTransform.position.x - moveArea.GetAreaLimits().x/2)
             {
-                transform.position = new Vector2(moveArea.transform.position.x - moveArea.scale.x/2 + playerScale.x , transform.position.y);
+                transform.position = new Vector2(moveArea.bgTransform.position.x - moveArea.GetAreaLimits().x/2 + playerSize.x , transform.position.y);
             }
-            if (transform.position.y + playerScale.y >= moveArea.transform.position.y + moveArea.scale.y/2)
+            if (transform.position.y + playerSize.y >= moveArea.bgTransform.position.y + moveArea.GetAreaLimits().y / 2)
             {
-                transform.position = new Vector2(transform.position.x, moveArea.transform.position.y + moveArea.scale.y / 2 - playerScale.y);
+                transform.position = new Vector2(transform.position.x, moveArea.bgTransform.position.y + moveArea.GetAreaLimits().y / 2 - playerSize.y);
             }
-            if (transform.position.y - playerScale.y <= moveArea.transform.position.y - moveArea.scale.y/2)
+            if (transform.position.y - playerSize.y <= moveArea.bgTransform.position.y - moveArea.GetAreaLimits().y/2)
             {
-                transform.position = new Vector2(transform.position.x, moveArea.transform.position.y - moveArea.scale.y / 2 + playerScale.y);
+                transform.position = new Vector2(transform.position.x, moveArea.bgTransform.position.y - moveArea.GetAreaLimits().y / 2 + playerSize.y);
             }
         }
     }
