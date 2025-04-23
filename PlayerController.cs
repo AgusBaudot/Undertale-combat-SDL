@@ -26,6 +26,8 @@ namespace MyGame
         }
         public void Inputs()
         {
+            instance = GameManager.GetInstance();
+
             #region Input movement
             input = Vector2.zero;
             if (Engine.GetKey(Engine.KEY_A))
@@ -49,32 +51,8 @@ namespace MyGame
             }
             #endregion
             Move();
-            //instance = GameManager.GetInstance();
-            //Engine.Debug(instance.GetGameState().ToString());
-            //if (Engine.GetKey(Engine.KEY_P))
-            //{
-            //    instance.OnGameStateChanged((GameState)0);
-            //}
-            //if (Engine.GetKey(Engine.KEY_O))
-            //{
-            //    instance.OnGameStateChanged((GameState)1);
-            //}
-            //if (Engine.GetKey(Engine.KEY_I))
-            //{
-            //    instance.OnGameStateChanged((GameState)2);
-            //}
-            //if (Engine.GetKey(Engine.KEY_U))
-            //{
-            //    instance.OnGameStateChanged((GameState)3);
-            //}
-            //if (Engine.GetKey(Engine.KEY_Y))
-            //{
-            //    instance.OnGameStateChanged((GameState)4);
-            //}
-            //if (Engine.GetKey(Engine.KEY_T))
-            //{
-            //    instance.OnGameStateChanged((GameState)5);
-            //}
+            
+
         }
 
         private void Move()
