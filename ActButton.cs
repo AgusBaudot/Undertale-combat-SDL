@@ -8,31 +8,37 @@ namespace MyGame
 {
     public class ActButton : Button
     {
+        private string _normalSpritePath, _selectedSpritePath;
+        private SpriteRenderer _spriteRenderer;
+
+
         public ActButton(float x, float y)
         {
             transform = new Transform(x, y);
-            transform = new Transform(x, y);
-            normalSprite[1] = Engine.LoadImage("assets/player.png");
-            selectedSprite[1] = Engine.LoadImage("assets/player.png");
+            _normalSpritePath = "assets/ActButton.png";
+            _selectedSpritePath = "assets/ActButtonPressed.png";
+            _spriteRenderer = new SpriteRenderer(transform, Engine.LoadImage(_normalSpritePath));
         }
 
-        public void update()
+        public override void Update()
         {
-            Update();
-            if (buttons[0] == true)
+            base.Update();
+
+            if (!attackButton && Engine.GetKey(Engine.KEY_ESP))
             {
                 Pressed();
             }
         }
 
-        public void hide()
+        private void Pressed()
         {
-            hide();
+            Engine.Debug("Act");
         }
 
-        protected override void Pressed()
+        public void Render()
         {
-
+            _spriteRenderer.UpdateSprite((!attackButton) ? _selectedSpritePath : _normalSpritePath);
+            _spriteRenderer.Render();
         }
     }
 }

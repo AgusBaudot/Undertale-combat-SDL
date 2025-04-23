@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActButton.cs" />
+    <Compile Include="assets\BoxCollider.cs" />
     <Compile Include="AttackButton.cs" />
     <Compile Include="Button.cs" />
     <Compile Include="CombatArea.cs" />
@@ -70,6 +71,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\ActButton.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\ActButtonPressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\attack.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="assets\combatArea.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

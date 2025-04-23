@@ -8,35 +8,12 @@ namespace MyGame
 {
     public class Button
     {
-        protected Transform transform;  
-        protected Image[] normalSprite = new Image[2];
-        protected Image[] selectedSprite = new Image[2];
-        private SpriteRenderer normalRenderer;
-        private SpriteRenderer selectedRenderer;
+        protected Transform transform;
+        protected bool attackButton = true;
 
-        protected bool[] buttons = new bool[2];
-        private int currentButton = 0;
-
-        public void Update()
+        public virtual void Update()
         {
             Inputs();
-        }
-
-        public void Render()
-        {
-            if (buttons[0] == true) 
-            {
-                selectedRenderer = new SpriteRenderer(transform, selectedSprite[0]);
-                normalRenderer = new SpriteRenderer(transform, normalSprite[1]);
-            }
-            if (buttons[1] == true)
-            {
-                selectedRenderer = new SpriteRenderer(transform, selectedSprite[1]);
-                normalRenderer = new SpriteRenderer(transform, normalSprite[2]);
-            }
-
-            normalRenderer.Render();
-            selectedRenderer.Render();
         }
 
         public void Inputs()
@@ -44,47 +21,18 @@ namespace MyGame
 
             if (Engine.GetKey(Engine.KEY_A))
             {
-                buttons[currentButton] = false;
-
-                if (currentButton == 0)
-                {
-                    currentButton = 1;
-                    buttons[currentButton] = true;
-                    Engine.Debug(currentButton.ToString());
-                    return;
-                }
-                currentButton--;
-                buttons[currentButton] = true;
-
-                Engine.Debug(currentButton.ToString());
+                attackButton = !attackButton; 
             }
 
-            if (Engine.GetKey(Engine.KEY_D))
+            else if (Engine.GetKey(Engine.KEY_D))
             {
-                buttons[currentButton] = false;
-
-                if (currentButton == 1)
-                {
-                    currentButton = 0;
-                    buttons[currentButton] = true;
-                    Engine.Debug(currentButton.ToString());
-                    return;
-                }
-                currentButton++;
-                buttons[currentButton] = true;
-
-                Engine.Debug(currentButton.ToString());
+                attackButton = !attackButton;
             }
         }
 
-        public void Hide()
-        {
-
-        }
-
-        protected virtual void Pressed()
-        {
-
-        }
+        //protected virtual void Pressed()
+        //{
+        //    return;
+        //}
     }
 }

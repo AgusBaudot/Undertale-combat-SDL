@@ -13,7 +13,7 @@ namespace MyGame
     {
         private Transform transform;
         private CombatArea moveArea;
-        private int speed = 3;
+        private int speed = 6;
         private Vector2 input;
         private Vector2 playerSize;
         private GameManager instance;
@@ -51,8 +51,6 @@ namespace MyGame
             }
             #endregion
             Move();
-            
-
         }
 
         private void Move()
@@ -63,21 +61,21 @@ namespace MyGame
 
         private void CalculateLimits()
         {
-            if (transform.position.x + playerSize.x >= moveArea.bgTransform.position.x + moveArea.GetAreaLimits().x/2) 
+            if (transform.position.x + playerSize.x/2 >= moveArea.bgTransform.position.x + moveArea.GetAreaLimits().x/2) 
             {
-                transform.position = new Vector2 (moveArea.bgTransform.position.x + moveArea.GetAreaLimits().x/2 - playerSize.x , transform.position.y);
+                transform.position = new Vector2 (moveArea.bgTransform.position.x + moveArea.GetAreaLimits().x/2 - playerSize.x/2 , transform.position.y);
             }
-            if (transform.position.x - playerSize.x <= moveArea.bgTransform.position.x - moveArea.GetAreaLimits().x/2)
+            if (transform.position.x - playerSize.x/2 <= moveArea.bgTransform.position.x - moveArea.GetAreaLimits().x/2)
             {
-                transform.position = new Vector2(moveArea.bgTransform.position.x - moveArea.GetAreaLimits().x/2 + playerSize.x , transform.position.y);
+                transform.position = new Vector2(moveArea.bgTransform.position.x - moveArea.GetAreaLimits().x/2 + playerSize.x/2 , transform.position.y);
             }
-            if (transform.position.y + playerSize.y >= moveArea.bgTransform.position.y + moveArea.GetAreaLimits().y / 2)
+            if (transform.position.y + playerSize.y/2 >= moveArea.bgTransform.position.y + moveArea.GetAreaLimits().y / 2)
             {
-                transform.position = new Vector2(transform.position.x, moveArea.bgTransform.position.y + moveArea.GetAreaLimits().y / 2 - playerSize.y);
+                transform.position = new Vector2(transform.position.x, moveArea.bgTransform.position.y + moveArea.GetAreaLimits().y / 2 - playerSize.y/2);
             }
-            if (transform.position.y - playerSize.y <= moveArea.bgTransform.position.y - moveArea.GetAreaLimits().y/2)
+            if (transform.position.y - playerSize.y/2 <= moveArea.bgTransform.position.y - moveArea.GetAreaLimits().y/2)
             {
-                transform.position = new Vector2(transform.position.x, moveArea.bgTransform.position.y - moveArea.GetAreaLimits().y / 2 + playerSize.y);
+                transform.position = new Vector2(transform.position.x, moveArea.bgTransform.position.y - moveArea.GetAreaLimits().y / 2 + playerSize.y/2);
             }
         }
     }

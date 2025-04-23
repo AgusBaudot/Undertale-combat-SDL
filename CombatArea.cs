@@ -28,8 +28,8 @@ namespace MyGame
 
         public void Render()
         {
-            bgRenderer.Render();
             borderRenderer.Render();
+            bgRenderer.Render();
         }
     }    
 }

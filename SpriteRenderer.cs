@@ -11,8 +11,8 @@ namespace MyGame
     {
         private Transform transform;
         private Image sprite;
-        private float scaledWidth { get; /*private*/ set; }
-        private float scaledHeight { get; /*private*/ set; }
+        public float scaledWidth { get; private set; }
+        public float scaledHeight { get; private set; }
 
         public SpriteRenderer(Transform transform, Image sprite)
         {
@@ -20,6 +20,11 @@ namespace MyGame
             this.sprite = sprite;
             scaledWidth = transform.scale.x * sprite.width;
             scaledHeight = transform.scale.y * sprite.height;
+        }
+
+        public void UpdateSprite(string newSprite)
+        {
+            sprite = Engine.LoadImage(newSprite);
         }
 
         public void Render()

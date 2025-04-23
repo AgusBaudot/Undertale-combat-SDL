@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MyGame
-{   
+{
     public class GameManager
     {
         private static GameManager Instance;
-        private GameState currentState = 0;
+        private GameState currentState = (GameState)3;
 
         public static GameManager GetInstance()
         {
