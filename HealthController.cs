@@ -28,7 +28,7 @@ namespace MyGame
         {
             if (counter < invencibilityDuration)
             {
-                counter += Program.deltaTime;
+                counter += Time.deltaTime;
             }
             else
             {

@@ -12,15 +12,6 @@ namespace MyGame
 
     class Program
     {
-        //test
-
-        #region Time
-        static public float deltaTime {  get; private set; }
-        static private float timeLastFrame;
-        static private DateTime initialTime;
-        static private float fixedDeltatime = 0.02f;
-        static public float DeltaTime => deltaTime;
-        #endregion
         #region Level
         static private Image fondo = Engine.LoadImage("assets/fondo.png");
         static private Player player1;
@@ -33,7 +24,7 @@ namespace MyGame
         #region Enemy
         static private Enemy enemy;
         #endregion
-
+        static private Time time;
         static private GameManager instance;
 
         static void Main(string[] args)
@@ -47,16 +38,12 @@ namespace MyGame
             attackButton = new AttackButton(360, 600, enemy.healthController);
             actButton = new ActButton(720, 600, player1.healthController);
            
-
-
-            initialTime = DateTime.Now;
+            time = new Time();
             
 
             while (true)
             {
-                float currentTime = (float)(DateTime.Now - initialTime).TotalSeconds;
-                deltaTime = currentTime - timeLastFrame;
-                timeLastFrame = currentTime;
+                time.UpdateTime();
                 if (Engine.GetKey(Engine.KEY_P))
                 {
                     instance.OnGameStateChanged((instance.GetGameState() == (GameState)2) ? (GameState)3 : (GameState)2); //Toggle between gamestate 2 & 3

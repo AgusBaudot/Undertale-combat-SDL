@@ -148,3 +148,9 @@ C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\AtkButton.png
 C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\AtkButtonPressed.png
 C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\attack.png
 C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\Enemy.png
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\ActButton.png
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\ActButtonPressed.png
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\AtkButton.png
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\AtkButtonPressed.png
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\attack.png
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\Enemy.png

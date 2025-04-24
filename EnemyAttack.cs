@@ -15,8 +15,9 @@ namespace MyGame
         private Transform transform;
         private SpriteRenderer spriteRenderer;
         private BoxCollider collider, playerCollider;
+        private Enemy fatherEnemy;
 
-        public EnemyAttack(Vector2 position, Vector2 speed, BoxCollider playerCollider, HealthController playerHealth)
+        public EnemyAttack(Vector2 position, Vector2 speed, BoxCollider playerCollider, HealthController playerHealth, Enemy enemy)
         {
             this.speed = speed;
             transform = new Transform(position);
@@ -24,6 +25,7 @@ namespace MyGame
             collider = new BoxCollider(transform, spriteRenderer);
             this.playerCollider = playerCollider;
             this.playerHealth = playerHealth;
+            fatherEnemy = enemy;
         }
 
         public void Update()
@@ -31,6 +33,12 @@ namespace MyGame
             transform.Translate(speed /** Program.DeltaTime*/);
             collider.Update();
             CheckCollisions();
+            /*
+             if (attack reached end of screen)
+            {
+                stop rendering it.
+            }
+             */
         }
 
         public void Render()
@@ -44,6 +52,7 @@ namespace MyGame
                 Math.Abs(transform.position.y - playerCollider.center.y) < (spriteRenderer.scaledHeight/2 + Math.Abs(playerCollider.center.y - playerCollider.max.y)))
             {
                 playerHealth.TakeDamage(damage);
+                fatherEnemy.RemoveAttack(this);
             }
         }
     }

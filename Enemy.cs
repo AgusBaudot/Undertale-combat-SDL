@@ -38,13 +38,14 @@ namespace MyGame
 
             if (instance.GetGameState() == GameState.EnemyTurn)
             {
-                counter += Program.deltaTime;
+                counter += Time.deltaTime;
 
                 if (counter > 1)
                 {
-                    attackListRight.Add(new EnemyAttack(new Vector2(160, Engine.center.y + 100), Vector2.right * 5, player.GetCollider(), player.healthController));
-                    attackListLeft.Add(new EnemyAttack(new Vector2(900, Engine.center.y + -100), Vector2.left * 5, player.GetCollider(), player.healthController));
+                    attackListRight.Add(new EnemyAttack(new Vector2(160, Engine.center.y + 100), Vector2.right * 5, player.GetCollider(), player.healthController, this));
+                    attackListLeft.Add(new EnemyAttack(new Vector2(900, Engine.center.y + -100), Vector2.left * 5, player.GetCollider(), player.healthController, this));
                     counter = 0;
+        
                 }
 
                 for (int i = 0; i < attackListRight.Count; i++)
@@ -52,6 +53,20 @@ namespace MyGame
                     attackListRight[i].Update();
                     attackListLeft[i].Update();
                 }
+                //if (attackListRight.Count > 0)
+                //{
+                //    foreach (EnemyAttack attack in attackListRight)
+                //    {
+                //        attack.Update();
+                //    } 
+                //}
+                //if (attackListLeft.Count > 0)
+                //{
+                //    foreach (EnemyAttack attack in attackListRight)
+                //    {
+                //        attack.Update();
+                //    }
+                //}
             }
 
         }
@@ -67,9 +82,38 @@ namespace MyGame
                     attackListRight[i].Render();
                     attackListLeft[i].Render();
                 }
+
+                //if (attackListRight.Count > 0)
+                //{
+                //    foreach (EnemyAttack attack in attackListRight)
+                //    {
+                //        attack.Render();
+                //    } 
+                //}
+
+                //if (attackListLeft.Count > 0)
+                //{
+                //    foreach(EnemyAttack attack in attackListRight)
+                //    {
+                //        attack.Render();
+                //    } 
+                //}
             }
-            
         }
 
+        public void RemoveAttack(EnemyAttack attack)
+        {
+            //if (attackListLeft.Contains(attack))
+            //{
+            //    attackListLeft.Remove(attack);
+            //    Engine.Debug("left");
+            //}
+            //else
+            //{
+            //    Engine.Debug("right");
+            //    attackListRight.Remove(attack);
+            //}
+            Engine.Debug($"Removed {attack}");
+        }
     }
 }
