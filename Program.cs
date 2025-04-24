@@ -12,6 +12,8 @@ namespace MyGame
 
     class Program
     {
+        //test
+
         #region Time
         static public float deltaTime {  get; private set; }
         static private float timeLastFrame;
