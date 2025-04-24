@@ -10,10 +10,15 @@ namespace MyGame
 {
     public class Player
     {
+        private int health = 100;
+        private int maxHealth = 100;
+        private float invencibilityDuration = 2;
+
         private Transform transform;
         private PlayerController playerController;
         private SpriteRenderer renderer;
         private BoxCollider collider;
+        public HealthController healthController;
         private Image playerSprite = Engine.LoadImage("assets/player.png");
 
         public Player(Vector2 position)
@@ -22,6 +27,7 @@ namespace MyGame
             playerController = new PlayerController(transform, playerSprite.width, playerSprite.height);
             renderer = new SpriteRenderer(transform, playerSprite);
             collider = new BoxCollider(transform, renderer);
+            healthController = new HealthController(health, maxHealth, invencibilityDuration);
         }
 
         public Player(float posX, float posY, float width, float height)
@@ -33,6 +39,7 @@ namespace MyGame
 
         public void Update()
         {
+            healthController.Update();
             playerController.Inputs();
             collider.Update();
             //logic update.

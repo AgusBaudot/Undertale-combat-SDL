@@ -21,12 +21,14 @@ namespace MyGame
 
             if (Engine.GetKey(Engine.KEY_A))
             {
-                attackButton = !attackButton; 
+                attackButton = !attackButton;
+                
             }
 
             else if (Engine.GetKey(Engine.KEY_D))
             {
                 attackButton = !attackButton;
+                
             }
         }
 
@@ -34,5 +36,6 @@ namespace MyGame
         //{
         //    return;
         //}
+
     }
 }

@@ -10,17 +10,20 @@ namespace MyGame
     public class EnemyAttack
     {
         private Vector2 speed;
+        private int damage = 10;
+        private HealthController playerHealth;
         private Transform transform;
         private SpriteRenderer spriteRenderer;
         private BoxCollider collider, playerCollider;
 
-        public EnemyAttack(Vector2 position, Vector2 speed, BoxCollider playerCollider)
+        public EnemyAttack(Vector2 position, Vector2 speed, BoxCollider playerCollider, HealthController playerHealth)
         {
             this.speed = speed;
             transform = new Transform(position);
             spriteRenderer = new SpriteRenderer(transform, Engine.LoadImage("assets/attack.png"));
             collider = new BoxCollider(transform, spriteRenderer);
             this.playerCollider = playerCollider;
+            this.playerHealth = playerHealth;
         }
 
         public void Update()
@@ -40,7 +43,7 @@ namespace MyGame
             if (Math.Abs(transform.position.x - playerCollider.center.x) < (spriteRenderer.scaledWidth/2 + Math.Abs(playerCollider.center.x - playerCollider.max.x)) &&
                 Math.Abs(transform.position.y - playerCollider.center.y) < (spriteRenderer.scaledHeight/2 + Math.Abs(playerCollider.center.y - playerCollider.max.y)))
             {
-                Engine.Debug("hola");
+                playerHealth.TakeDamage(damage);
             }
         }
     }

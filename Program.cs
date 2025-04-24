@@ -13,7 +13,7 @@ namespace MyGame
     class Program
     {
         #region Time
-        static private float deltaTime;
+        static public float deltaTime {  get; private set; }
         static private float timeLastFrame;
         static private DateTime initialTime;
         static private float fixedDeltatime = 0.02f;
@@ -29,7 +29,7 @@ namespace MyGame
         static private ActButton actButton;
         #endregion
         #region Enemy
-        static private EnemyAttack attacktest;
+        static private Enemy enemy;
         #endregion
 
         static private GameManager instance;
@@ -37,11 +37,16 @@ namespace MyGame
         static void Main(string[] args)
         {
             Engine.Initialize(1080, 720);
+
             player1 = new Player(Engine.center);
+            enemy = new Enemy(player1, 560, 90);
             combatArea = new CombatArea();
             instance = GameManager.GetInstance();
-            attackButton = new AttackButton(360, 600);
-            actButton = new ActButton(720, 600);
+            attackButton = new AttackButton(360, 600, enemy.healthController);
+            actButton = new ActButton(720, 600, player1.healthController);
+           
+
+
             initialTime = DateTime.Now;
             
 
@@ -63,14 +68,11 @@ namespace MyGame
 
         static void Update()
         {
-            if (attacktest == null)
-            {
-                attacktest = new EnemyAttack(new Vector2(0, Engine.center.y), Vector2.right * 5, player1.GetCollider());
-            }
+            enemy.Update();
+
             if (instance.GetGameState() == GameState.EnemyTurn)
             {
                 player1.Update();
-                attacktest.Update();
             }
             if (instance.GetGameState() == GameState.PlayerTurn)
             {
@@ -89,9 +91,11 @@ namespace MyGame
             {
                 player1.Render();
             }
+            enemy.Render();
+
             attackButton.Render();
             actButton.Render();
-            attacktest.Render();
+            
             Engine.Show();
         }
     }

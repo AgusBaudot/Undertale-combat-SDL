@@ -10,14 +10,16 @@ namespace MyGame
     {
         private string _normalSpritePath, _selectedSpritePath;
         private SpriteRenderer _spriteRenderer;
+        private HealthController enemyHealth;
+        private int damage = 10;
 
-
-        public AttackButton(float x, float y)
+        public AttackButton(float x, float y, HealthController enemyHealth)
         {
             transform = new Transform(x, y);
-            _normalSpritePath = "assets/ActButton.png"; //Hacer otro
-            _selectedSpritePath = "assets/ActButtonPressed.png"; //Hacer otro
+            _normalSpritePath = "assets/AtkButton.png"; //Hacer otro
+            _selectedSpritePath = "assets/AtkButtonPressed.png"; //Hacer otro
             _spriteRenderer = new SpriteRenderer(transform, Engine.LoadImage(_normalSpritePath));
+            this.enemyHealth = enemyHealth;
         }
 
         public override void Update()
@@ -32,7 +34,7 @@ namespace MyGame
 
         private void Pressed()
         {
-            Engine.Debug("Attack");
+            enemyHealth.TakeDamage(10);
         }
 
         public void Render()
