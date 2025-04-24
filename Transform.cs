@@ -9,11 +9,17 @@ namespace MyGame
     public class Transform
     {
         public Vector2 position { get; /*private*/ set; }
-        public Vector2 scale { get; private set; }
+        public Vector2 scale { get; /*private*/ set; }
 
         public Transform(float x, float y)
         {
             position = new Vector2(x, y);
+            scale = Vector2.one;
+        }
+
+        public Transform(Vector2 pos)
+        {
+            position = new Vector2(pos.x, pos.y);
             scale = Vector2.one;
         }
 
@@ -27,5 +33,6 @@ namespace MyGame
         {
             position += translation;
         }
+
     }
 }

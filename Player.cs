@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyGame.assets;
 
 namespace MyGame
 {
@@ -12,25 +13,28 @@ namespace MyGame
         private Transform transform;
         private PlayerController playerController;
         private SpriteRenderer renderer;
+        private BoxCollider collider;
         private Image playerSprite = Engine.LoadImage("assets/player.png");
 
-        public Player(float positionX, float positionY)
+        public Player(Vector2 position)
         {
-            transform = new Transform(positionX, positionY);
-            playerController = new PlayerController(transform);
+            transform = new Transform(position);
+            playerController = new PlayerController(transform, playerSprite.width, playerSprite.height);
             renderer = new SpriteRenderer(transform, playerSprite);
+            collider = new BoxCollider(transform, renderer);
         }
 
         public Player(float posX, float posY, float width, float height)
         {
             transform = new Transform(posX, posY, width, height);
-            playerController = new PlayerController(transform);
+            playerController = new PlayerController(transform, playerSprite.width, playerSprite.height);
             renderer = new SpriteRenderer(transform, playerSprite);
         }
 
         public void Update()
         {
             playerController.Inputs();
+            collider.Update();
             //logic update.
         }
 
@@ -38,6 +42,8 @@ namespace MyGame
         {
             renderer.Render();
         }
+
+        public BoxCollider GetCollider() => collider;
 
     }
 }

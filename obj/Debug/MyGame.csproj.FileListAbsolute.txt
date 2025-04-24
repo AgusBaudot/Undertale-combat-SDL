@@ -103,3 +103,42 @@ D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.csproj.CoreCompileInputs.ca
 D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.csproj.CopyComplete
 D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.exe
 D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.pdb
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\fondo.png
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\player.png
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\MyGame.exe.config
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\MyGame.exe
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\MyGame.pdb
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\obj\Debug\MyGame.csproj.AssemblyReference.cache
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\obj\Debug\MyGame.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\obj\Debug\MyGame.csproj.Up2Date
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\obj\Debug\MyGame.exe
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\obj\Debug\MyGame.pdb
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\CombatArea.png
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\combatAreaBack.png
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\combatArea.png
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\combatAreaBack.png
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\fondo.png
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\player.png
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\MyGame.exe.config
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\MyGame.exe
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\MyGame.pdb
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\obj\Debug\MyGame.csproj.AssemblyReference.cache
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\obj\Debug\MyGame.csproj.CoreCompileInputs.cache
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\obj\Debug\MyGame.csproj.Up2Date
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\obj\Debug\MyGame.exe
+C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\obj\Debug\MyGame.pdb
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\combatArea.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\combatAreaBack.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\fondo.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\player.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\MyGame.exe.config
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\MyGame.exe
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\MyGame.pdb
+C:\Users\alu765\Downloads\Undertale-combat-SDL\obj\Debug\MyGame.csproj.AssemblyReference.cache
+C:\Users\alu765\Downloads\Undertale-combat-SDL\obj\Debug\MyGame.csproj.CoreCompileInputs.cache
+C:\Users\alu765\Downloads\Undertale-combat-SDL\obj\Debug\MyGame.csproj.Up2Date
+C:\Users\alu765\Downloads\Undertale-combat-SDL\obj\Debug\MyGame.exe
+C:\Users\alu765\Downloads\Undertale-combat-SDL\obj\Debug\MyGame.pdb
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\ActButton.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\ActButtonPressed.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\attack.png

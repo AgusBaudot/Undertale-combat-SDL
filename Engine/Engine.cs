@@ -4,28 +4,34 @@ using System.Drawing;
 using Tao.Sdl;
 using static System.Net.Mime.MediaTypeNames;
 using System.Collections.Generic;
+using MyGame;
 
 class Engine
 {
     static IntPtr screen;
-    static int ancho, alto;
+    public static int width {get; private set;}
+    public static int height {get; private set;}
+
+    public static Vector2 center { get; private set;}
 
     public static void Initialize()
     {
-        ancho = 1024;
-        alto = 768;
+        width = 1024;
+        height = 768;
         int colores = 24;
+
+        center = new Vector2(width / 2, height / 2);
 
         int flags = (Sdl.SDL_HWSURFACE | Sdl.SDL_DOUBLEBUF | Sdl.SDL_ANYFORMAT);
         Sdl.SDL_Init(Sdl.SDL_INIT_EVERYTHING);
         screen = Sdl.SDL_SetVideoMode(
-            ancho,
-            alto,
+            width,
+            height,
             colores,
             flags);
 
         Sdl.SDL_Rect rect2 =
-            new Sdl.SDL_Rect(0, 0, (short)ancho, (short)alto);
+            new Sdl.SDL_Rect(0, 0, (short)width, (short)height);
         Sdl.SDL_SetClipRect(screen, ref rect2);
 
         SdlTtf.TTF_Init();
@@ -33,20 +39,22 @@ class Engine
 
     public static void Initialize(int an, int al)
     {
-        ancho = an;
-        alto = al;
+        width = an;
+        height = al;
         int colores = 24;
+
+        center = new Vector2(width / 2, height / 2);
 
         int flags = (Sdl.SDL_HWSURFACE | Sdl.SDL_DOUBLEBUF | Sdl.SDL_ANYFORMAT);
         Sdl.SDL_Init(Sdl.SDL_INIT_EVERYTHING);
         screen = Sdl.SDL_SetVideoMode(
-            ancho,
-            alto,
+            width,
+            height,
             colores,
             flags);
 
         Sdl.SDL_Rect rect2 =
-            new Sdl.SDL_Rect(0, 0, (short)ancho, (short)alto);
+            new Sdl.SDL_Rect(0, 0, (short)width, (short)height);
         Sdl.SDL_SetClipRect(screen, ref rect2);
 
         SdlTtf.TTF_Init();
@@ -59,7 +67,7 @@ class Engine
 
     public static void Clear()
     {
-        Sdl.SDL_Rect origin = new Sdl.SDL_Rect(0, 0, (short)ancho, (short)alto);
+        Sdl.SDL_Rect origin = new Sdl.SDL_Rect(0, 0, (short)width, (short)height);
         Sdl.SDL_FillRect(screen, ref origin, 0);
     }
 
@@ -70,14 +78,14 @@ class Engine
 
     public static void Draw(IntPtr imagen, float x, float y)
     {
-        Sdl.SDL_Rect origen = new Sdl.SDL_Rect(0, 0, (short)ancho, (short)alto);
-        Sdl.SDL_Rect dest = new Sdl.SDL_Rect((short)x, (short)y, (short)ancho, (short)alto);
+        Sdl.SDL_Rect origen = new Sdl.SDL_Rect(0, 0, (short)width, (short)height);
+        Sdl.SDL_Rect dest = new Sdl.SDL_Rect((short)x, (short)y, (short)width, (short)height);
         Sdl.SDL_BlitSurface(imagen, ref origen, screen, ref dest);
     }
 
     public static void Draw(Image image, float x, float y, Sdl.SDL_Rect dest)
     {
-        Sdl.SDL_Rect origen = new Sdl.SDL_Rect(0, 0, (short)ancho, (short)alto);
+        Sdl.SDL_Rect origen = new Sdl.SDL_Rect(0, 0, (short)width, (short)height);
         Sdl.SDL_BlitSurface(image.Pointer, ref origen, screen, ref dest);
     }
 
@@ -85,8 +93,8 @@ class Engine
     //{
     //    IntPtr image = LoadImage(tempimage);
 
-    //    Sdl.SDL_Rect origin = new Sdl.SDL_Rect(0, 0, (short)ancho, (short)alto);
-    //    Sdl.SDL_Rect dest = new Sdl.SDL_Rect((short)x, (short)y, (short)ancho, (short)alto);
+    //    Sdl.SDL_Rect origin = new Sdl.SDL_Rect(0, 0, (short)width, (short)height);
+    //    Sdl.SDL_Rect dest = new Sdl.SDL_Rect((short)x, (short)y, (short)width, (short)height);
     //    Sdl.SDL_BlitSurface(image, ref origin, screen, ref dest);
     //}
 
@@ -144,8 +152,8 @@ class Engine
         if (textAsImage == IntPtr.Zero)
             Environment.Exit(5);
 
-        Sdl.SDL_Rect origen = new Sdl.SDL_Rect(0, 0, (short)ancho, (short)alto);
-        Sdl.SDL_Rect dest = new Sdl.SDL_Rect((short)x, (short)y, (short)ancho, (short)alto);
+        Sdl.SDL_Rect origen = new Sdl.SDL_Rect(0, 0, (short)width, (short)height);
+        Sdl.SDL_Rect dest = new Sdl.SDL_Rect((short)x, (short)y, (short)width, (short)height);
 
         Sdl.SDL_BlitSurface(textAsImage, ref origen,
             screen, ref dest);
