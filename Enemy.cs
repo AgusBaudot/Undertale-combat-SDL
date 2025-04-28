@@ -42,6 +42,7 @@ namespace MyGame
             healthController.Update();
             if (currentState == GameState.EnemyTurn)
             {
+                
                 attackHandler.Update();
             }
         }

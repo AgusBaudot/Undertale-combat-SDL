@@ -12,7 +12,7 @@ namespace MyGame
         private Vector2 speed;
         private int damage = 10;
         private HealthController playerHealth;
-        private Transform transform;
+        public Transform transform {  get; private set; }   
         private SpriteRenderer spriteRenderer;
         private BoxCollider collider, playerCollider;
         private Enemy fatherEnemy;
