@@ -19,23 +19,15 @@ namespace MyGame
         public void Inputs()
         {
 
-            if (Engine.GetKey(Engine.KEY_A))
+            if (Engine.GetKeyDown(Engine.KEY_A))
             {
                 attackButton = !attackButton;
-                
             }
 
-            else if (Engine.GetKey(Engine.KEY_D))
+            else if (Engine.GetKeyDown(Engine.KEY_D))
             {
                 attackButton = !attackButton;
-                
             }
         }
-
-        //protected virtual void Pressed()
-        //{
-        //    return;
-        //}
-
     }
 }

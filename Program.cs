@@ -12,39 +12,27 @@ namespace MyGame
 
     class Program
     {
-        #region Level
-        static private Image fondo = Engine.LoadImage("assets/fondo.png");
-        static private Player player1;
-        static private CombatArea combatArea;
-        #endregion
-        #region UI
-        static private AttackButton attackButton;
-        static private ActButton actButton;
-        #endregion
-        #region Enemy
-        static private Enemy enemy;
-        #endregion
         static private Time time;
         static private GameManager instance;
+        static private LevelManager level;
+        static private MainMenu mainMenu;
 
         static void Main(string[] args)
         {
             Engine.Initialize(1080, 720);
 
-            player1 = new Player(Engine.center);
-            enemy = new Enemy(player1, 560, 90);
-            combatArea = new CombatArea();
-            instance = GameManager.GetInstance();
-            attackButton = new AttackButton(360, 600, enemy.healthController);
-            actButton = new ActButton(720, 600, player1.healthController);
-           
+            level = new LevelManager();
             time = new Time();
+            mainMenu = new MainMenu();
+            instance = GameManager.GetInstance();
             
 
             while (true)
             {
                 time.UpdateTime();
-                if (Engine.GetKey(Engine.KEY_P))
+                Engine.UpdateInput(); //Update input.
+
+                if (Engine.GetKeyDown(Engine.KEY_P))
                 {
                     instance.OnGameStateChanged((instance.GetGameState() == (GameState)2) ? (GameState)3 : (GameState)2); //Toggle between gamestate 2 & 3
                 }
@@ -52,39 +40,51 @@ namespace MyGame
                 Update();
                 Render();
             }
-
         }
 
         static void Update()
         {
-            enemy.Update();
-
-            if (instance.GetGameState() == GameState.EnemyTurn)
+            switch (instance.GetGameState())
             {
-                player1.Update();
+                case GameState.MainMenu:
+                    mainMenu.Update();
+                    break;
+                case GameState.EnterBattle:
+                    break;
+                case GameState.EnemyTurn:
+                    level.Update(); //Level already manages difference between enemy and player turn.
+                    break;
+                case GameState.PlayerTurn:
+                    level.Update(); //Level already manages difference between enemy and player turn.
+                    break;
+                case GameState.Win:
+                    break;
+                case GameState.Lose:
+                    break;
             }
-            if (instance.GetGameState() == GameState.PlayerTurn)
-            {
-                attackButton.Update();
-                actButton.Update();
-            }
-
         }
         
         static void Render()
         {
             Engine.Clear();
-            Engine.Draw(fondo, 0, 0);
-            combatArea.Render();
-            if (instance.GetGameState() == GameState.EnemyTurn)
+            switch (instance.GetGameState())
             {
-                player1.Render();
+                case GameState.MainMenu:
+                    mainMenu.Render();
+                    break;
+                case GameState.EnterBattle:
+                    break;
+                case GameState.EnemyTurn:
+                    level.Render(); //Level already manages difference between enemy and player turn.
+                    break;
+                case GameState.PlayerTurn:
+                    level.Render(); //Level already manager difference between enemy and player turn.
+                    break;
+                case GameState.Win:
+                    break;
+                case GameState.Lose:
+                    break;
             }
-            enemy.Render();
-
-            attackButton.Render();
-            actButton.Render();
-            
             Engine.Show();
         }
     }

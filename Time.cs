@@ -11,7 +11,6 @@ namespace MyGame
         static public float deltaTime { get; private set; }
         private float timeLastFrame;
         private DateTime initialTime;
-        private float fixedDeltatime = 0.02f;
 
         public Time()
         {

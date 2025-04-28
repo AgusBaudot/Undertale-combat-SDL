@@ -10,7 +10,7 @@ namespace MyGame
     public class GameManager
     {
         private static GameManager Instance;
-        private GameState currentState = (GameState)3;
+        private GameState currentState = 0;
 
         public static GameManager GetInstance()
         {
@@ -34,6 +34,7 @@ namespace MyGame
         public void OnGameStateChanged(GameState newState)
         {
             currentState = newState;
+            //invoke event.
         }
     }
 

@@ -154,3 +154,16 @@ C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\AtkButton
 C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\AtkButtonPressed.png
 C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\attack.png
 C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\Enemy.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\ActButton.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\ActButtonPressed.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\AtkButton.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\AtkButtonPressed.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\attack.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\combatArea.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\combatAreaBack.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Enemy.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Spritesheet_1.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Spritesheet_2.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Spritesheet_3.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Spritesheet_4.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Spritesheet_5.png

@@ -9,24 +9,26 @@ namespace MyGame
     public class ActButton : Button
     {
         private int heal = 20;
-        private string _normalSpritePath, _selectedSpritePath;
-        private SpriteRenderer _spriteRenderer;
+        private string normalSpritePath, selectedSpritePath;
+        private SpriteRenderer spriteRenderer;
         private HealthController playerHealth;
+        private GameManager instance;
 
         public ActButton(float x, float y, HealthController playerHealth)
         {
             transform = new Transform(x, y);
-            _normalSpritePath = "assets/ActButton.png";
-            _selectedSpritePath = "assets/ActButtonPressed.png";
-            _spriteRenderer = new SpriteRenderer(transform, Engine.LoadImage(_normalSpritePath));
+            normalSpritePath = "assets/ActButton.png";
+            selectedSpritePath = "assets/ActButtonPressed.png";
+            spriteRenderer = new SpriteRenderer(transform, Engine.LoadImage(normalSpritePath));
             this.playerHealth = playerHealth;
+            instance = GameManager.GetInstance();
         }
 
         public override void Update()
         {
             base.Update();
 
-            if (!attackButton && Engine.GetKey(Engine.KEY_ESP))
+            if (!attackButton && Engine.GetKeyDown(Engine.KEY_ESP))
             {
                 Pressed();
             }
@@ -35,12 +37,13 @@ namespace MyGame
         private void Pressed()
         {
             playerHealth.Recover(heal);
+            instance.OnGameStateChanged(GameState.EnemyTurn);
         }
 
         public void Render()
         {
-            _spriteRenderer.UpdateSprite((!attackButton) ? _selectedSpritePath : _normalSpritePath);
-            _spriteRenderer.Render();
+            spriteRenderer.UpdateSprite((!attackButton) ? selectedSpritePath : normalSpritePath);
+            spriteRenderer.Render();
         }
     }
 }

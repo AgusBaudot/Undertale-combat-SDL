@@ -10,7 +10,7 @@ namespace MyGame
     public class SpriteRenderer
     {
         private Transform transform;
-        private Image sprite;
+        public Image sprite { get; private set; }
         public float scaledWidth { get; private set; }
         public float scaledHeight { get; private set; }
 

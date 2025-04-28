@@ -50,10 +50,9 @@ namespace MyGame
                 input += Vector2.down;
             }
             #endregion
-            Move();
         }
 
-        private void Move()
+        public void Move()
         {
             transform.Translate(input.normalized * speed);
             CalculateLimits();

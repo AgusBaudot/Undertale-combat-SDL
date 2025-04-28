@@ -8,25 +8,26 @@ namespace MyGame
 {
     public class AttackButton : Button
     {
-        private string _normalSpritePath, _selectedSpritePath;
-        private SpriteRenderer _spriteRenderer;
+        private string normalSpritePath, selectedSpritePath;
+        private SpriteRenderer spriteRenderer;
         private HealthController enemyHealth;
-        private int damage = 10;
+        private GameManager instance;
 
         public AttackButton(float x, float y, HealthController enemyHealth)
         {
             transform = new Transform(x, y);
-            _normalSpritePath = "assets/AtkButton.png"; //Hacer otro
-            _selectedSpritePath = "assets/AtkButtonPressed.png"; //Hacer otro
-            _spriteRenderer = new SpriteRenderer(transform, Engine.LoadImage(_normalSpritePath));
+            normalSpritePath = "assets/AtkButton.png";
+            selectedSpritePath = "assets/AtkButtonPressed.png";
+            spriteRenderer = new SpriteRenderer(transform, Engine.LoadImage(normalSpritePath));
             this.enemyHealth = enemyHealth;
+            instance = GameManager.GetInstance();
         }
 
         public override void Update()
         {
             base.Update();
 
-            if (attackButton && Engine.GetKey(Engine.KEY_ESP))
+            if (attackButton && Engine.GetKeyDown(Engine.KEY_ESP))
             {
                 Pressed();
             }
@@ -35,12 +36,13 @@ namespace MyGame
         private void Pressed()
         {
             enemyHealth.TakeDamage(10);
+            instance.OnGameStateChanged(GameState.EnemyTurn);
         }
 
         public void Render()
         {
-            _spriteRenderer.UpdateSprite((attackButton) ? _selectedSpritePath : _normalSpritePath);
-            _spriteRenderer.Render();
+            spriteRenderer.UpdateSprite((attackButton) ? selectedSpritePath : normalSpritePath);
+            spriteRenderer.Render();
         }
     }
 }

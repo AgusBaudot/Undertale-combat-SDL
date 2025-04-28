@@ -14,6 +14,10 @@ class Engine
 
     public static Vector2 center { get; private set;}
 
+    private static byte[] previousKeys; //Array storing state of keys in last frame
+    private static byte[] currentKeys; //Array storing state of keys in current frame
+    private static int numKeys; //
+
     public static void Initialize()
     {
         width = 1024;
@@ -35,6 +39,8 @@ class Engine
         Sdl.SDL_SetClipRect(screen, ref rect2);
 
         SdlTtf.TTF_Init();
+
+        InitInput();
     }
 
     public static void Initialize(int an, int al)
@@ -58,6 +64,8 @@ class Engine
         Sdl.SDL_SetClipRect(screen, ref rect2);
 
         SdlTtf.TTF_Init();
+
+        InitInput();
     }
 
     public static void Debug(string text)
@@ -188,6 +196,29 @@ class Engine
         if (keys[c] == 1)
             press = true;
         return press;
+    }
+
+    private static void InitInput()
+    {
+        currentKeys = Tao.Sdl.Sdl.SDL_GetKeyState(out numKeys);
+        previousKeys = new byte[numKeys];
+    }
+
+    public static void UpdateInput()
+    {
+        Sdl.SDL_PumpEvents(); //Fetch queue from input device used.
+        Array.Copy(currentKeys, previousKeys, numKeys); //Copy current keys array into previous keys array.
+        currentKeys = Tao.Sdl.Sdl.SDL_GetKeyState(out numKeys); //Update current keys to match player's input.
+    }
+
+    public static bool GetKeyDown(int key)
+    {
+        return currentKeys[key] != 0 && previousKeys[key] == 0; //returns true whenever key is being pressed now, but last frame wasn't.
+    }
+
+    public static bool GetKeyUp (int key)
+    {
+        return currentKeys[key] == 0 && previousKeys[key] != 0; //returns true whenever key is not being pressed now, but last frame was.
     }
 
     private static List<Sdl.SDL_Event> eventQueue = new List<Sdl.SDL_Event>();

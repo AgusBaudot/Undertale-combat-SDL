@@ -41,8 +41,12 @@ namespace MyGame
         {
             healthController.Update();
             playerController.Inputs();
+        }
+
+        public void FixedUpdate()
+        {
+            playerController.Move();
             collider.Update();
-            //logic update.
         }
 
         public void Render()

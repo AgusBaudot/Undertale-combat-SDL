@@ -6,6 +6,7 @@ public class Image
     public IntPtr Pointer { get; private set; }
     public int width { get; private set; }
     public int height { get; private set; }
+    public string path { get; private set; }
 
     public Image(string imagePath)
     {
@@ -14,6 +15,7 @@ public class Image
 
     private void LoadImage(string imagePath)
     {
+        path = imagePath;
         Pointer = SdlImage.IMG_Load(imagePath);
         if (Pointer == IntPtr.Zero)
         {
