@@ -15,8 +15,8 @@ namespace MyGame
         public PlayButton(float x, float y)
         {
             transform = new Transform(x, y);
-            normalSprite = "assets/AtkButton.png";
-            selectedSprite = "assets/AtkButtonPressed.png";
+            normalSprite = "assets/StartButton.png";
+            selectedSprite = "assets/StartButtonPressed.png";
             renderer = new SpriteRenderer(transform, Engine.LoadImage(normalSprite));
             instance = GameManager.GetInstance();
         }

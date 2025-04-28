@@ -15,10 +15,7 @@ namespace MyGame
         private Transform transform;
         private SpriteRenderer renderer;
         public HealthController healthController;
-        private List<EnemyAttack> attackListRight = new List<EnemyAttack>();
-        private List<EnemyAttack> attackListLeft = new List<EnemyAttack>();
-
-        private float counter = 0;
+        private AttackHandler attackHandler;
 
         private Animator anim;
 
@@ -35,31 +32,23 @@ namespace MyGame
             }
             renderer = new SpriteRenderer (transform, spriteSheet[0]);
             anim = new Animator(spriteSheet, 0.15f, renderer, true);
+            attackHandler = new AttackHandler(player, this);
         }
 
         public void Update(GameState currentState)
         {
+            attackHandler.ResetListAttack();
+
             healthController.Update();
             if (currentState == GameState.EnemyTurn)
             {
-                counter += Time.deltaTime;
-
-                if (counter > 1)
-                {
-                    attackListRight.Add(new EnemyAttack(new Vector2(160, Engine.center.y + 100), Vector2.right * 5, player.GetCollider(), player.healthController, this));
-                    attackListLeft.Add(new EnemyAttack(new Vector2(900, Engine.center.y + -100), Vector2.left * 5, player.GetCollider(), player.healthController, this));
-                    counter = 0;
-                } 
+                attackHandler.Update();
             }
         }
 
         public void FixedUpdate()
         {
-            for (int i = 0; i < attackListRight.Count; i++)
-            {
-                attackListRight[i].Update();
-                attackListLeft[i].Update();
-            }
+            attackHandler?.FixedUpdate();
 
             //if (attackListRight.Count > 0)
             //{
@@ -83,11 +72,7 @@ namespace MyGame
             anim.OnAnimationEnd += AnimationEnded;
             if (state == GameState.EnemyTurn)
             {
-                for (int i = 0; i < attackListRight.Count; i++)
-                {
-                    attackListRight[i].Render();
-                    attackListLeft[i].Render();
-                }
+                attackHandler.Render();
 
                 //if (attackListRight.Count > 0)
                 //{
@@ -128,5 +113,7 @@ namespace MyGame
             
             //Engine.Debug($"Removed {attack}");
         }
+
+
     }
 }

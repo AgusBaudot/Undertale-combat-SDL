@@ -167,3 +167,12 @@ D:\My games\Visual\Undertale-combat\bin\Debug\assets\Spritesheet_2.png
 D:\My games\Visual\Undertale-combat\bin\Debug\assets\Spritesheet_3.png
 D:\My games\Visual\Undertale-combat\bin\Debug\assets\Spritesheet_4.png
 D:\My games\Visual\Undertale-combat\bin\Debug\assets\Spritesheet_5.png
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\Spritesheet_1.png
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\Spritesheet_2.png
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\Spritesheet_3.png
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\Spritesheet_4.png
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\Spritesheet_5.png
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\ExitButton.png
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\ExitButtonPressed.png
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\StartButton.png
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\StartButtonPressed.png

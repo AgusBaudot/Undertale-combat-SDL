@@ -15,8 +15,8 @@ namespace MyGame
         public QuitButton(float x, float y)
         {
             transform = new Transform(x, y);
-            normalSprite = "assets/ActButton.png";
-            selectedSprite = "assets/ActButtonPressed.png";
+            normalSprite = "assets/ExitButton.png";
+            selectedSprite = "assets/ExitButtonPressed.png";
             renderer = new SpriteRenderer(transform, Engine.LoadImage(normalSprite));
         }
 

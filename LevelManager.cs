@@ -11,7 +11,7 @@ namespace MyGame
         private Image fondo = Engine.LoadImage("assets/fondo.png");
         private Player player;
         private CombatArea combatArea;
-        private Enemy enemy;
+        public Enemy enemy;
         private GameManager instance;
 
         #region FixedUpdate
