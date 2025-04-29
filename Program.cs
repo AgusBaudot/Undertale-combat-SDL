@@ -32,11 +32,6 @@ namespace MyGame
                 time.UpdateTime();
                 Engine.UpdateInput(); //Update input.
 
-                /*if (Engine.GetKeyDown(Engine.KEY_P))
-                {
-                    instance.OnGameStateChanged((instance.GetGameState() == (GameState)2) ? (GameState)3 : (GameState)2); //Toggle between gamestate 2 & 3
-                }*/
-
                 Update();
                 Render();
             }

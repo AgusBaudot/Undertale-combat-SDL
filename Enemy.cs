@@ -26,7 +26,7 @@ namespace MyGame
             transform = new Transform(position);
             healthController = new HealthController(health, maxHealth, 0.5f);
             List<Image> spriteSheet = new List<Image>();
-            for (int i = 1; i <= 5; i++)
+            for (int i = 1; i <= 8; i++)
             {
                 spriteSheet.Add(Engine.LoadImage($"assets/Spritesheet_{i}.png"));
             }
@@ -37,7 +37,10 @@ namespace MyGame
 
         public void Update(GameState currentState)
         {
-            attackHandler.ResetListAttack();
+            if (Engine.GetKeyDown(Engine.KEY_P))
+            {
+                attackHandler.ResetListAttack();
+            }
 
             healthController.Update();
             if (currentState == GameState.EnemyTurn)
@@ -50,21 +53,6 @@ namespace MyGame
         public void FixedUpdate()
         {
             attackHandler?.FixedUpdate();
-
-            //if (attackListRight.Count > 0)
-            //{
-            //    foreach (EnemyAttack attack in attackListRight)
-            //    {
-            //        attack.Update();
-            //    } 
-            //}
-            //if (attackListLeft.Count > 0)
-            //{
-            //    foreach (EnemyAttack attack in attackListRight)
-            //    {
-            //        attack.Update();
-            //    }
-            //}
         }
 
         public void Render(GameState state)
@@ -74,22 +62,6 @@ namespace MyGame
             if (state == GameState.EnemyTurn)
             {
                 attackHandler.Render();
-
-                //if (attackListRight.Count > 0)
-                //{
-                //    foreach (EnemyAttack attack in attackListRight)
-                //    {
-                //        attack.Render();
-                //    } 
-                //}
-
-                //if (attackListLeft.Count > 0)
-                //{
-                //    foreach(EnemyAttack attack in attackListRight)
-                //    {
-                //        attack.Render();
-                //    } 
-                //}
             }
         }
 

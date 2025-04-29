@@ -15,6 +15,7 @@ namespace MyGame
         private List<EnemyAttack> attackListRight = new List<EnemyAttack>();
         private List<EnemyAttack> attackListLeft = new List<EnemyAttack>();
         private GameManager instance;
+        private int numOfAttacks = 0;
 
         public AttackHandler (Player player, Enemy enemy)
         {
@@ -65,17 +66,6 @@ namespace MyGame
             }
         }
 
-        public void ResetListAttack()
-        {
-            if (Engine.GetKeyDown(Engine.KEY_P))
-            {
-                attackListRight.Clear();
-                attackListLeft .Clear();
-
-                instance.OnGameStateChanged((instance.GetGameState() == (GameState)2) ? (GameState)3 : (GameState)2); //Toggle between gamestate 2 & 3
-            }
-        }
-
         private void RemoveAttack()
         {
             for (int i = 0; i < attackListRight.Count; i++)
@@ -85,14 +75,30 @@ namespace MyGame
                     attackListRight.Remove(attackListRight[i]);
                 }
             }
-            List<EnemyAttack> toRemove = new List<EnemyAttack>();
             for (int i = 0; i < attackListLeft.Count; i++)
             {
                 if (attackListLeft[i].transform.position.x < 160)
                 {
                     attackListLeft.Remove(attackListLeft[i]);
+                    numOfAttacks++;
+                }
+
+                if (numOfAttacks > 6) 
+                {
+                    ResetListAttack();
+                    numOfAttacks = 0;
+                    break;
                 }
             }
+        }
+
+        public void ResetListAttack()
+        {
+            attackListRight.Clear();
+            attackListLeft.Clear();
+
+            instance.OnGameStateChanged(GameState.PlayerTurn);
+            //instance.OnGameStateChanged((instance.GetGameState() == (GameState)2) ? (GameState)3 : (GameState)2); //Toggle between gamestate 2 & 3
         }
 
     }
