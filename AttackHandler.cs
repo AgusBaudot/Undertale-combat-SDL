@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
@@ -15,10 +17,13 @@ namespace MyGame
         private float counter = 0;
         private List<EnemyAttack> attackListRight = new List<EnemyAttack>();
         private List<EnemyAttack> attackListLeft = new List<EnemyAttack>();
+        private List<EnemyAttack> attackListDown = new List<EnemyAttack>();
         private GameManager instance;
-        private int numOfAttacks = 0;
-        private int selectAttack = 2;
 
+        private int numOfAttacks = 0;
+        private int selectAttack = 1;
+
+        private int selectPosition = 0;
         private bool up = true;
 
         public AttackHandler (Player player, Enemy enemy)
@@ -53,6 +58,7 @@ namespace MyGame
                     counter = 0;
                 }
             }
+
             else if (selectAttack == 2)
             {
                 if (counter > 0.4)
@@ -61,20 +67,63 @@ namespace MyGame
                     {
                         attackListRight.Add(new EnemyAttack(new Vector2(160, Engine.center.y - 100), Vector2.right * 10, player.GetCollider(), player.healthController, enemy));
                         up = !up;
-                        counter = 0;
                     }
                     else
                     {
                         attackListRight.Add(new EnemyAttack(new Vector2(160, Engine.center.y + 100), Vector2.right * 10, player.GetCollider(), player.healthController, enemy));
                         up = !up;
-                        counter = 0;
                     }
-                    
-                    
+
+                    counter = 0;
                 }
+            }
+
+            else if (selectAttack == 3)
+            {
+                if (counter > 0.3)
+                {
+                    switch (selectPosition)
+                    {
+                        case 0:
+
+                            attackListDown.Add(new EnemyAttack(new Vector2(200, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
+                            selectPosition = 1;
+                            break;
+                        case 1:
+
+                            attackListDown.Add(new EnemyAttack(new Vector2(325, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
+                            selectPosition = 2;
+                            break;
+                        case 2:
+
+                            attackListDown.Add(new EnemyAttack(new Vector2(450, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
+                            selectPosition = 3;
+                            break;
+                        case 3:
+
+                            attackListDown.Add(new EnemyAttack(new Vector2(575, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
+                            selectPosition = 4;
+                            break;
+                        case 4:
+
+                            attackListDown.Add(new EnemyAttack(new Vector2(700, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
+                            selectPosition = 5;
+                            break;
+                        case 5:
+
+                            attackListDown.Add(new EnemyAttack(new Vector2(825, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
+                            selectPosition = 0;
+                            break;
+                    }
+
+                    counter = 0;
+                }
+
             }
             
         }
+
+        
 
         private void AttackBehavior()
         {
@@ -92,6 +141,14 @@ namespace MyGame
                 for (int i = 0; i < attackListRight.Count; i++)
                 {
                     attackListRight[i].Update();
+                }
+            }
+
+            else if (selectAttack == 3)
+            {
+                for (int i = 0; i < attackListDown.Count; i++)
+                {
+                    attackListDown[i].Update();
                 }
             }
 
@@ -113,6 +170,14 @@ namespace MyGame
                 for (int i = 0; i < attackListRight.Count; i++)
                 {
                     attackListRight[i].Render();
+                }
+            }
+
+            else if (selectAttack == 3)
+            {
+                for (int i = 0; i < attackListDown.Count; i++)
+                {
+                    attackListDown[i].Render();
                 }
             }
 
@@ -165,12 +230,37 @@ namespace MyGame
                 }
             }
 
+            else if (selectAttack == 3)
+            {
+                for (int i = 0; i < attackListDown.Count; i++)
+                {
+                    if (attackListDown[i].transform.position.y > 500)
+                    {
+                        attackListDown.Remove(attackListDown[i]);
+                        numOfAttacks++;
+                    }
+
+                    if (numOfAttacks > 15)
+                    {
+                        ResetListAttack();
+                        numOfAttacks = 0;
+                        break;
+                    }
+                }
+            }
+
         }
 
         public void ResetListAttack()
         {
             attackListRight.Clear();
             attackListLeft.Clear();
+            attackListDown.Clear();
+
+            if (selectAttack == 1) selectAttack = 2;
+            else if (selectAttack == 2) selectAttack = 3;
+            else if (selectAttack == 3) selectAttack = 1;
+
 
             instance.OnGameStateChanged(GameState.PlayerTurn);
             //instance.OnGameStateChanged((instance.GetGameState() == (GameState)2) ? (GameState)3 : (GameState)2); //Toggle between gamestate 2 & 3
