@@ -30,15 +30,14 @@ namespace MyGame
 
         public void Update()
         {
-            transform.Translate(speed /** Program.DeltaTime*/);
+            transform.Translate(speed);
             collider.Update();
             CheckCollisions();
-            /*
-             if (attack reached end of screen)
-            {
-                stop rendering it.
-            }
-             */
+        }
+
+        public void UpdateSpeed (Vector2 newSpeed)
+        {
+            speed = newSpeed;
         }
 
         public void Render()

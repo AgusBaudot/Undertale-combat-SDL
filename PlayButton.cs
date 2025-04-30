@@ -25,7 +25,7 @@ namespace MyGame
         {
             base.Update();
 
-            if (attackButton && Engine.GetKeyDown(Engine.KEY_ESP))
+            if (leftButton && Engine.GetKeyDown(Engine.KEY_ESP))
             {
                 Pressed();
             }
@@ -38,7 +38,7 @@ namespace MyGame
 
         public void Render()
         {
-            renderer.UpdateSprite((attackButton) ? selectedSprite : normalSprite);
+            renderer.UpdateSprite((leftButton) ? selectedSprite : normalSprite);
             renderer.Render();
         }
     }

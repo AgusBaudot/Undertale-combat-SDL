@@ -39,11 +39,6 @@ namespace MyGame
         {
             IsAlive();
 
-            if (Engine.GetKeyDown(Engine.KEY_P))
-            {
-                attackHandler.ResetListAttack();
-            }
-
             healthController.Update();
             if (currentState == GameState.EnemyTurn)
             {

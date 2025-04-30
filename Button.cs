@@ -9,7 +9,7 @@ namespace MyGame
     public class Button
     {
         protected Transform transform;
-        protected bool attackButton = true;
+        protected bool leftButton = true;
 
         public virtual void Update()
         {
@@ -21,12 +21,12 @@ namespace MyGame
 
             if (Engine.GetKeyDown(Engine.KEY_A))
             {
-                attackButton = !attackButton;
+                leftButton = !leftButton;
             }
 
             else if (Engine.GetKeyDown(Engine.KEY_D))
             {
-                attackButton = !attackButton;
+                leftButton = !leftButton;
             }
         }
     }
