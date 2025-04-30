@@ -16,6 +16,8 @@ namespace MyGame
         static private GameManager instance;
         static private LevelManager level;
         static private MainMenu mainMenu;
+        static private WinScreen win;
+        static private LoseScreen lose;
 
         static void Main(string[] args)
         {
@@ -24,6 +26,8 @@ namespace MyGame
             level = new LevelManager();
             time = new Time();
             mainMenu = new MainMenu();
+            win = new WinScreen();
+            lose = new LoseScreen();
             instance = GameManager.GetInstance();
             
 
@@ -53,8 +57,10 @@ namespace MyGame
                     level.Update(); //Level already manages difference between enemy and player turn.
                     break;
                 case GameState.Win:
+                    win.Update();
                     break;
                 case GameState.Lose:
+                    lose.Update();
                     break;
             }
         }
@@ -76,8 +82,10 @@ namespace MyGame
                     level.Render(); //Level already manager difference between enemy and player turn.
                     break;
                 case GameState.Win:
+                    win.Render();
                     break;
                 case GameState.Lose:
+                    lose.Render();
                     break;
             }
             Engine.Show();

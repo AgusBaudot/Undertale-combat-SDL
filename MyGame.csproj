@@ -63,7 +63,9 @@
     <Compile Include="HealthController.cs" />
     <Compile Include="KeyboardHandler.cs" />
     <Compile Include="LevelManager.cs" />
+    <Compile Include="LoseScreen.cs" />
     <Compile Include="MainMenu.cs" />
+    <Compile Include="MenuButton.cs" />
     <Compile Include="PlayButton.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerController.cs" />
@@ -75,6 +77,7 @@
     <Compile Include="Time.cs" />
     <Compile Include="Transform.cs" />
     <Compile Include="Vector2.cs" />
+    <Compile Include="WinScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -113,6 +116,15 @@
     <Content Include="assets\fondo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="assets\lose.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\MenuButton.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\MenuButtonPressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="assets\player.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -144,6 +156,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="assets\StartButtonPressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\win.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

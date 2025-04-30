@@ -16,8 +16,9 @@ namespace MyGame
         private SpriteRenderer renderer;
         public HealthController healthController;
         private AttackHandler attackHandler;
-
         private Animator anim;
+
+        private GameManager instance;
 
         public Enemy(Player player, float x, float y)
         {
@@ -33,10 +34,14 @@ namespace MyGame
             renderer = new SpriteRenderer (transform, spriteSheet[0]);
             anim = new Animator(spriteSheet, 0.15f, renderer, true);
             attackHandler = new AttackHandler(player, this);
+
+            instance = GameManager.GetInstance();
         }
 
         public void Update(GameState currentState)
         {
+            IsAlive();
+
             if (Engine.GetKeyDown(Engine.KEY_P))
             {
                 attackHandler.ResetListAttack();
@@ -87,6 +92,13 @@ namespace MyGame
             //Engine.Debug($"Removed {attack}");
         }
 
+        private void IsAlive()
+        {
+            if (healthController.health <= 0)
+            {
+                instance.OnGameStateChanged(GameState.Win);
+            }
+        }
 
     }
 }

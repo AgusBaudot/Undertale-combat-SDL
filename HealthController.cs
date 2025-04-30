@@ -9,9 +9,8 @@ namespace MyGame
 {
     public class HealthController
     {
-        private int health;
+        public int health { get; private set; }
         private int maxHealth;
-        public bool death {  get; private set; }
         public bool isInvencible { get; private set; }
 
         private float invencibilityDuration;
@@ -45,10 +44,6 @@ namespace MyGame
             if(health < 0)
             {
                 health = 0;
-            }
-            if (health == 0)
-            {
-                death = true;
             }
             if (health > 0)
             {

@@ -206,3 +206,7 @@ C:\Users\alu764\Downloads\Undertale-combat-SDL\obj\Debug\MyGame.pdb
 C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\Spritesheet_6.png
 C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\Spritesheet_7.png
 C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\Spritesheet_8.png
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\lose.png
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\win.png
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\MenuButton.png
+C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\MenuButtonPressed.png

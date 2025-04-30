@@ -21,6 +21,8 @@ namespace MyGame
         public HealthController healthController;
         private Image playerSprite = Engine.LoadImage("assets/player.png");
 
+        private GameManager instance;
+
         public Player(Vector2 position)
         {
             transform = new Transform(position);
@@ -28,6 +30,7 @@ namespace MyGame
             renderer = new SpriteRenderer(transform, playerSprite);
             collider = new BoxCollider(transform, renderer);
             healthController = new HealthController(health, maxHealth, invencibilityDuration);
+            instance = GameManager.GetInstance();
         }
 
         public Player(float posX, float posY, float width, float height)
@@ -41,6 +44,7 @@ namespace MyGame
         {
             healthController.Update();
             playerController.Inputs();
+            IsAlive();
         }
 
         public void FixedUpdate()
@@ -52,6 +56,14 @@ namespace MyGame
         public void Render()
         {
             renderer.Render();
+        }
+
+        private void IsAlive()
+        {
+            if (healthController.health <= 0)
+            {
+                instance.OnGameStateChanged(GameState.Lose);
+            }
         }
 
         public BoxCollider GetCollider() => collider;
