@@ -221,3 +221,22 @@ D:\My games\Visual\Undertale-combat\bin\Debug\assets\Spritesheet_8.png
 D:\My games\Visual\Undertale-combat\bin\Debug\assets\StartButton.png
 D:\My games\Visual\Undertale-combat\bin\Debug\assets\StartButtonPressed.png
 D:\My games\Visual\Undertale-combat\bin\Debug\assets\win.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\AtkButton.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\AtkButtonPressed.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Enemy.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\ExitButton.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\ExitButtonPressed.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\lose.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\MenuButton.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\MenuButtonPressed.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Spritesheet_1.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Spritesheet_2.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Spritesheet_3.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Spritesheet_4.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Spritesheet_5.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Spritesheet_6.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Spritesheet_7.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Spritesheet_8.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\StartButton.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\StartButtonPressed.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\win.png

@@ -64,7 +64,7 @@ namespace MyGame
             switch (selectAttack)
             {
                 case 1: //If enemy is doing his first attack:
-                    if (counter > 1 - (duration/20)) //If 1 - (duration/20)" have passed since last attack was thrown:
+                    if (counter > 1.2 - (duration/20)) //If 1 - (duration/20)" have passed since last attack was thrown:
                     {
                         attackListRight.Add(new EnemyAttack(new Vector2(160, Engine.center.y + 90), Vector2.right * 5, player.GetCollider(), player.healthController, enemy));
                         attackListLeft.Add(new EnemyAttack(new Vector2(880, Engine.center.y + -90), Vector2.left * 5, player.GetCollider(), player.healthController, enemy));
@@ -139,8 +139,8 @@ namespace MyGame
                 case 1:
                     for (int i = 0; i < attackListRight.Count; i++) //If enemy is performing his first attack, update each attack of both right and left lists.
                     {
-                        attackListRight[i].UpdateSpeed(Vector2.right * (5 + duration)); 
-                        attackListLeft[i].UpdateSpeed(Vector2.left * (5 + duration));
+                        attackListRight[i].UpdateSpeed(Vector2.right * (3 + duration)); 
+                        attackListLeft[i].UpdateSpeed(Vector2.left * (3 + duration));
                         attackListRight[i].Update();
                         attackListLeft[i].Update();
                     }
@@ -271,6 +271,7 @@ namespace MyGame
             numOfAttacks = 0;
             selectAttack = 1;
             selectPosition = 0;
+            duration = 0;
             up = true;
             attackListRight.Clear();
             attackListLeft.Clear();

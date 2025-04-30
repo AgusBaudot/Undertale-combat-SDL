@@ -8,7 +8,7 @@ namespace MyGame
 {
     public class LevelManager
     {
-        private Image fondo = Engine.LoadImage("assets/fondo.png");
+        private Image bg = Engine.LoadImage("assets/fondo.png");
         private Player player;
         private CombatArea combatArea;
         private Enemy enemy;
@@ -79,7 +79,7 @@ namespace MyGame
 
         public void Render()
         {
-            Engine.Draw(fondo, 0, 0);
+            Engine.Draw(bg, 0, 0);
             combatArea.Render();
             if (instance.GetGameState() == GameState.EnemyTurn)
             {
