@@ -10,9 +10,8 @@ namespace MyGame
 {
     public class Player
     {
-        private int health = 100;
         private int maxHealth = 100;
-        private float invencibilityDuration = 2;
+        private float invencibilityDuration = 0.5f;
 
         private Transform transform;
         private PlayerController playerController;
@@ -29,7 +28,7 @@ namespace MyGame
             playerController = new PlayerController(transform, playerSprite.width, playerSprite.height);
             renderer = new SpriteRenderer(transform, playerSprite);
             collider = new BoxCollider(transform, renderer);
-            healthController = new HealthController(health, maxHealth, invencibilityDuration);
+            healthController = new HealthController(maxHealth, invencibilityDuration);
             instance = GameManager.GetInstance();
         }
 
@@ -65,8 +64,11 @@ namespace MyGame
                 instance.OnGameStateChanged(GameState.Lose);
             }
         }
-
         public BoxCollider GetCollider() => collider;
-
+        public void Reset()
+        {
+            transform.position = Engine.center;
+            healthController.Reset();
+        }
     }
 }

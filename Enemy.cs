@@ -9,9 +9,7 @@ namespace MyGame
     public class Enemy
     {
         private Vector2 position;
-        private int health = 50;
         private int maxHealth = 50;
-        private Player player;
         private Transform transform;
         private SpriteRenderer renderer;
         public HealthController healthController;
@@ -22,10 +20,9 @@ namespace MyGame
 
         public Enemy(Player player, float x, float y)
         {
-            this.player = player;
             position = new Vector2(x, y);
             transform = new Transform(position);
-            healthController = new HealthController(health, maxHealth, 0.5f);
+            healthController = new HealthController(maxHealth, 0.5f);
             List<Image> spriteSheet = new List<Image>();
             for (int i = 1; i <= 8; i++)
             {
@@ -100,5 +97,11 @@ namespace MyGame
             }
         }
 
+        public void Reset()
+        {
+            //reset health and set attack counter back to 0.
+            healthController.Reset();
+            attackHandler.Reset();
+        }
     }
 }

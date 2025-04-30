@@ -16,10 +16,9 @@ namespace MyGame
         private float invencibilityDuration;
         private float counter;
 
-        public HealthController(int health, int maxHealth, float invencibilityDuration)
+        public HealthController(int maxHealth, float invencibilityDuration)
         {
-            this.health = health;
-            this.maxHealth = maxHealth;
+            health = this.maxHealth = maxHealth;
             this.invencibilityDuration = invencibilityDuration;
         }
 
@@ -47,7 +46,7 @@ namespace MyGame
             }
             if (health > 0)
             {
-                invecibility();
+                Invencibility();
             }
 
             Engine.Debug(health.ToString());
@@ -65,10 +64,15 @@ namespace MyGame
             Engine.Debug(health.ToString());
         }
 
-        private void invecibility()
+        private void Invencibility()
         {
             counter = 0;
             isInvencible = true;
+        }
+
+        public void Reset()
+        {
+            health = maxHealth;
         }
     }
 }

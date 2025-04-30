@@ -39,7 +39,6 @@ namespace MyGame
 
             SpawnAttack();
             RemoveAttack();
-
         }
 
         public void FixedUpdate()
@@ -49,208 +48,189 @@ namespace MyGame
 
         private void SpawnAttack()
         {
-            if (selectAttack == 1)
+            switch (selectAttack)
             {
-                if (counter > 1)
-                {
-                    attackListRight.Add(new EnemyAttack(new Vector2(160, Engine.center.y + 100), Vector2.right * 5, player.GetCollider(), player.healthController, enemy));
-                    attackListLeft.Add(new EnemyAttack(new Vector2(880, Engine.center.y + -100), Vector2.left * 5, player.GetCollider(), player.healthController, enemy));
-                    counter = 0;
-                }
-            }
-
-            else if (selectAttack == 2)
-            {
-                if (counter > 0.4)
-                {
-                    if (up)
+                case 1:
+                    if (counter > 1)
                     {
-                        attackListRight.Add(new EnemyAttack(new Vector2(160, Engine.center.y - 100), Vector2.right * 10, player.GetCollider(), player.healthController, enemy));
-                        up = !up;
+                        attackListRight.Add(new EnemyAttack(new Vector2(160, Engine.center.y + 90), Vector2.right * 5, player.GetCollider(), player.healthController, enemy));
+                        attackListLeft.Add(new EnemyAttack(new Vector2(880, Engine.center.y + -90), Vector2.left * 5, player.GetCollider(), player.healthController, enemy));
+                        counter = 0;
                     }
-                    else
+                    break;
+                case 2:
+                    if (counter > 0.4)
                     {
-                        attackListRight.Add(new EnemyAttack(new Vector2(160, Engine.center.y + 100), Vector2.right * 10, player.GetCollider(), player.healthController, enemy));
-                        up = !up;
+                        if (up)
+                        {
+                            attackListRight.Add(new EnemyAttack(new Vector2(160, Engine.center.y - 90), Vector2.right * 10, player.GetCollider(), player.healthController, enemy));
+                            up = !up;
+                        }
+                        else
+                        {
+                            attackListRight.Add(new EnemyAttack(new Vector2(160, Engine.center.y + 90), Vector2.right * 10, player.GetCollider(), player.healthController, enemy));
+                            up = !up;
+                        }
+
+                        counter = 0;
                     }
-
-                    counter = 0;
-                }
-            }
-
-            else if (selectAttack == 3)
-            {
-                if (counter > 0.3)
-                {
-                    switch (selectPosition)
+                    break;
+                case 3:
+                    if (counter > 0.3)
                     {
-                        case 0:
+                        switch (selectPosition)
+                        {
+                            case 0:
+                                attackListDown.Add(new EnemyAttack(new Vector2(200, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
+                                selectPosition = 1;
+                                break;
+                            case 1:
 
-                            attackListDown.Add(new EnemyAttack(new Vector2(200, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
-                            selectPosition = 1;
-                            break;
-                        case 1:
+                                attackListDown.Add(new EnemyAttack(new Vector2(325, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
+                                selectPosition = 2;
+                                break;
+                            case 2:
 
-                            attackListDown.Add(new EnemyAttack(new Vector2(325, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
-                            selectPosition = 2;
-                            break;
-                        case 2:
+                                attackListDown.Add(new EnemyAttack(new Vector2(450, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
+                                selectPosition = 3;
+                                break;
+                            case 3:
 
-                            attackListDown.Add(new EnemyAttack(new Vector2(450, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
-                            selectPosition = 3;
-                            break;
-                        case 3:
+                                attackListDown.Add(new EnemyAttack(new Vector2(575, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
+                                selectPosition = 4;
+                                break;
+                            case 4:
 
-                            attackListDown.Add(new EnemyAttack(new Vector2(575, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
-                            selectPosition = 4;
-                            break;
-                        case 4:
+                                attackListDown.Add(new EnemyAttack(new Vector2(700, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
+                                selectPosition = 5;
+                                break;
+                            case 5:
 
-                            attackListDown.Add(new EnemyAttack(new Vector2(700, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
-                            selectPosition = 5;
-                            break;
-                        case 5:
-
-                            attackListDown.Add(new EnemyAttack(new Vector2(825, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
-                            selectPosition = 0;
-                            break;
+                                attackListDown.Add(new EnemyAttack(new Vector2(825, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
+                                selectPosition = 0;
+                                break;
+                        }
+                        counter = 0;
                     }
-
-                    counter = 0;
-                }
-
+                    break;
             }
-            
         }
-
-        
 
         private void AttackBehavior()
         {
-            if (selectAttack == 1)
+            switch (selectAttack)
             {
-                for (int i = 0; i < attackListRight.Count; i++)
-                {
-                    attackListRight[i].Update();
-                    attackListLeft[i].Update();
-                }
+                case 1:
+                    for (int i = 0; i < attackListRight.Count; i++)
+                    {
+                        attackListRight[i].Update();
+                        attackListLeft[i].Update();
+                    }
+                    break;
+                case 2:
+                    for (int i = 0; i < attackListRight.Count; i++)
+                    {
+                        attackListRight[i].Update();
+                    }
+                    break;
+                case 3:
+                    for (int i = 0; i < attackListDown.Count; i++)
+                    {
+                        attackListDown[i].Update();
+                    }
+                    break;
             }
-
-            else if (selectAttack == 2)
-            {
-                for (int i = 0; i < attackListRight.Count; i++)
-                {
-                    attackListRight[i].Update();
-                }
-            }
-
-            else if (selectAttack == 3)
-            {
-                for (int i = 0; i < attackListDown.Count; i++)
-                {
-                    attackListDown[i].Update();
-                }
-            }
-
         }
-
         public void Render()
         {
-            if (selectAttack == 1)
+            switch (selectAttack)
             {
-                for (int i = 0; i < attackListRight.Count; i++)
-                {
-                    attackListRight[i].Render();
-                    attackListLeft[i].Render();
-                }
+                case 1:
+                    for (int i = 0; i < attackListRight.Count; i++)
+                    {
+                        attackListRight[i].Render();
+                        attackListLeft[i].Render();
+                    }
+                    break;
+                case 2:
+                    for (int i = 0; i < attackListRight.Count; i++)
+                    {
+                        attackListRight[i].Render();
+                    }
+                    break;
+                case 3:
+                    for (int i = 0; i < attackListDown.Count; i++)
+                    {
+                        attackListDown[i].Render();
+                    }
+                    break;
             }
-
-            else if (selectAttack == 2)
-            {
-                for (int i = 0; i < attackListRight.Count; i++)
-                {
-                    attackListRight[i].Render();
-                }
-            }
-
-            else if (selectAttack == 3)
-            {
-                for (int i = 0; i < attackListDown.Count; i++)
-                {
-                    attackListDown[i].Render();
-                }
-            }
-
         }
-
         private void RemoveAttack()
         {
-            if (selectAttack == 1)
+            switch (selectAttack)
             {
-                for (int i = 0; i < attackListRight.Count; i++)
-                {
-                    if (attackListRight[i].transform.position.x > 880)
+                case 1:
+                    for (int i = 0; i < attackListRight.Count; i++)
                     {
-                        attackListRight.Remove(attackListRight[i]);
+                        if (attackListRight[i].transform.position.x > 880)
+                        {
+                            attackListRight.Remove(attackListRight[i]);
+                        }
                     }
-                }
-                for (int i = 0; i < attackListLeft.Count; i++)
-                {
-                    if (attackListLeft[i].transform.position.x < 160)
+                    for (int i = 0; i < attackListLeft.Count; i++)
                     {
-                        attackListLeft.Remove(attackListLeft[i]);
-                        numOfAttacks++;
-                    }
+                        if (attackListLeft[i].transform.position.x < 160)
+                        {
+                            attackListLeft.Remove(attackListLeft[i]);
+                            numOfAttacks++;
+                        }
 
-                    if (numOfAttacks > 6)
-                    {
-                        ResetListAttack();
-                        numOfAttacks = 0;
-                        break;
+                        if (numOfAttacks > 6)
+                        {
+                            ResetListAttack();
+                            numOfAttacks = 0;
+                            break;
+                        }
                     }
-                }
+                    break;
+                case 2:
+                    for (int i = 0; i < attackListRight.Count; i++)
+                    {
+                        if (attackListRight[i].transform.position.x > 880)
+                        {
+                            attackListRight.Remove(attackListRight[i]);
+                            numOfAttacks++;
+                        }
+
+                        if (numOfAttacks > 12)
+                        {
+                            ResetListAttack();
+                            numOfAttacks = 0;
+                            break;
+                        }
+                    }
+                    break;
+                case 3:
+                    for (int i = 0; i < attackListDown.Count; i++)
+                    {
+                        if (attackListDown[i].transform.position.y > 500)
+                        {
+                            attackListDown.Remove(attackListDown[i]);
+                            numOfAttacks++;
+                        }
+
+                        if (numOfAttacks > 15)
+                        {
+                            ResetListAttack();
+                            numOfAttacks = 0;
+                            selectPosition = 0;
+                            break;
+                        }
+                    }
+                    break;
             }
-
-            else if (selectAttack == 2)
-            {
-                for (int i = 0; i < attackListRight.Count; i++)
-                {
-                    if (attackListRight[i].transform.position.x > 880)
-                    {
-                        attackListRight.Remove(attackListRight[i]);
-                        numOfAttacks++;
-                    }
-
-                    if (numOfAttacks > 12)
-                    {
-                        ResetListAttack();
-                        numOfAttacks = 0;
-                        break;
-                    }
-                }
-            }
-
-            else if (selectAttack == 3)
-            {
-                for (int i = 0; i < attackListDown.Count; i++)
-                {
-                    if (attackListDown[i].transform.position.y > 500)
-                    {
-                        attackListDown.Remove(attackListDown[i]);
-                        numOfAttacks++;
-                    }
-
-                    if (numOfAttacks > 15)
-                    {
-                        ResetListAttack();
-                        numOfAttacks = 0;
-                        break;
-                    }
-                }
-            }
-
         }
-
         public void ResetListAttack()
         {
             attackListRight.Clear();
@@ -261,12 +241,18 @@ namespace MyGame
             else if (selectAttack == 2) selectAttack = 3;
             else if (selectAttack == 3) selectAttack = 1;
 
-
             instance.OnGameStateChanged(GameState.PlayerTurn);
-            //instance.OnGameStateChanged((instance.GetGameState() == (GameState)2) ? (GameState)3 : (GameState)2); //Toggle between gamestate 2 & 3
         }
-
+        public void Reset()
+        {
+            counter = 0;
+            numOfAttacks = 0;
+            selectAttack = 1;
+            selectPosition = 0;
+            up = true;
+            attackListRight.Clear();
+            attackListLeft.Clear();
+            attackListDown.Clear();
+        }
     }
-
-
 }

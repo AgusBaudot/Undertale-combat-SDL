@@ -210,3 +210,14 @@ C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\lose.png
 C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\win.png
 C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\MenuButton.png
 C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\MenuButtonPressed.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\ExitButton.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\ExitButtonPressed.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\lose.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\MenuButton.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\MenuButtonPressed.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Spritesheet_6.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Spritesheet_7.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Spritesheet_8.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\StartButton.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\StartButtonPressed.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\win.png

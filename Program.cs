@@ -29,7 +29,8 @@ namespace MyGame
             win = new WinScreen();
             lose = new LoseScreen();
             instance = GameManager.GetInstance();
-            
+
+            instance.OnLevelReset += ResetLevel;
 
             while (true)
             {
@@ -89,6 +90,11 @@ namespace MyGame
                     break;
             }
             Engine.Show();
+        }
+
+        static void ResetLevel()
+        {
+            level.ResetLevel();
         }
     }
 }

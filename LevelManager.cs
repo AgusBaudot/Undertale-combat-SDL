@@ -11,7 +11,7 @@ namespace MyGame
         private Image fondo = Engine.LoadImage("assets/fondo.png");
         private Player player;
         private CombatArea combatArea;
-        public Enemy enemy;
+        private Enemy enemy;
         private GameManager instance;
 
         #region FixedUpdate
@@ -74,7 +74,7 @@ namespace MyGame
 
         private void LateUpdate()
         {
-
+            //Late update.
         }
 
         public void Render()
@@ -88,6 +88,13 @@ namespace MyGame
             enemy.Render(instance.GetGameState());
             attackButton.Render();
             actButton.Render();
+        }
+
+        public void ResetLevel()
+        {
+            Engine.Debug("Level reseted!");
+            player.Reset();
+            enemy.Reset();
         }
     }
 }
