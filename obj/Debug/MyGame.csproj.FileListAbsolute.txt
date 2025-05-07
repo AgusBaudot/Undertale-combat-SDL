@@ -240,3 +240,4 @@ C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Spritesheet_8.pn
 C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\StartButton.png
 C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\StartButtonPressed.png
 C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\win.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Music\DeathByGlamour.wav

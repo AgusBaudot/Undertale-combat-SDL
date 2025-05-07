@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyGame
+﻿namespace MyGame
 {
     public class LevelManager
     {
@@ -26,9 +20,9 @@ namespace MyGame
         public LevelManager()
         {
             instance = GameManager.GetInstance();
-            player = new Player(Engine.center);
-            enemy = new Enemy(player, 560, 90);
             combatArea = new CombatArea();
+            player = new Player(Engine.center);
+            enemy = new Enemy(player, 560, 90, combatArea);
             attackButton = new AttackButton(360, 600, enemy.healthController);
             actButton = new ActButton(720, 600, player.healthController);
         }

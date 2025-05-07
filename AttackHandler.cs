@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Emit;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
+using Tao.Sdl;
 
 namespace MyGame
 {
@@ -15,6 +9,7 @@ namespace MyGame
         #region Classes
         private Player player;
         private Enemy enemy;
+        private CombatArea combatArea;
         private GameManager instance;
         #endregion
         #region Internal variables
@@ -34,13 +29,16 @@ namespace MyGame
         private bool up = true;
         #endregion
         #endregion
+        Sdl.SDL_Rect clipRect;
 
         #region Logic
-        public AttackHandler(Player player, Enemy enemy) //AttackHandler constructor.
+        public AttackHandler(Player player, Enemy enemy, CombatArea combatArea) //AttackHandler constructor.
         {
             this.player = player;
             this.enemy = enemy;
+            this.combatArea = combatArea;
             instance = GameManager.GetInstance();
+            SetAreaRect();
         }
         public void Update()
         {
@@ -56,10 +54,14 @@ namespace MyGame
         public void FixedUpdate() => AttackBehavior();
         public void Render() //Render each attack on screen. See AttackBehaviour method for logic.
         {
+            Sdl.SDL_SetClipRect(Engine.screen, ref clipRect);
             foreach (var attack in GetActiveAttackList())
             {
                 attack.Render();
             }
+            Sdl.SDL_Rect screenRect =
+                new Sdl.SDL_Rect(0, 0, (short)Engine.width, (short)Engine.height);
+            Sdl.SDL_SetClipRect(Engine.screen, ref screenRect);
         }
         private void SpawnAttack() //Spawner of attacks
         {
@@ -98,12 +100,15 @@ namespace MyGame
             switch (selectAttack)
             {
                 case 1:
-                    for (int i = 0; i < attackListRight.Count; i++) //If enemy is performing his first attack, update each attack of both right and left lists.
+                    foreach (var attack in attackListRight)
                     {
-                        attackListRight[i].UpdateSpeed(Vector2.right * (3 + duration));
-                        attackListLeft[i].UpdateSpeed(Vector2.left * (3 + duration));
-                        attackListRight[i].Update();
-                        attackListLeft[i].Update();
+                        attack.UpdateSpeed(Vector2.right * (3 + duration));
+                        attack.Update();
+                    }
+                    foreach (var attack in attackListLeft)
+                    {
+                        attack.UpdateSpeed(Vector2.left * (3 + duration));
+                        attack.Update();
                     }
                     break;
                 case 2:
@@ -122,7 +127,7 @@ namespace MyGame
             {
                 case 1:
                     RemoveAttacks(attackListRight, a => a.transform.position.x > 880);
-                    RemoveAttacks(attackListLeft, a => a.transform.position.x < 160);
+                    RemoveAttacks(attackListLeft, a => a.transform.position.x < 165);
                     if (numOfAttacks > 16) AdvanceAttackPhase();
                     break;
                 case 2:
@@ -189,6 +194,18 @@ namespace MyGame
             attackListLeft.Clear();
             attackListDown.Clear();
         } 
+        private void SetAreaRect()
+        {
+            var areaCenter = combatArea.bgTransform.position;
+            var areaHalfSize = combatArea.GetAreaLimits() / 2;
+            clipRect = new Sdl.SDL_Rect()
+            {
+                x = (short)(areaCenter.x - areaHalfSize.x),
+                y = (short)(areaCenter.y - areaHalfSize.y),
+                w = (short)(areaHalfSize.x * 2),
+                h = (short)(areaHalfSize.y * 2)
+            };
+        }
         #endregion
     }
 }

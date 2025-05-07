@@ -32,6 +32,8 @@ namespace MyGame
 
         private void Pressed()
         {
+            SdlMixer.Mix_FreeChunk(Program.music);
+            SdlMixer.Mix_CloseAudio();
             Sdl.SDL_Quit();
         }
 

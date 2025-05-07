@@ -1,14 +1,11 @@
-﻿using System;
-using System.Threading;
-using System.Drawing;
-using Tao.Sdl;
-using static System.Net.Mime.MediaTypeNames;
+﻿using MyGame;
+using System;
 using System.Collections.Generic;
-using MyGame;
+using Tao.Sdl;
 
 class Engine
 {
-    static IntPtr screen;
+    public static IntPtr screen { get; private set; }
     public static int width {get; private set;}
     public static int height {get; private set;}
 
@@ -39,6 +36,7 @@ class Engine
         Sdl.SDL_SetClipRect(screen, ref rect2);
 
         SdlTtf.TTF_Init();
+        SdlMixer.Mix_OpenAudio(44100, (short)SdlMixer.MIX_DEFAULT_FORMAT, 2, 2048);
 
         InitInput();
     }
@@ -64,6 +62,7 @@ class Engine
         Sdl.SDL_SetClipRect(screen, ref rect2);
 
         SdlTtf.TTF_Init();
+        SdlMixer.Mix_OpenAudio(44100, (short)SdlMixer.MIX_DEFAULT_FORMAT, 2, 2048);
 
         InitInput();
     }

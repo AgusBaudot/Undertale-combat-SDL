@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MyGame
 {
@@ -18,7 +14,7 @@ namespace MyGame
 
         private GameManager instance;
 
-        public Enemy(Player player, float x, float y)
+        public Enemy(Player player, float x, float y, CombatArea combatArea)
         {
             position = new Vector2(x, y);
             transform = new Transform(position);
@@ -30,7 +26,7 @@ namespace MyGame
             }
             renderer = new SpriteRenderer (transform, spriteSheet[0]);
             anim = new Animator(spriteSheet, 0.15f, renderer, true);
-            attackHandler = new AttackHandler(player, this);
+            attackHandler = new AttackHandler(player, this, combatArea);
 
             instance = GameManager.GetInstance();
         }
