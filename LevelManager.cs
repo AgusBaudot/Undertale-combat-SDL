@@ -15,7 +15,7 @@ namespace MyGame
         private GameManager instance;
 
         #region FixedUpdate
-        private float fixedDeltaTime = 0.02f;
+        private const float fixedDeltaTime = 0.02f;
         private float accumulatedTime = 0f;
         #endregion
         #region UI
@@ -29,7 +29,6 @@ namespace MyGame
             player = new Player(Engine.center);
             enemy = new Enemy(player, 560, 90);
             combatArea = new CombatArea();
-            instance = GameManager.GetInstance();
             attackButton = new AttackButton(360, 600, enemy.healthController);
             actButton = new ActButton(720, 600, player.healthController);
         }
@@ -81,18 +80,18 @@ namespace MyGame
         {
             Engine.Draw(bg, 0, 0);
             combatArea.Render();
-            if (instance.GetGameState() == GameState.EnemyTurn)
+            GameState state = instance.GetGameState();
+            if (state == GameState.EnemyTurn)
             {
                 player.Render();
             }
-            enemy.Render(instance.GetGameState());
+            enemy.Render(state);
             attackButton.Render();
             actButton.Render();
         }
 
         public void ResetLevel()
         {
-            Engine.Debug("Level reseted!");
             player.Reset();
             enemy.Reset();
         }

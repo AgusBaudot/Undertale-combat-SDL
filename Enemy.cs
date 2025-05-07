@@ -67,23 +67,6 @@ namespace MyGame
             //Animation has ended.
         }
 
-        public void RemoveAttack(EnemyAttack attack)
-        {
-            //if (attackListLeft.Contains(attack))
-            //{
-            //    attackListLeft.Remove(attack);
-            //    Engine.Debug("left");
-            //}
-            //else
-            //{
-            //    Engine.Debug("right");
-            //    attackListRight.Remove(attack);
-            //}
-            
-            
-            //Engine.Debug($"Removed {attack}");
-        }
-
         private void IsAlive()
         {
             if (healthController.health <= 0)
@@ -94,7 +77,6 @@ namespace MyGame
 
         public void Reset()
         {
-            //reset health and set attack counter back to 0.
             healthController.Reset();
             attackHandler.Reset();
         }

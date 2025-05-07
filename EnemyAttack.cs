@@ -51,7 +51,6 @@ namespace MyGame
                 Math.Abs(transform.position.y - playerCollider.center.y) < (spriteRenderer.scaledHeight/2 + Math.Abs(playerCollider.center.y - playerCollider.max.y)))
             {
                 playerHealth.TakeDamage(damage);
-                fatherEnemy.RemoveAttack(this);
             }
         }
     }
