@@ -1,4 +1,6 @@
-﻿namespace MyGame
+﻿using System.CodeDom;
+
+namespace MyGame
 {
     public class LevelManager
     {
@@ -30,6 +32,7 @@
         public void Update()
         {
             accumulatedTime += Time.deltaTime;
+
             while (accumulatedTime >= fixedDeltaTime)
             {
                 FixedUpdate();

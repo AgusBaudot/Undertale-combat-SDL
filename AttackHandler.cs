@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Tao.Sdl;
 
@@ -25,12 +26,14 @@ namespace MyGame
 
         private int numOfAttacks = 0;
         private int selectAttack = 1;
+        private int lastAttack = 0;
 
         private int selectPosition = 0;
         private bool up = true;
         #endregion
         #endregion
-        Sdl.SDL_Rect clipRect;
+        private Sdl.SDL_Rect clipRect;
+        private Random rng = new Random();
 
         #region Logic
         public AttackHandler(Player player, Enemy enemy, CombatArea combatArea) //AttackHandler constructor.
@@ -221,7 +224,12 @@ namespace MyGame
             ResetLists();
             numOfAttacks = 0;
             //selectAttack = selectAttack == 3 ? 1 : selectAttack + 1; //Weird behaviour due to increment after comparison.
-            selectAttack = (int)Helpers.Wrap(selectAttack + 1, 1, 6);
+            //selectAttack = (int)Helpers.Wrap(selectAttack + 1, 1, 6);
+            lastAttack = selectAttack;
+            while (selectAttack == lastAttack)
+            {
+                selectAttack = rng.Next(1, 6);
+            }
             if (selectAttack == 1) duration = 0;
             instance.OnGameStateChanged(GameState.PlayerTurn);
         }
