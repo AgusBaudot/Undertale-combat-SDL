@@ -22,7 +22,7 @@ namespace MyGame
             List<Image> spriteSheet = new List<Image>();
             for (int i = 1; i <= 8; i++)
             {
-                spriteSheet.Add(Engine.LoadImage($"assets/Spritesheet_{i}.png"));
+                spriteSheet.Add(Engine.LoadImage($"assets/Sprites/Spritesheet_{i}.png"));
             }
             renderer = new SpriteRenderer (transform, spriteSheet[0]);
             anim = new Animator(spriteSheet, 0.15f, renderer, true);

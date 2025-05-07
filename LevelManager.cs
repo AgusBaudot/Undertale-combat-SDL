@@ -2,7 +2,7 @@
 {
     public class LevelManager
     {
-        private Image bg = Engine.LoadImage("assets/fondo.png");
+        private Image bg = Engine.LoadImage("assets/Sprites/fondo.png");
         private Player player;
         private CombatArea combatArea;
         private Enemy enemy;
@@ -88,6 +88,11 @@
         {
             player.Reset();
             enemy.Reset();
+        }
+
+        public void SetPosition()
+        {
+            player.ResetPosition();
         }
     }
 }

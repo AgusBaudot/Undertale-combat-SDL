@@ -11,7 +11,8 @@ namespace MyGame
         static private MainMenu mainMenu;
         static private WinScreen win;
         static private LoseScreen lose;
-        public static IntPtr music;
+        static private Music music;
+        static private Font normalFont;
 
         static void Main(string[] args)
         {
@@ -22,25 +23,11 @@ namespace MyGame
             mainMenu = new MainMenu();
             win = new WinScreen();
             lose = new LoseScreen();
+            music = new Music();
             instance = GameManager.GetInstance();
+            normalFont = new Font("assets/Fonts/UndertaleFont.ttf", 24);
 
             instance.OnLevelReset += ResetLevel;
-
-
-            music = SdlMixer.Mix_LoadMUS("assets/Music/DeathByGlamour.wav");
-            //sfx= SdlMixer.Mix_LoadWAV(); //for sound efects.
-            SdlMixer.Mix_PlayMusic(music, -1);
-            //SdlMixer.Mix_PlayChannel(int channel, sfx, -1 for loop & 0? for one time track); for playing sound effects.
-            SdlMixer.Mix_VolumeMusic(128);
-            //if (music == IntPtr.Zero)
-            //{
-            //    Engine.Debug($"Music failed to load: {Sdl.SDL_GetError()}");
-            //}
-            //else
-            //{
-            //    SdlMixer.Mix_PlayMusic(music, -1);
-            //    Engine.Debug((SdlMixer.Mix_PlayingMusic()).ToString());
-            //} //Check if it's imported right.
 
             while (true)
             {
@@ -65,6 +52,7 @@ namespace MyGame
                     level.Update(); //Level already manages difference between enemy and player turn.
                     break;
                 case GameState.PlayerTurn:
+                    level.SetPosition();
                     level.Update(); //Level already manages difference between enemy and player turn.
                     break;
                 case GameState.Win:
@@ -102,7 +90,9 @@ namespace MyGame
             Engine.Show();
         }
 
-        static void ResetLevel()
+        static public Font GetFont() => normalFont;
+
+        static private void ResetLevel()
         {
             level.ResetLevel();
         }

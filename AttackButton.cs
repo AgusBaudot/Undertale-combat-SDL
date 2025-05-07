@@ -20,8 +20,8 @@ namespace MyGame
         public AttackButton(float x, float y, HealthController enemyHealth)
         {
             transform = new Transform(x, y);
-            normalSpritePath = "assets/AtkButton.png";
-            selectedSpritePath = "assets/AtkButtonPressed.png";
+            normalSpritePath = "assets/Sprites/AtkButton.png";
+            selectedSpritePath = "assets/Sprites/AtkButtonPressed.png";
             spriteRenderer = new SpriteRenderer(transform, Engine.LoadImage(normalSpritePath));
             this.enemyHealth = enemyHealth;
             instance = GameManager.GetInstance();

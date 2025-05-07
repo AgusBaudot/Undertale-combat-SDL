@@ -21,7 +21,7 @@ namespace MyGame
         {
             this.speed = speed;
             transform = new Transform(position);
-            spriteRenderer = new SpriteRenderer(transform, Engine.LoadImage("assets/attack.png"));
+            spriteRenderer = new SpriteRenderer(transform, Engine.LoadImage("assets/Sprites/attack.png"));
             collider = new BoxCollider(transform, spriteRenderer);
             this.playerCollider = playerCollider;
             this.playerHealth = playerHealth;

@@ -6,8 +6,8 @@
         private Transform borderTransform;
         private SpriteRenderer bgRenderer;
         private SpriteRenderer borderRenderer;
-        private Image boxSprite = Engine.LoadImage("assets/combatArea.png");
-        private Image edgesSprite = Engine.LoadImage("assets/combatAreaBack.png");
+        private Image boxSprite = Engine.LoadImage("assets/Sprites/combatArea.png");
+        private Image edgesSprite = Engine.LoadImage("assets/Sprites/combatAreaBack.png");
 
         public CombatArea()
         {

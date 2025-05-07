@@ -15,8 +15,8 @@ namespace MyGame
         public QuitButton(float x, float y)
         {
             transform = new Transform(x, y);
-            normalSprite = "assets/ExitButton.png";
-            selectedSprite = "assets/ExitButtonPressed.png";
+            normalSprite = "assets/Sprites/ExitButton.png";
+            selectedSprite = "assets/Sprites/ExitButtonPressed.png";
             renderer = new SpriteRenderer(transform, Engine.LoadImage(normalSprite));
         }
 
@@ -32,7 +32,7 @@ namespace MyGame
 
         private void Pressed()
         {
-            SdlMixer.Mix_FreeChunk(Program.music);
+            //SdlMixer.Mix_FreeChunk();
             SdlMixer.Mix_CloseAudio();
             Sdl.SDL_Quit();
         }

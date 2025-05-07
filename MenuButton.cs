@@ -15,8 +15,8 @@ namespace MyGame
         public MenuButton(float x, float y)
         {
             transform = new Transform(x, y);
-            normalSprite = "assets/MenuButton.png";
-            selectedSprite = "assets/MenuButtonPressed.png";
+            normalSprite = "assets/Sprites/MenuButton.png";
+            selectedSprite = "assets/Sprites/MenuButtonPressed.png";
             renderer = new SpriteRenderer(transform, Engine.LoadImage(normalSprite));
             instance = GameManager.GetInstance();
         }

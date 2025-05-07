@@ -14,7 +14,7 @@ namespace MyGame
 
         public MainMenu()
         {
-            bg = Engine.LoadImage("assets/fondo.png");
+            bg = Engine.LoadImage("assets/Sprites/fondo.png");
             playBtn = new PlayButton(360, 600);
             quitBtn = new QuitButton(720, 600);
         }

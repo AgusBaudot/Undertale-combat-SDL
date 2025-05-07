@@ -16,7 +16,7 @@ namespace MyGame
 
         public LoseScreen()
         {
-            bg = Engine.LoadImage("assets/lose.png");
+            bg = Engine.LoadImage("assets/Sprites/lose.png");
             menuButton = new MenuButton(360, 600);
             quitBtn = new QuitButton(720, 600);
 

@@ -68,6 +68,7 @@
     <Compile Include="LoseScreen.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="MenuButton.cs" />
+    <Compile Include="Music.cs" />
     <Compile Include="PlayButton.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerController.cs" />
@@ -83,93 +84,94 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="assets\Fonts\UndertaleFont.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\ActButton.png">
+    <Content Include="assets\Sprites\ActButton.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\ActButtonPressed.png">
+    <Content Include="assets\Sprites\ActButtonPressed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\AtkButton.png">
+    <Content Include="assets\Sprites\AtkButton.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\AtkButtonPressed.png">
+    <Content Include="assets\Sprites\AtkButtonPressed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\attack.png">
+    <Content Include="assets\Sprites\attack.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\combatArea.png">
+    <Content Include="assets\Sprites\combatArea.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\combatAreaBack.png">
+    <Content Include="assets\Sprites\combatAreaBack.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\Enemy.png">
+    <Content Include="assets\Sprites\Enemy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\ExitButton.png">
+    <Content Include="assets\Sprites\ExitButton.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\ExitButtonPressed.png">
+    <Content Include="assets\Sprites\ExitButtonPressed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\fondo.png">
+    <Content Include="assets\Sprites\fondo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\lose.png">
+    <Content Include="assets\Sprites\lose.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\MenuButton.png">
+    <Content Include="assets\Sprites\MenuButton.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\MenuButtonPressed.png">
+    <Content Include="assets\Sprites\MenuButtonPressed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="assets\Music\DeathByGlamour.mp3" />
     <Content Include="assets\Music\DeathByGlamour.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\player.png">
+    <Content Include="assets\Sprites\player.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\Spritesheet_1.png">
+    <Content Include="assets\Sprites\Spritesheet_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\Spritesheet_2.png">
+    <Content Include="assets\Sprites\Spritesheet_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\Spritesheet_3.png">
+    <Content Include="assets\Sprites\Spritesheet_3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\Spritesheet_4.png">
+    <Content Include="assets\Sprites\Spritesheet_4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\Spritesheet_5.png">
+    <Content Include="assets\Sprites\Spritesheet_5.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\Spritesheet_6.png">
+    <Content Include="assets\Sprites\Spritesheet_6.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\Spritesheet_7.png">
+    <Content Include="assets\Sprites\Spritesheet_7.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\Spritesheet_8.png">
+    <Content Include="assets\Sprites\Spritesheet_8.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\StartButton.png">
+    <Content Include="assets\Sprites\StartButton.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\StartButtonPressed.png">
+    <Content Include="assets\Sprites\StartButtonPressed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\win.png">
+    <Content Include="assets\Sprites\win.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="assets\Sprites\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -16,7 +16,7 @@ namespace MyGame
 
         public WinScreen()
         {
-            bg = Engine.LoadImage("assets/win.png");
+            bg = Engine.LoadImage("assets/Sprites/win.png");
             menuButton = new MenuButton(360, 600);
             quitBtn = new QuitButton(720, 600);
 

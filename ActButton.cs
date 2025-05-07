@@ -21,8 +21,8 @@ namespace MyGame
         public ActButton(float x, float y, HealthController playerHealth) //ActButton constructor.
         {
             transform = new Transform(x, y); //Set button's transform with given position.
-            normalSpritePath = "assets/ActButton.png"; //Set normal sprite for this button.
-            selectedSpritePath = "assets/ActButtonPressed.png"; //Set selected sprite for this button.
+            normalSpritePath = "assets/Sprites/ActButton.png"; //Set normal sprite for this button.
+            selectedSpritePath = "assets/Sprites/ActButtonPressed.png"; //Set selected sprite for this button.
             spriteRenderer = new SpriteRenderer(transform, Engine.LoadImage(normalSpritePath)); //Set SpriteRenderer and initialize it with normal sprite by default.
             this.playerHealth = playerHealth; //Set playerHealth to given value.
             instance = GameManager.GetInstance(); //Get instance of GameManager.

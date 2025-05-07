@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-
     public class Animator
     {
         #region Classes

@@ -17,6 +17,7 @@ namespace MyGame
         private List<EnemyAttack> attackListRight = new List<EnemyAttack>();
         private List<EnemyAttack> attackListLeft = new List<EnemyAttack>();
         private List<EnemyAttack> attackListDown = new List<EnemyAttack>();
+        private List<EnemyAttack> attackListUp = new List<EnemyAttack>();
         #endregion
         #region Attack logic
         private float counter = 0; //Time passed since last spawned attack
@@ -93,6 +94,24 @@ namespace MyGame
                         counter = 0;
                     }
                     break;
+                case 4:
+                    if (counter > 0.4)
+                    {
+                        float yOffset = up ? -90 : 90;
+                        AddAttack(attackListLeft, new Vector2(880, Engine.center.y + yOffset), Vector2.left * 10);
+                        up = !up;
+                        counter = 0;
+                    }
+                    break;
+                case 5:
+                    if (counter > 0.3)
+                    {
+                        float xPos = 840 - 125 * selectPosition;
+                        AddAttack(attackListUp, new Vector2(xPos, Engine.center.y + 100), Vector2.up * 10);
+                        selectPosition = (int)Helpers.Wrap(selectPosition + 1, 0, 7);
+                        counter = 0;
+                    }
+                    break;
             }
         }
         private void AttackBehavior() //Move logic of each attack
@@ -117,6 +136,12 @@ namespace MyGame
                 case 3:
                     attackListDown.ForEach(a => a.Update());
                     break;
+                case 4:
+                    attackListLeft.ForEach(a => a.Update());
+                    break;
+                case 5:
+                    attackListUp.ForEach(a => a.Update());
+                    break;
             }
         } 
         #endregion
@@ -132,10 +157,30 @@ namespace MyGame
                     break;
                 case 2:
                     RemoveAttacks(attackListRight, a => a.transform.position.x > 880);
-                    if (numOfAttacks > 12) AdvanceAttackPhase();
+                    if (numOfAttacks > 12)
+                    {
+                        up = true;
+                        AdvanceAttackPhase();
+                    }
                     break;
                 case 3:
                     RemoveAttacks(attackListDown, a => a.transform.position.y > 500);
+                    if (numOfAttacks > 18)
+                    {
+                        selectPosition = 0;
+                        AdvanceAttackPhase();
+                    }
+                    break;
+                case 4:
+                    RemoveAttacks(attackListLeft, a => a.transform.position.x < 160);
+                    if (numOfAttacks > 12)
+                    {
+                        up = true;
+                        AdvanceAttackPhase();
+                    } 
+                    break;
+                case 5:
+                    RemoveAttacks(attackListUp, a => a.transform.position.y < Engine.center.y - 100);
                     if (numOfAttacks > 18)
                     {
                         selectPosition = 0;
@@ -166,6 +211,8 @@ namespace MyGame
                 1 => attackListRight.Concat(attackListLeft).ToList(),
                 2 => attackListRight,
                 3 => attackListDown,
+                4 => attackListLeft,
+                5 => attackListUp,
                 _ => new List<EnemyAttack>()
             };
         }
@@ -174,7 +221,7 @@ namespace MyGame
             ResetLists();
             numOfAttacks = 0;
             //selectAttack = selectAttack == 3 ? 1 : selectAttack + 1; //Weird behaviour due to increment after comparison.
-            selectAttack = (int)Helpers.Wrap(selectAttack + 1, 1, 4);
+            selectAttack = (int)Helpers.Wrap(selectAttack + 1, 1, 6);
             if (selectAttack == 1) duration = 0;
             instance.OnGameStateChanged(GameState.PlayerTurn);
         }

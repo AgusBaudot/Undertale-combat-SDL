@@ -10,7 +10,7 @@ namespace MyGame
 {
     public class Player
     {
-        private int maxHealth = 100;
+        private int maxHealth = 200;
         private float invencibilityDuration = 0.5f;
 
         private Transform transform;
@@ -18,7 +18,7 @@ namespace MyGame
         private SpriteRenderer renderer;
         private BoxCollider collider;
         public HealthController healthController;
-        private Image playerSprite = Engine.LoadImage("assets/player.png");
+        private Image playerSprite = Engine.LoadImage("assets/Sprites/player.png");
 
         private GameManager instance;
 
@@ -55,6 +55,7 @@ namespace MyGame
         public void Render()
         {
             renderer.Render();
+            Engine.DrawText($"{healthController.health} HP / {maxHealth}", (int)Engine.center.x, (int)Engine.center.y + 200, 255, 255, 255, Program.GetFont());
         }
 
         private void IsAlive()
@@ -69,6 +70,10 @@ namespace MyGame
         {
             transform.position = Engine.center;
             healthController.Reset();
+        }
+        public void ResetPosition()
+        {
+            transform.position = Engine.center;
         }
     }
 }
