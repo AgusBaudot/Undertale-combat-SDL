@@ -87,7 +87,7 @@ namespace MyGame
                     {
                         float xPos = 200 + 125 * selectPosition;
                         AddAttack(attackListDown, new Vector2(xPos, Engine.center.y - 100), Vector2.down * 10);
-                        selectPosition = (selectPosition + 1) % 7;
+                        selectPosition = (int)Helpers.Wrap(selectPosition + 1, 0, 7);
                         counter = 0;
                     }
                     break;
@@ -168,7 +168,8 @@ namespace MyGame
         {
             ResetLists();
             numOfAttacks = 0;
-            selectAttack = selectAttack == 3 ? 1 : selectAttack + 1;
+            //selectAttack = selectAttack == 3 ? 1 : selectAttack + 1; //Weird behaviour due to increment after comparison.
+            selectAttack = (int)Helpers.Wrap(selectAttack + 1, 1, 4);
             if (selectAttack == 1) duration = 0;
             instance.OnGameStateChanged(GameState.PlayerTurn);
         }
