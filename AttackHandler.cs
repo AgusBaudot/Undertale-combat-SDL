@@ -35,17 +35,17 @@ namespace MyGame
         #endregion
         #endregion
 
-        public AttackHandler (Player player, Enemy enemy) //AttackHandler constructor.
+        #region Logic
+        public AttackHandler(Player player, Enemy enemy) //AttackHandler constructor.
         {
-            this.player = player; 
+            this.player = player;
             this.enemy = enemy;
             instance = GameManager.GetInstance();
         }
-
-        public void Update ()
+        public void Update()
         {
             counter += Time.deltaTime; //Update timer.
-            if (selectAttack == 1)  
+            if (selectAttack == 1)
             {
                 duration += Time.deltaTime; //Update duration timer.
             }
@@ -53,85 +53,46 @@ namespace MyGame
             SpawnAttack(); //Spawn attacks.
             RemoveAttack(); //Remove any unnecesary attacks from lists.
         }
-
-        public void FixedUpdate()
+        public void FixedUpdate() => AttackBehavior();
+        public void Render() //Render each attack on screen. See AttackBehaviour method for logic.
         {
-            AttackBehavior(); //Move each attack.
+            foreach (var attack in GetActiveAttackList())
+            {
+                attack.Render();
+            }
         }
-
         private void SpawnAttack() //Spawner of attacks
         {
             switch (selectAttack)
             {
                 case 1: //If enemy is doing his first attack:
-                    if (counter > 1.2 - (duration/20)) //If 1 - (duration/20)" have passed since last attack was thrown:
+                    if (counter > 1.2f - (duration / 20)) //If 1 - (duration/20)" have passed since last attack was thrown:
                     {
-                        attackListRight.Add(new EnemyAttack(new Vector2(160, Engine.center.y + 90), Vector2.right * 5, player.GetCollider(), player.healthController, enemy));
-                        attackListLeft.Add(new EnemyAttack(new Vector2(880, Engine.center.y + -90), Vector2.left * 5, player.GetCollider(), player.healthController, enemy));
-                        //Add new attack to left and right lists.
+                        AddAttack(attackListRight, new Vector2(160, Engine.center.y + 90), Vector2.right * 5);
+                        AddAttack(attackListLeft, new Vector2(880, Engine.center.y - 90), Vector2.left * 5);
                         counter = 0; //Reset attack timer.
                     }
                     break;
                 case 2:
                     if (counter > 0.4) //If 0.4" have passed since last attack was thrown:
                     {
-                        if (up) //If previous attack was in bottom half of sceen:
-                        {
-                            attackListRight.Add(new EnemyAttack(new Vector2(160, Engine.center.y - 90), Vector2.right * 10, player.GetCollider(), player.healthController, enemy));
-                            up = !up;
-                            //Add new attack to right list and set up to inverse value.
-                        }
-                        else //If previous attack was in top hald of screen:
-                        {
-                            attackListRight.Add(new EnemyAttack(new Vector2(160, Engine.center.y + 90), Vector2.right * 10, player.GetCollider(), player.healthController, enemy));
-                            up = !up;
-                            //Add new attack to right list and set up to inverse value.
-                        }
-                        counter = 0; //Reset attack timer.
+                        float yOffset = up ? -90 : 90;
+                        AddAttack(attackListRight, new Vector2(160, Engine.center.y + yOffset), Vector2.right * 10);
+                        up = !up;
+                        counter = 0;
                     }
                     break;
                 case 3:
                     if (counter > 0.3) //If 0.3" have passed since last attack was thrown:
                     {
-                        switch (selectPosition) 
-                        {
-                            //Spawn attack along x axis depending on position of previous attack and add it to list.
-                            case 0:
-                                attackListDown.Add(new EnemyAttack(new Vector2(200, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
-                                selectPosition = 1;
-                                break;
-                            case 1:
-
-                                attackListDown.Add(new EnemyAttack(new Vector2(325, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
-                                selectPosition = 2;
-                                break;
-                            case 2:
-
-                                attackListDown.Add(new EnemyAttack(new Vector2(450, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
-                                selectPosition = 3;
-                                break;
-                            case 3:
-
-                                attackListDown.Add(new EnemyAttack(new Vector2(575, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
-                                selectPosition = 4;
-                                break;
-                            case 4:
-
-                                attackListDown.Add(new EnemyAttack(new Vector2(700, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
-                                selectPosition = 5;
-                                break;
-                            case 5:
-
-                                attackListDown.Add(new EnemyAttack(new Vector2(825, Engine.center.y + -100), Vector2.down * 10, player.GetCollider(), player.healthController, enemy));
-                                selectPosition = 0;
-                                break;
-                        }
-                        counter = 0; //Reset attack timer.
+                        float xPos = 200 + 125 * selectPosition;
+                        AddAttack(attackListDown, new Vector2(xPos, Engine.center.y - 100), Vector2.down * 10);
+                        selectPosition = (selectPosition + 1) % 7;
+                        counter = 0;
                     }
                     break;
             }
         }
-
         private void AttackBehavior() //Move logic of each attack
         {
             switch (selectAttack)
@@ -139,130 +100,76 @@ namespace MyGame
                 case 1:
                     for (int i = 0; i < attackListRight.Count; i++) //If enemy is performing his first attack, update each attack of both right and left lists.
                     {
-                        attackListRight[i].UpdateSpeed(Vector2.right * (3 + duration)); 
+                        attackListRight[i].UpdateSpeed(Vector2.right * (3 + duration));
                         attackListLeft[i].UpdateSpeed(Vector2.left * (3 + duration));
                         attackListRight[i].Update();
                         attackListLeft[i].Update();
                     }
                     break;
                 case 2:
-                    for (int i = 0; i < attackListRight.Count; i++) //If enemy is perfoming his second attack, update each attack of right list.
-                    {
-                        attackListRight[i].Update();
-                    }
+                    attackListRight.ForEach(a => a.Update());
                     break;
                 case 3:
-                    for (int i = 0; i < attackListDown.Count; i++) //If enemy is performing his third attack, update each attack of down list.
-                    {
-                        attackListDown[i].Update();
-                    }
+                    attackListDown.ForEach(a => a.Update());
                     break;
             }
-        }
-        public void Render() //Render each attack on screen. See AttackBehaviour method for logic.
-        {
-            switch (selectAttack) //Call Render method of each attack instead of Update.
-            {
-                case 1:
-                    for (int i = 0; i < attackListRight.Count; i++)
-                    {
-                        attackListRight[i].Render();
-                        attackListLeft[i].Render();
-                    }
-                    break;
-                case 2:
-                    for (int i = 0; i < attackListRight.Count; i++)
-                    {
-                        attackListRight[i].Render();
-                    }
-                    break;
-                case 3:
-                    for (int i = 0; i < attackListDown.Count; i++)
-                    {
-                        attackListDown[i].Render();
-                    }
-                    break;
-            }
-        }
-        private void RemoveAttack() //Remove unnecesary attacks from lists.
+        } 
+        #endregion
+        #region Helpers
+        private void RemoveAttack()
         {
             switch (selectAttack)
             {
                 case 1:
-                    for (int i = 0; i < attackListRight.Count; i++)
-                    {
-                        if (attackListRight[i].transform.position.x > 880) //Remove attacks from right list exiting in right side of screen.
-                        {
-                            attackListRight.Remove(attackListRight[i]);
-                        }
-                    }
-                    for (int i = 0; i < attackListLeft.Count; i++) //Remove attacks from left list existing in left side of scren.
-                    {
-                        if (attackListLeft[i].transform.position.x < 160)
-                        {
-                            attackListLeft.Remove(attackListLeft[i]);
-                            numOfAttacks++;
-                        }
-
-                        if (numOfAttacks > 8)
-                        {
-                            ResetListAttack();
-                            numOfAttacks = 0;
-                            break;
-                        }
-                    }
+                    RemoveAttacks(attackListRight, a => a.transform.position.x > 880);
+                    RemoveAttacks(attackListLeft, a => a.transform.position.x < 160);
+                    if (numOfAttacks > 16) AdvanceAttackPhase();
                     break;
                 case 2:
-                    for (int i = 0; i < attackListRight.Count; i++)
-                    {
-                        if (attackListRight[i].transform.position.x > 880)
-                        {
-                            attackListRight.Remove(attackListRight[i]);
-                            numOfAttacks++;
-                        }
-
-                        if (numOfAttacks > 12)
-                        {
-                            ResetListAttack();
-                            numOfAttacks = 0;
-                            break;
-                        }
-                    }
+                    RemoveAttacks(attackListRight, a => a.transform.position.x > 880);
+                    if (numOfAttacks > 12) AdvanceAttackPhase();
                     break;
                 case 3:
-                    for (int i = 0; i < attackListDown.Count; i++)
+                    RemoveAttacks(attackListDown, a => a.transform.position.y > 500);
+                    if (numOfAttacks > 18)
                     {
-                        if (attackListDown[i].transform.position.y > 500)
-                        {
-                            attackListDown.Remove(attackListDown[i]);
-                            numOfAttacks++;
-                        }
-
-                        if (numOfAttacks > 15)
-                        {
-                            ResetListAttack();
-                            numOfAttacks = 0;
-                            selectPosition = 0;
-                            break;
-                        }
+                        selectPosition = 0;
+                        AdvanceAttackPhase();
                     }
                     break;
             }
         }
-        private void ResetListAttack()
+        private void RemoveAttacks(List<EnemyAttack> list, System.Predicate<EnemyAttack> condition) //Remove unnecesary attacks from lists.
         {
-            attackListRight.Clear();
-            attackListLeft.Clear();
-            attackListDown.Clear();
-
-            if (selectAttack == 1) selectAttack = 2;
-            else if (selectAttack == 2) selectAttack = 3;
-            else if (selectAttack == 3)
+            foreach (var attack in list.ToList())
             {
-                selectAttack = 1;
-                duration = 0; //Reset duration timer.
+                if (condition(attack))
+                {
+                    list.Remove(attack);
+                    numOfAttacks++;
+                }
             }
-
+        }
+        private void AddAttack(List<EnemyAttack> list, Vector2 position, Vector2 direction)
+        {
+            list.Add(new EnemyAttack(position, direction, player.GetCollider(), player.healthController, enemy));
+        }
+        private List<EnemyAttack> GetActiveAttackList()
+        {
+            return selectAttack switch //Upgraded to c# 8.0
+            {
+                1 => attackListRight.Concat(attackListLeft).ToList(),
+                2 => attackListRight,
+                3 => attackListDown,
+                _ => new List<EnemyAttack>()
+            };
+        }
+        private void AdvanceAttackPhase()
+        {
+            ResetLists();
+            numOfAttacks = 0;
+            selectAttack = selectAttack == 3 ? 1 : selectAttack + 1;
+            if (selectAttack == 1) duration = 0;
             instance.OnGameStateChanged(GameState.PlayerTurn);
         }
         public void Reset()
@@ -273,9 +180,14 @@ namespace MyGame
             selectPosition = 0;
             duration = 0;
             up = true;
+            ResetLists();
+        }
+        private void ResetLists()
+        {
             attackListRight.Clear();
             attackListLeft.Clear();
             attackListDown.Clear();
-        }
+        } 
+        #endregion
     }
 }
