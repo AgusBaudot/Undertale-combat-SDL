@@ -16,18 +16,21 @@ namespace MyGame
         private int speed = 6;
         private Vector2 input;
         private Vector2 playerSize;
-        private GameManager instance;
+        #region CombatArea
+        private Vector2 areaCenter;
+        private Vector2 areaHalfSize;
+        private float minX, maxX, minY, maxY;
+        #endregion
 
         public PlayerController(Transform transform, float w, float h)
         {
             this.transform = transform;
             moveArea = new CombatArea();
             playerSize = new Vector2(w, h);
+            SetAreaMovement();
         }
         public void Inputs()
         {
-            instance = GameManager.GetInstance();
-
             #region Input movement
             input = Vector2.zero;
             if (Engine.GetKey(Engine.KEY_A))
@@ -60,22 +63,20 @@ namespace MyGame
 
         private void CalculateLimits()
         {
-            if (transform.position.x + playerSize.x/2 >= moveArea.bgTransform.position.x + moveArea.GetAreaLimits().x/2) 
-            {
-                transform.position = new Vector2 (moveArea.bgTransform.position.x + moveArea.GetAreaLimits().x/2 - playerSize.x/2 , transform.position.y);
-            }
-            if (transform.position.x - playerSize.x/2 <= moveArea.bgTransform.position.x - moveArea.GetAreaLimits().x/2)
-            {
-                transform.position = new Vector2(moveArea.bgTransform.position.x - moveArea.GetAreaLimits().x/2 + playerSize.x/2 , transform.position.y);
-            }
-            if (transform.position.y + playerSize.y/2 >= moveArea.bgTransform.position.y + moveArea.GetAreaLimits().y / 2)
-            {
-                transform.position = new Vector2(transform.position.x, moveArea.bgTransform.position.y + moveArea.GetAreaLimits().y / 2 - playerSize.y/2);
-            }
-            if (transform.position.y - playerSize.y/2 <= moveArea.bgTransform.position.y - moveArea.GetAreaLimits().y/2)
-            {
-                transform.position = new Vector2(transform.position.x, moveArea.bgTransform.position.y - moveArea.GetAreaLimits().y / 2 + playerSize.y/2);
-            }
+            float clampedX = Helpers.Clamp(transform.position.x, minX, maxX);
+            float clampedY = Helpers.Clamp(transform.position.y, minY, maxY);
+            transform.position = new Vector2(clampedX, clampedY);
+        }
+
+        private void SetAreaMovement()
+        {
+            areaCenter = moveArea.bgTransform.position;
+            areaHalfSize = moveArea.GetAreaLimits() / 2;
+
+            minX = areaCenter.x - areaHalfSize.x + playerSize.x / 2;
+            maxX = areaCenter.x + areaHalfSize.x - playerSize.x / 2;
+            minY = areaCenter.y - areaHalfSize.y + playerSize.y / 2;
+            maxY = areaCenter.y + areaHalfSize.y - playerSize.y / 2;
         }
     }
 }
