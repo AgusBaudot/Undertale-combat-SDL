@@ -104,6 +104,9 @@
     <Content Include="assets\Sprites\attack.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="assets\Sprites\Combat area.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="assets\Sprites\combatArea.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

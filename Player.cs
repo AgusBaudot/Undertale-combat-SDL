@@ -55,7 +55,7 @@ namespace MyGame
         public void Render()
         {
             renderer.Render();
-            Engine.DrawText($"{healthController.health} HP / {maxHealth} HP", (int)Engine.center.x, (int)Engine.center.y, 255, 255, 255, Program.GetFont());
+            Engine.DrawText($"{healthController.health} HP / {maxHealth} HP", (int)Engine.center.x, 600 /*Hard-coded to be same as act and atk buttons Y position.*/, 255, 255, 255, Program.GetFont());
         }
 
         private void IsAlive()

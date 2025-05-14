@@ -243,3 +243,4 @@ C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Sprites\Spritesh
 C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Sprites\StartButton.png
 C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Sprites\StartButtonPressed.png
 C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Sprites\win.png
+C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Sprites\Combat area.png

@@ -48,8 +48,6 @@ namespace MyGame
             {
                 Invencibility();
             }
-
-            Engine.Debug(health.ToString());
         }
 
         public void Recover(int heal)
@@ -60,8 +58,6 @@ namespace MyGame
             {
                 health = maxHealth;
             }
-
-            Engine.Debug(health.ToString());
         }
 
         private void Invencibility()

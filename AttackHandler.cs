@@ -264,3 +264,5 @@ namespace MyGame
         #endregion
     }
 }
+
+//CHANGE HARDCODED POSITIONS TO COMBAT AREA WIDTH AND HEIGHT.

@@ -1,6 +1,7 @@
 ﻿using MyGame;
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using Tao.Sdl;
 
 class Engine
@@ -154,26 +155,17 @@ class Engine
         int x, int y, byte r, byte g, byte b, IntPtr fuente)
     {
         Sdl.SDL_Color color = new Sdl.SDL_Color(r, g, b);
-        #region Added code
-        int textWidth, textHeight;
-        int sizeResult = SdlTtf. TTF_SizeText(fuente, texto, out textWidth, out textHeight);
-
-        if (sizeResult != 0)
-        {
-            Environment.Exit(5);
-        }
-        #endregion
-        IntPtr textAsImage = SdlTtf.TTF_RenderText_Solid(fuente, texto, color);
+        IntPtr textAsImage = SdlTtf.TTF_RenderText_Blended(fuente, texto, color);
         if (textAsImage == IntPtr.Zero)
             Environment.Exit(5);
 
-        Vector2 centeredPos = new Vector2(x - textWidth / 2, y - textHeight / 2);
-        
+        Sdl.SDL_Surface surface = (Sdl.SDL_Surface)Marshal.PtrToStructure(textAsImage, typeof(Sdl.SDL_Surface));
+
+        Vector2 textSize = new Vector2(surface.w, surface.h);
+        Vector2 centeredPos = new Vector2(x - textSize.x / 2, y - textSize.y / 2);
 
         Sdl.SDL_Rect origen = new Sdl.SDL_Rect(0, 0, (short)width, (short)height);
-        Sdl.SDL_Rect dest = new Sdl.SDL_Rect((short)centeredPos.x, (short)centeredPos.y, (short)textWidth, (short)textHeight);
-        Debug($"Text position: {centeredPos.x}, {centeredPos.y}");
-        Debug($"Center of screen: {center}");
+        Sdl.SDL_Rect dest = new Sdl.SDL_Rect((short)centeredPos.x, (short)centeredPos.y, (short)width, (short)height);
         Sdl.SDL_BlitSurface(textAsImage, ref origen,
             screen, ref dest);
         Sdl.SDL_FreeSurface(textAsImage);
