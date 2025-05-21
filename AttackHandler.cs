@@ -32,6 +32,10 @@ namespace MyGame
         private bool up = true;
         #endregion
         #endregion
+
+        private IAttackPatterns currentAttackPattern;
+        private Dictionary<int, IAttackPatterns> attackPatterns;
+
         private Sdl.SDL_Rect clipRect;
         private Random rng = new Random();
 
@@ -43,6 +47,17 @@ namespace MyGame
             this.combatArea = combatArea;
             instance = GameManager.GetInstance();
             SetAreaRect();
+
+            attackPatterns = new Dictionary<int, IAttackPatterns>()
+            {
+                {1, new FirstBoneAttack(player, enemy) },
+                {2, new SecondBoneAttack(player, enemy) },
+                {3, new ThirdBoneAttack(player, enemy) },
+                {4, new FourthBoneAttack(player, enemy) },
+                {5, new FifthBoneAttack(player, enemy) },
+            };
+            
+            currentAttackPattern = attackPatterns[1];
         }
         public void Update()
         {
@@ -54,39 +69,53 @@ namespace MyGame
 
             SpawnAttack(); //Spawn attacks.
             RemoveAttack(); //Remove any unnecesary attacks from lists.
+            
+            //Engine.Debug($"Right list count: {attackListRight.Count} | Left list count: {attackListLeft.Count}");
+
+            //if (selectAttack == 1)
+            //{
+            //    currentAttackPattern.SpawnAttack(attackListUp.Concat(attackListLeft).ToList(), ref counter, ref duration, ref numOfAttacks, ref up, ref selectPosition);
+            //    currentAttackPattern.UpdateAttack((List<EnemyAttack>)attackListUp.Concat(attackListLeft), ref duration);
+            //    currentAttackPattern.RemoveAttack((List<EnemyAttack>)attackListUp.Concat(attackListLeft), ref numOfAttacks);
+            //}
         }
         public void FixedUpdate() => AttackBehavior();
         public void Render() //Render each attack on screen. See AttackBehaviour method for logic.
         {
-            Sdl.SDL_SetClipRect(Engine.screen, ref clipRect);
-            foreach (var attack in GetActiveAttackList())
-            {
-                attack.Render();
-            }
-            Sdl.SDL_Rect screenRect =
-                new Sdl.SDL_Rect(0, 0, (short)Engine.width, (short)Engine.height);
-            Sdl.SDL_SetClipRect(Engine.screen, ref screenRect);
+            //Sdl.SDL_SetClipRect(Engine.screen, ref clipRect);
+            //foreach (var attack in GetActiveAttackList())
+            //{
+            //    attack.Render();
+            //}
+            //Sdl.SDL_Rect screenRect =
+            //    new Sdl.SDL_Rect(0, 0, (short)Engine.width, (short)Engine.height);
+            //Sdl.SDL_SetClipRect(Engine.screen, ref screenRect);
+            currentAttackPattern.RenderList(GetActiveAttackList(), ref clipRect);
         }
         private void SpawnAttack() //Spawner of attacks
         {
             switch (selectAttack)
             {
                 case 1: //If enemy is doing his first attack:
-                    if (counter > 1.2f - (duration / 20)) //If 1 - (duration/20)" have passed since last attack was thrown:
+                    /*
+                     if (counter > 1.2f - (duration / 20)) //If 1 - (duration/20)" have passed since last attack was thrown:
                     {
                         AddAttack(attackListRight, new Vector2(160, Engine.center.y + 90), Vector2.right * 5);
                         AddAttack(attackListLeft, new Vector2(880, Engine.center.y - 90), Vector2.left * 5);
                         counter = 0; //Reset attack timer.
-                    }
+                    } //Delete if successful.
+                     */
+                    currentAttackPattern.SpawnAttack(attackListRight, attackListLeft, ref counter, ref duration, ref numOfAttacks, ref up, ref selectPosition);
                     break;
                 case 2:
-                    if (counter > 0.4) //If 0.4" have passed since last attack was thrown:
-                    {
-                        float yOffset = up ? -90 : 90;
-                        AddAttack(attackListRight, new Vector2(160, Engine.center.y + yOffset), Vector2.right * 10);
-                        up = !up;
-                        counter = 0;
-                    }
+                    //if (counter > 0.4) //If 0.4" have passed since last attack was thrown:
+                    //{
+                    //    float yOffset = up ? -90 : 90;
+                    //    AddAttack(attackListRight, new Vector2(160, Engine.center.y + yOffset), Vector2.right * 10);
+                    //    up = !up;
+                    //    counter = 0;
+                    //}
+                    currentAttackPattern.SpawnAttack(attackListRight, null, ref counter, ref duration, ref numOfAttacks, ref up, ref selectPosition);
                     break;
                 case 3:
                     if (counter > 0.3) //If 0.3" have passed since last attack was thrown:
@@ -122,16 +151,7 @@ namespace MyGame
             switch (selectAttack)
             {
                 case 1:
-                    foreach (var attack in attackListRight)
-                    {
-                        attack.UpdateSpeed(Vector2.right * (3 + duration));
-                        attack.Update();
-                    }
-                    foreach (var attack in attackListLeft)
-                    {
-                        attack.UpdateSpeed(Vector2.left * (3 + duration));
-                        attack.Update();
-                    }
+                    currentAttackPattern.UpdateAttack(GetActiveAttackList(), ref duration);
                     break;
                 case 2:
                     attackListRight.ForEach(a => a.Update());
@@ -154,13 +174,12 @@ namespace MyGame
             switch (selectAttack)
             {
                 case 1:
-                    RemoveAttacks(attackListRight, a => a.transform.position.x > 880);
-                    RemoveAttacks(attackListLeft, a => a.transform.position.x < 165);
-                    if (numOfAttacks > 16) AdvanceAttackPhase();
+                    currentAttackPattern.RemoveAttack(attackListRight, attackListLeft);
+                    if (numOfAttacks >= 16 && attackListRight.Count == 0 && attackListLeft.Count == 0) AdvanceAttackPhase();
                     break;
                 case 2:
-                    RemoveAttacks(attackListRight, a => a.transform.position.x > 880);
-                    if (numOfAttacks > 12)
+                    //RemoveAttacks(attackListRight, a => a.transform.position.x > 880);
+                    if (numOfAttacks >= 12 && attackListRight.Count == 0)
                     {
                         up = true;
                         AdvanceAttackPhase();
@@ -168,7 +187,7 @@ namespace MyGame
                     break;
                 case 3:
                     RemoveAttacks(attackListDown, a => a.transform.position.y > 500);
-                    if (numOfAttacks > 18)
+                    if (numOfAttacks >= 18 && attackListDown.Count == 0)
                     {
                         selectPosition = 0;
                         AdvanceAttackPhase();
@@ -176,7 +195,7 @@ namespace MyGame
                     break;
                 case 4:
                     RemoveAttacks(attackListLeft, a => a.transform.position.x < 160);
-                    if (numOfAttacks > 12)
+                    if (numOfAttacks >= 12 && attackListLeft.Count == 0)
                     {
                         up = true;
                         AdvanceAttackPhase();
@@ -184,7 +203,7 @@ namespace MyGame
                     break;
                 case 5:
                     RemoveAttacks(attackListUp, a => a.transform.position.y < Engine.center.y - 100);
-                    if (numOfAttacks > 18)
+                    if (numOfAttacks >= 18 && attackListUp.Count == 0)
                     {
                         selectPosition = 0;
                         AdvanceAttackPhase();
@@ -211,7 +230,7 @@ namespace MyGame
         {
             return selectAttack switch //Upgraded to c# 8.0
             {
-                1 => attackListRight.Concat(attackListLeft).ToList(),
+                1 => attackListRight.Concat(attackListLeft).ToList(), //Adjust interface to get both lists separately, and not use concatenate every frame
                 2 => attackListRight,
                 3 => attackListDown,
                 4 => attackListLeft,
@@ -232,6 +251,11 @@ namespace MyGame
             }
             if (selectAttack == 1) duration = 0;
             instance.OnGameStateChanged(GameState.PlayerTurn);
+
+            if (attackPatterns.ContainsKey(selectAttack) && currentAttackPattern != attackPatterns[selectAttack])
+            {
+                currentAttackPattern = attackPatterns[selectAttack];
+            }
         }
         public void Reset()
         {

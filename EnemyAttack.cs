@@ -9,13 +9,12 @@ namespace MyGame
 {
     public class EnemyAttack
     {
-        private Vector2 speed;
+        public Vector2 speed {get; private set;}
         private int damage = 10;
         private HealthController playerHealth;
         public Transform transform {  get; private set; }   
         private SpriteRenderer spriteRenderer;
         private BoxCollider collider, playerCollider;
-        private Enemy fatherEnemy;
 
         public EnemyAttack(Vector2 position, Vector2 speed, BoxCollider playerCollider, HealthController playerHealth, Enemy enemy)
         {
@@ -25,7 +24,6 @@ namespace MyGame
             collider = new BoxCollider(transform, spriteRenderer);
             this.playerCollider = playerCollider;
             this.playerHealth = playerHealth;
-            fatherEnemy = enemy;
         }
 
         public void Update()

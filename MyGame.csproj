@@ -51,6 +51,8 @@
     <Compile Include="ActButton.cs" />
     <Compile Include="Animator.cs" />
     <Compile Include="AttackHandler.cs" />
+    <Compile Include="AttackPatterns.cs" />
+    <Compile Include="AttackPatternsInterface.cs" />
     <Compile Include="BoxCollider.cs" />
     <Compile Include="AttackButton.cs" />
     <Compile Include="Button.cs" />
