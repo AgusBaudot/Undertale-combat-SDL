@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Tao.Sdl;
 using System;
+using System.Diagnostics;
 
 namespace MyGame
 {
@@ -9,6 +10,8 @@ namespace MyGame
     {
         private Player player;
         private Enemy enemy;
+
+        public event Action OnAttackEnd;
 
         public FirstBoneAttack(Player player, Enemy enemy)
         {
@@ -18,7 +21,12 @@ namespace MyGame
 
         public void SpawnAttack(List<EnemyAttack> listA, List<EnemyAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
         {
-            if (numOfAttacks >= 16) return;
+            if (numOfAttacks >= 16 && listA.Count == 0 && listB.Count == 0)
+            {
+                OnAttackEnd?.Invoke();
+                return;
+            }
+            else if (numOfAttacks >= 16) return;
             if (counter > 1.2f - (duration / 20)) //If 1 - (duration/20)" have passed since last attack was thrown:
             {
                 AddAttack(listA, new Vector2(160, Engine.center.y + 90), Vector2.right * 5);
@@ -68,6 +76,8 @@ namespace MyGame
         private Player player;
         private Enemy enemy;
 
+        public event Action OnAttackEnd;
+
         public SecondBoneAttack(Player player, Enemy enemy)
         {
             this.player = player;
@@ -76,12 +86,20 @@ namespace MyGame
 
         public void SpawnAttack(List<EnemyAttack> listA, List<EnemyAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
         {
+            if (numOfAttacks >= 12 && listA.Count == 0)
+            {
+                up = true;
+                OnAttackEnd?.Invoke();
+                return;
+            }
+            else if (numOfAttacks >= 12) return;
             if (counter > 0.4) //If 0.4" have passed since last attack was thrown:
             {
                 float yOffset = up ? -90 : 90;
                 AddAttack(listA, new Vector2(160, Engine.center.y + yOffset), Vector2.right * 10);
                 up = !up;
                 counter = 0;
+                numOfAttacks++;
             }
         }
 
@@ -118,30 +136,53 @@ namespace MyGame
         private Player player;
         private Enemy enemy;
 
+        public event Action OnAttackEnd;
+
         public ThirdBoneAttack(Player player, Enemy enemy)
         {
             this.player = player;
             this.enemy = enemy;
         }
 
-        public void RemoveAttack(List<EnemyAttack> listA, List<EnemyAttack> listB)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void RenderList(List<EnemyAttack> attackList, ref Sdl.SDL_Rect clipRect)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void SpawnAttack(List<EnemyAttack> listA, List<EnemyAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
         {
-            throw new System.NotImplementedException();
+            if (numOfAttacks >= 18 && listA.Count == 0)
+            {
+                selectPosition = 0;
+                OnAttackEnd?.Invoke();
+                return;
+            }
+            else if (numOfAttacks >= 18) return;
+            if (counter > 0.3)
+            {
+                float xPos = 200 + 125 * selectPosition;
+                AddAttack(listA, new Vector2(xPos, Engine.center.y - 100), Vector2.down * 10);
+                selectPosition = (int)Helpers.Wrap(selectPosition + 1, 0, 7);
+                counter = 0;
+                numOfAttacks++;
+            }
         }
 
         public void UpdateAttack(List<EnemyAttack> attackList, ref float duration)
         {
-            throw new System.NotImplementedException();
+            attackList.ForEach(a => a.Update());
+        }
+
+        public void RemoveAttack(List<EnemyAttack> listA, List<EnemyAttack> listB)
+        {
+            listA.RemoveAll(a => a.transform.position.y > 500);
+        }
+
+        public void RenderList(List<EnemyAttack> attackList, ref Sdl.SDL_Rect clipRect)
+        {
+            Sdl.SDL_SetClipRect(Engine.screen, ref clipRect);
+            foreach (var attack in attackList)
+            {
+                attack.Render();
+            }
+            Sdl.SDL_Rect screenRect =
+                new Sdl.SDL_Rect(0, 0, (short)Engine.width, (short)Engine.height);
+            Sdl.SDL_SetClipRect(Engine.screen, ref screenRect);
         }
 
         private void AddAttack(List<EnemyAttack> list, Vector2 position, Vector2 direction)
@@ -155,30 +196,53 @@ namespace MyGame
         private Player player;
         private Enemy enemy;
 
+        public event Action OnAttackEnd;
+
         public FourthBoneAttack(Player player, Enemy enemy)
         {
             this.player = player;
             this.enemy = enemy;
         }
 
-        public void RemoveAttack(List<EnemyAttack> listA, List<EnemyAttack> listB)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void RenderList(List<EnemyAttack> attackList, ref Sdl.SDL_Rect clipRect)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void SpawnAttack(List<EnemyAttack> listA, List<EnemyAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
         {
-            throw new System.NotImplementedException();
+            if (numOfAttacks >= 12 && listA.Count == 0)
+            {
+                up = true;
+                OnAttackEnd?.Invoke();
+                return;
+            }
+            else if (numOfAttacks >= 12) return;
+            if (counter > 0.4)
+            {
+                float yOffset = up ? -90 : 90;
+                AddAttack(listA, new Vector2(880, Engine.center.y + yOffset), Vector2.left * 10);
+                up = !up;
+                counter = 0;
+                numOfAttacks++;
+            }
         }
 
         public void UpdateAttack(List<EnemyAttack> attackList, ref float duration)
         {
-            throw new System.NotImplementedException();
+            attackList.ForEach(a => a.Update());
+        }
+
+        public void RemoveAttack(List<EnemyAttack> listA, List<EnemyAttack> listB)
+        {
+            listA.RemoveAll(a => a.transform.position.x < 160);
+        }
+
+        public void RenderList(List<EnemyAttack> attackList, ref Sdl.SDL_Rect clipRect)
+        {
+            Sdl.SDL_SetClipRect(Engine.screen, ref clipRect);
+            foreach (var attack in attackList)
+            {
+                attack.Render();
+            }
+            Sdl.SDL_Rect screenRect =
+                new Sdl.SDL_Rect(0, 0, (short)Engine.width, (short)Engine.height);
+            Sdl.SDL_SetClipRect(Engine.screen, ref screenRect);
         }
 
         private void AddAttack(List<EnemyAttack> list, Vector2 position, Vector2 direction)
@@ -192,30 +256,53 @@ namespace MyGame
         private Player player;
         private Enemy enemy;
 
+        public event Action OnAttackEnd;
+
         public FifthBoneAttack(Player player, Enemy enemy)
         {
             this.player = player;
             this.enemy = enemy;
         }
 
-        public void RemoveAttack(List<EnemyAttack> listA, List<EnemyAttack> listB)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void RenderList(List<EnemyAttack> attackList, ref Sdl.SDL_Rect clipRect)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void SpawnAttack(List<EnemyAttack> listA, List<EnemyAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
         {
-            throw new System.NotImplementedException();
+            if (numOfAttacks >= 18 && listA.Count == 0)
+            {
+                selectPosition = 0;
+                OnAttackEnd?.Invoke();
+                return;
+            }
+            else if (numOfAttacks >= 18) return;
+            if (counter > 0.3)
+            {
+                float xPos = 840 - 125 * selectPosition;
+                AddAttack(listA, new Vector2(xPos, Engine.center.y + 100), Vector2.up * 10);
+                selectPosition = (int)Helpers.Wrap(selectPosition + 1, 0, 7);
+                counter = 0;
+                numOfAttacks++;
+            }
         }
 
         public void UpdateAttack(List<EnemyAttack> attackList, ref float duration)
         {
-            throw new System.NotImplementedException();
+            attackList.ForEach(a => a.Update());
+        }
+
+        public void RemoveAttack(List<EnemyAttack> listA, List<EnemyAttack> listB)
+        {
+            listA.RemoveAll(a => a.transform.position.y < 160);
+        }
+
+        public void RenderList(List<EnemyAttack> attackList, ref Sdl.SDL_Rect clipRect)
+        {
+            Sdl.SDL_SetClipRect(Engine.screen, ref clipRect);
+            foreach (var attack in attackList)
+            {
+                attack.Render();
+            }
+            Sdl.SDL_Rect screenRect =
+                new Sdl.SDL_Rect(0, 0, (short)Engine.width, (short)Engine.height);
+            Sdl.SDL_SetClipRect(Engine.screen, ref screenRect);
         }
 
         private void AddAttack(List<EnemyAttack> list, Vector2 position, Vector2 direction)

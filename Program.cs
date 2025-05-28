@@ -49,11 +49,11 @@ namespace MyGame
                 case GameState.EnterBattle:
                     break;
                 case GameState.EnemyTurn:
-                    level.Update(); //Level already manages difference between enemy and player turn.
+                    level.Update();
                     break;
                 case GameState.PlayerTurn:
                     level.SetPosition();
-                    level.Update(); //Level already manages difference between enemy and player turn.
+                    level.Update();
                     break;
                 case GameState.Win:
                     win.Update();

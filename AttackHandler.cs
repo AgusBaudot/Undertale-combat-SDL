@@ -56,8 +56,8 @@ namespace MyGame
                 {4, new FourthBoneAttack(player, enemy) },
                 {5, new FifthBoneAttack(player, enemy) },
             };
-            
-            currentAttackPattern = attackPatterns[1];
+            AdvanceAttackPhase();
+            attackPatterns[selectAttack].OnAttackEnd += AdvanceAttackPhase;
         }
         public void Update()
         {
@@ -118,31 +118,34 @@ namespace MyGame
                     currentAttackPattern.SpawnAttack(attackListRight, null, ref counter, ref duration, ref numOfAttacks, ref up, ref selectPosition);
                     break;
                 case 3:
-                    if (counter > 0.3) //If 0.3" have passed since last attack was thrown:
-                    {
-                        float xPos = 200 + 125 * selectPosition;
-                        AddAttack(attackListDown, new Vector2(xPos, Engine.center.y - 100), Vector2.down * 10);
-                        selectPosition = (int)Helpers.Wrap(selectPosition + 1, 0, 7);
-                        counter = 0;
-                    }
+                    //if (counter > 0.3) //If 0.3" have passed since last attack was thrown:
+                    //{
+                    //    float xPos = 200 + 125 * selectPosition;
+                    //    AddAttack(attackListDown, new Vector2(xPos, Engine.center.y - 100), Vector2.down * 10);
+                    //    selectPosition = (int)Helpers.Wrap(selectPosition + 1, 0, 7);
+                    //    counter = 0;
+                    //}
+                    currentAttackPattern.SpawnAttack(attackListDown, null, ref counter, ref duration, ref numOfAttacks, ref up, ref selectPosition);
                     break;
                 case 4:
-                    if (counter > 0.4)
-                    {
-                        float yOffset = up ? -90 : 90;
-                        AddAttack(attackListLeft, new Vector2(880, Engine.center.y + yOffset), Vector2.left * 10);
-                        up = !up;
-                        counter = 0;
-                    }
+                    //if (counter > 0.4)
+                    //{
+                    //    float yOffset = up ? -90 : 90;
+                    //    AddAttack(attackListLeft, new Vector2(880, Engine.center.y + yOffset), Vector2.left * 10);
+                    //    up = !up;
+                    //    counter = 0;
+                    //}
+                    currentAttackPattern.SpawnAttack(attackListLeft, null, ref counter, ref duration, ref numOfAttacks, ref up, ref selectPosition);
                     break;
                 case 5:
-                    if (counter > 0.3)
-                    {
-                        float xPos = 840 - 125 * selectPosition;
-                        AddAttack(attackListUp, new Vector2(xPos, Engine.center.y + 100), Vector2.up * 10);
-                        selectPosition = (int)Helpers.Wrap(selectPosition + 1, 0, 7);
-                        counter = 0;
-                    }
+                    //if (counter > 0.3)
+                    //{
+                    //    float xPos = 840 - 125 * selectPosition;
+                    //    AddAttack(attackListUp, new Vector2(xPos, Engine.center.y + 100), Vector2.up * 10);
+                    //    selectPosition = (int)Helpers.Wrap(selectPosition + 1, 0, 7);
+                    //    counter = 0;
+                    //}
+                    currentAttackPattern.SpawnAttack(attackListUp, null, ref counter, ref duration, ref numOfAttacks, ref up, ref selectPosition);
                     break;
             }
         }
@@ -154,16 +157,20 @@ namespace MyGame
                     currentAttackPattern.UpdateAttack(GetActiveAttackList(), ref duration);
                     break;
                 case 2:
-                    attackListRight.ForEach(a => a.Update());
+                    //attackListRight.ForEach(a => a.Update());
+                    currentAttackPattern.UpdateAttack(attackListRight, ref duration);
                     break;
                 case 3:
-                    attackListDown.ForEach(a => a.Update());
+                    //attackListDown.ForEach(a => a.Update());
+                    currentAttackPattern.UpdateAttack(attackListDown, ref duration);
                     break;
                 case 4:
-                    attackListLeft.ForEach(a => a.Update());
+                    //attackListLeft.ForEach(a => a.Update());
+                    currentAttackPattern.UpdateAttack(attackListLeft, ref duration);
                     break;
                 case 5:
-                    attackListUp.ForEach(a => a.Update());
+                    //attackListUp.ForEach(a => a.Update());
+                    currentAttackPattern.UpdateAttack(attackListUp, ref duration);
                     break;
             }
         } 
@@ -175,39 +182,22 @@ namespace MyGame
             {
                 case 1:
                     currentAttackPattern.RemoveAttack(attackListRight, attackListLeft);
-                    if (numOfAttacks >= 16 && attackListRight.Count == 0 && attackListLeft.Count == 0) AdvanceAttackPhase();
                     break;
                 case 2:
                     //RemoveAttacks(attackListRight, a => a.transform.position.x > 880);
-                    if (numOfAttacks >= 12 && attackListRight.Count == 0)
-                    {
-                        up = true;
-                        AdvanceAttackPhase();
-                    }
+                    currentAttackPattern.RemoveAttack(GetActiveAttackList(), null);
                     break;
                 case 3:
-                    RemoveAttacks(attackListDown, a => a.transform.position.y > 500);
-                    if (numOfAttacks >= 18 && attackListDown.Count == 0)
-                    {
-                        selectPosition = 0;
-                        AdvanceAttackPhase();
-                    }
+                    currentAttackPattern.RemoveAttack(GetActiveAttackList(), null);
+                    //RemoveAttacks(attackListDown, a => a.transform.position.y > 500);
                     break;
                 case 4:
-                    RemoveAttacks(attackListLeft, a => a.transform.position.x < 160);
-                    if (numOfAttacks >= 12 && attackListLeft.Count == 0)
-                    {
-                        up = true;
-                        AdvanceAttackPhase();
-                    } 
+                    currentAttackPattern.RemoveAttack(GetActiveAttackList(), null);
+                    //RemoveAttacks(attackListLeft, a => a.transform.position.x < 160);
                     break;
                 case 5:
-                    RemoveAttacks(attackListUp, a => a.transform.position.y < Engine.center.y - 100);
-                    if (numOfAttacks >= 18 && attackListUp.Count == 0)
-                    {
-                        selectPosition = 0;
-                        AdvanceAttackPhase();
-                    }
+                    currentAttackPattern.RemoveAttack(GetActiveAttackList(), null);
+                    //RemoveAttacks(attackListUp, a => a.transform.position.y < Engine.center.y - 100);
                     break;
             }
         }
@@ -241,6 +231,7 @@ namespace MyGame
         private void AdvanceAttackPhase()
         {
             ResetLists();
+            attackPatterns[selectAttack].OnAttackEnd -= AdvanceAttackPhase;
             numOfAttacks = 0;
             //selectAttack = selectAttack == 3 ? 1 : selectAttack + 1; //Weird behaviour due to increment after comparison.
             //selectAttack = (int)Helpers.Wrap(selectAttack + 1, 1, 6);
@@ -252,6 +243,7 @@ namespace MyGame
             if (selectAttack == 1) duration = 0;
             instance.OnGameStateChanged(GameState.PlayerTurn);
 
+            attackPatterns[selectAttack].OnAttackEnd += AdvanceAttackPhase;
             if (attackPatterns.ContainsKey(selectAttack) && currentAttackPattern != attackPatterns[selectAttack])
             {
                 currentAttackPattern = attackPatterns[selectAttack];

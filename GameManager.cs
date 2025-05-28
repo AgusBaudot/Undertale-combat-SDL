@@ -34,8 +34,10 @@ namespace MyGame
 
         public void OnGameStateChanged(GameState newState)
         {
-            if (currentState != GameState.EnemyTurn && newState == GameState.PlayerTurn)
+            Engine.Debug(newState.ToString());
+            if ((currentState == GameState.Win || currentState == GameState.Lose) && newState == GameState.MainMenu)
             {
+                Engine.Debug("Level reset");    
                 OnLevelReset?.Invoke();
             }
             currentState = newState;

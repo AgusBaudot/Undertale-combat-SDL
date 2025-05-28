@@ -3,60 +3,80 @@
   "WorkspaceRootPath": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|c:\\users\\alu765\\downloads\\undertale-combat-sdl\\attackpatterns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:attackpatterns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|c:\\users\\alu765\\downloads\\undertale-combat-sdl\\attackpatternsinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:attackpatternsinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|c:\\users\\alu765\\downloads\\undertale-combat-sdl\\attackhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:attackhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|c:\\users\\alu765\\downloads\\undertale-combat-sdl\\healthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:healthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\enemyattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:enemyattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|c:\\users\\alu765\\downloads\\undertale-combat-sdl\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|c:\\users\\alu765\\downloads\\undertale-combat-sdl\\attackbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:attackbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|c:\\users\\alu765\\downloads\\undertale-combat-sdl\\attackpatterns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:attackpatterns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\spriterenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:spriterenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|c:\\users\\alu765\\downloads\\undertale-combat-sdl\\attackhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:attackhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\engine\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:engine\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\actbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:actbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|c:\\users\\alu765\\downloads\\undertale-combat-sdl\\helpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:helpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\attackbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:attackbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\assets\\BoxCollider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\BoxCollider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|c:\\users\\alu765\\downloads\\undertale-combat-sdl\\enemyattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:enemyattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\spriterenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:spriterenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\actbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:actbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\engine\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -80,14 +100,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Consultoria\\Dropbox\\Facultad\\UTN\\Proyecto Base\\Sound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\assets\\boxcollider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\boxcollider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -97,34 +109,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AttackHandler.cs",
-              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\AttackHandler.cs",
-              "RelativeDocumentMoniker": "AttackHandler.cs",
-              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\AttackHandler.cs",
-              "RelativeToolTip": "AttackHandler.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAowFEAAAArAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwB0AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T16:53:55.329Z",
+              "WhenOpened": "2025-03-13T16:53:56.438Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AttackPatterns.cs",
-              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\AttackPatterns.cs",
-              "RelativeDocumentMoniker": "AttackPatterns.cs",
-              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\AttackPatterns.cs",
-              "RelativeToolTip": "AttackPatterns.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAYwFAAAABXAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "LevelManager.cs",
+              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\LevelManager.cs",
+              "RelativeDocumentMoniker": "LevelManager.cs",
+              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\LevelManager.cs",
+              "RelativeToolTip": "LevelManager.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAMwEIAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T16:58:50.268Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-05-28T19:56:44.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HealthController.cs",
+              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\HealthController.cs",
+              "RelativeDocumentMoniker": "HealthController.cs",
+              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\HealthController.cs",
+              "RelativeToolTip": "HealthController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAhwAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T19:55:26.066Z",
               "EditorCaption": ""
             },
             {
@@ -135,75 +159,66 @@
               "RelativeDocumentMoniker": "AttackPatternsInterface.cs",
               "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\AttackPatternsInterface.cs",
               "RelativeToolTip": "AttackPatternsInterface.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T17:41:37.334Z",
+              "WhenOpened": "2025-05-28T18:30:20.903Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAgwEMAAAAsAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "Helpers.cs",
+              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Helpers.cs",
+              "RelativeDocumentMoniker": "Helpers.cs",
+              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Helpers.cs",
+              "RelativeToolTip": "Helpers.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowDkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T16:53:56.438Z"
+              "WhenOpened": "2025-05-28T17:53:19.212Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "BoxCollider.cs",
-              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\assets\\BoxCollider.cs",
-              "RelativeDocumentMoniker": "assets\\BoxCollider.cs",
-              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\assets\\BoxCollider.cs",
-              "RelativeToolTip": "assets\\BoxCollider.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAswBsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "AttackHandler.cs",
+              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\AttackHandler.cs",
+              "RelativeDocumentMoniker": "AttackHandler.cs",
+              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\AttackHandler.cs",
+              "RelativeToolTip": "AttackHandler.cs",
+              "ViewState": "AgIAANYAAAAAAAAAAIA9wPgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T19:26:52.111Z"
+              "WhenOpened": "2025-05-28T17:00:37.599Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Button.cs",
-              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Button.cs",
-              "RelativeDocumentMoniker": "Button.cs",
-              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Button.cs",
-              "RelativeToolTip": "Button.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "AttackPatterns.cs",
+              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\AttackPatterns.cs",
+              "RelativeDocumentMoniker": "AttackPatterns.cs",
+              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\AttackPatterns.cs",
+              "RelativeToolTip": "AttackPatterns.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T00:49:34.115Z"
+              "WhenOpened": "2025-05-28T15:54:39.247Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
               "Title": "Engine.cs",
               "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Engine\\Engine.cs",
               "RelativeDocumentMoniker": "Engine\\Engine.cs",
               "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Engine\\Engine.cs",
               "RelativeToolTip": "Engine\\Engine.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAqwFIAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAWwEgAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T16:53:56.619Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AttackButton.cs",
-              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\AttackButton.cs",
-              "RelativeDocumentMoniker": "AttackButton.cs",
-              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\AttackButton.cs",
-              "RelativeToolTip": "AttackButton.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T03:00:59.72Z",
+              "WhenOpened": "2025-03-13T16:53:56.619Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "ActButton.cs",
               "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\ActButton.cs",
               "RelativeDocumentMoniker": "ActButton.cs",
@@ -215,20 +230,96 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Player.cs",
+              "RelativeDocumentMoniker": "Player.cs",
+              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Player.cs",
+              "RelativeToolTip": "Player.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAnwEcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T17:03:21.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\GameManager.cs",
+              "RelativeDocumentMoniker": "GameManager.cs",
+              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\GameManager.cs",
+              "RelativeToolTip": "GameManager.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCUAAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T19:05:41.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AttackButton.cs",
+              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\AttackButton.cs",
+              "RelativeDocumentMoniker": "AttackButton.cs",
+              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\AttackButton.cs",
+              "RelativeToolTip": "AttackButton.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T03:00:59.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Button.cs",
+              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Button.cs",
+              "RelativeDocumentMoniker": "Button.cs",
+              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Button.cs",
+              "RelativeToolTip": "Button.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T00:49:34.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "EnemyAttack.cs",
               "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\EnemyAttack.cs",
               "RelativeDocumentMoniker": "EnemyAttack.cs",
               "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\EnemyAttack.cs",
               "RelativeToolTip": "EnemyAttack.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAiwBEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T01:01:47.2Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Properties\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "Properties\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Properties\\AssemblyInfo.cs",
+              "RelativeToolTip": "Properties\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T16:53:56.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BoxCollider.cs",
+              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\assets\\BoxCollider.cs",
+              "RelativeDocumentMoniker": "assets\\BoxCollider.cs",
+              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\assets\\BoxCollider.cs",
+              "RelativeToolTip": "assets\\BoxCollider.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T19:26:52.111Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\PlayerController.cs",
               "RelativeDocumentMoniker": "PlayerController.cs",
@@ -240,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "SpriteRenderer.cs",
               "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\SpriteRenderer.cs",
               "RelativeDocumentMoniker": "SpriteRenderer.cs",
@@ -252,19 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\GameManager.cs",
-              "RelativeDocumentMoniker": "GameManager.cs",
-              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\GameManager.cs",
-              "RelativeToolTip": "GameManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T19:05:41.125Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 16,
               "Title": "Transform.cs",
               "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Transform.cs",
               "RelativeDocumentMoniker": "Transform.cs",
@@ -276,19 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Player.cs",
-              "RelativeDocumentMoniker": "Player.cs",
-              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Player.cs",
-              "RelativeToolTip": "Player.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAYwCQAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T17:03:21.393Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "Image.cs",
               "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Engine\\Image.cs",
               "RelativeDocumentMoniker": "Engine\\Image.cs",
@@ -300,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "Font.cs",
               "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Engine\\Font.cs",
               "RelativeDocumentMoniker": "Engine\\Font.cs",
@@ -312,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "Vector2.cs",
               "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Vector2.cs",
               "RelativeDocumentMoniker": "Vector2.cs",
@@ -324,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "CombatArea.cs",
               "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\CombatArea.cs",
               "RelativeDocumentMoniker": "CombatArea.cs",
@@ -336,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 23,
               "Title": "Sound.cs",
               "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Engine\\Sound.cs",
               "RelativeDocumentMoniker": "Engine\\Sound.cs",
@@ -348,19 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "AssemblyInfo.cs",
-              "DocumentMoniker": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Properties\\AssemblyInfo.cs",
-              "RelativeDocumentMoniker": "Properties\\AssemblyInfo.cs",
-              "ToolTip": "C:\\Users\\alu765\\Downloads\\Undertale-combat-SDL\\Properties\\AssemblyInfo.cs",
-              "RelativeToolTip": "Properties\\AssemblyInfo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T16:53:56.618Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "Sound.cs",
               "DocumentMoniker": "C:\\Users\\Consultoria\\Dropbox\\Facultad\\UTN\\Proyecto Base\\Sound.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Consultoria\\Dropbox\\Facultad\\UTN\\Proyecto Base\\Sound.cs",

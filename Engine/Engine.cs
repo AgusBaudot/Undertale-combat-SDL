@@ -68,6 +68,11 @@ class Engine
         InitInput();
     }
 
+    public static void Debug<T>(ref T text)
+    {
+        System.Console.Write(text.ToString() + "\n");
+    }
+
     public static void Debug(string text)
     {
         System.Console.Write(text + "\n");
