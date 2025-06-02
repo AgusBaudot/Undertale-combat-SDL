@@ -11,9 +11,12 @@ namespace MyGame
         public Vector2 position { get; /*private*/ set; }
         public Vector2 scale { get; /*private*/ set; }
 
+        private Vector2 lastFramePosition;
+
         public Transform(float x, float y)
         {
             position = new Vector2(x, y);
+            lastFramePosition = position;
             scale = Vector2.one;
         }
 
@@ -31,8 +34,8 @@ namespace MyGame
 
         public void Translate(Vector2 translation)
         {
+            lastFramePosition = position;
             position += translation;
         }
-
     }
 }

@@ -7,6 +7,7 @@
         private int speed = 6;
         private Vector2 input;
         private Vector2 playerSize;
+        private bool isMoving;
         #region CombatArea
         private Vector2 areaCenter;
         private Vector2 areaHalfSize;
@@ -27,6 +28,7 @@
             if (Engine.GetKey(Engine.KEY_A))
             {
                 input += Vector2.left;
+
             }
 
             if (Engine.GetKey(Engine.KEY_D))
@@ -44,6 +46,7 @@
                 input += Vector2.down;
             }
             #endregion
+            isMoving = (input != Vector2.zero);
         }
 
         public void Move()
@@ -69,5 +72,7 @@
             minY = areaCenter.y - areaHalfSize.y + playerSize.y / 2;
             maxY = areaCenter.y + areaHalfSize.y - playerSize.y / 2;
         }
+
+        public bool IsMoving() => isMoving;
     }
 }

@@ -48,6 +48,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractFactory.cs" />
     <Compile Include="ActButton.cs" />
     <Compile Include="Animator.cs" />
     <Compile Include="AttackHandler.cs" />
@@ -57,8 +58,9 @@
     <Compile Include="AttackButton.cs" />
     <Compile Include="Button.cs" />
     <Compile Include="CombatArea.cs" />
+    <Compile Include="ConcreteFactory.cs" />
     <Compile Include="Enemy.cs" />
-    <Compile Include="EnemyAttack.cs" />
+    <Compile Include="EnemyAttacks.cs" />
     <Compile Include="GameManager.cs" />
     <Compile Include="Engine\Font.cs" />
     <Compile Include="Engine\Engine.cs" />
@@ -103,7 +105,7 @@
     <Content Include="assets\Sprites\AtkButtonPressed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\Sprites\attack.png">
+    <Content Include="assets\Sprites\Blue bone attack.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="assets\Sprites\Combat area.png">
@@ -140,6 +142,9 @@
     <Content Include="assets\Music\DeathByGlamour.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="assets\Sprites\Orange bone attack.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="assets\Sprites\player.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -171,6 +176,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="assets\Sprites\StartButtonPressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Sprites\White bone attack.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="assets\Sprites\win.png">

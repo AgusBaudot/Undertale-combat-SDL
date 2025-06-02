@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using Tao.Sdl;
 
 namespace MyGame
@@ -15,10 +16,10 @@ namespace MyGame
         #endregion
         #region Internal variables
         #region Attack lists
-        private List<EnemyAttack> attackListRight = new List<EnemyAttack>();
-        private List<EnemyAttack> attackListLeft = new List<EnemyAttack>();
-        private List<EnemyAttack> attackListDown = new List<EnemyAttack>();
-        private List<EnemyAttack> attackListUp = new List<EnemyAttack>();
+        private List<BaseBoneAttack> attackListRight = new List<BaseBoneAttack >();
+        private List<BaseBoneAttack> attackListLeft = new List<BaseBoneAttack>();
+        private List<BaseBoneAttack> attackListDown = new List<BaseBoneAttack>();
+        private List<BaseBoneAttack> attackListUp = new List<BaseBoneAttack>();
         #endregion
         #region Attack logic
         private float counter = 0; //Time passed since last spawned attack
@@ -33,6 +34,7 @@ namespace MyGame
         #endregion
         #endregion
 
+        private IAbstractFactory factory;
         private IAttackPatterns currentAttackPattern;
         private Dictionary<int, IAttackPatterns> attackPatterns;
 
@@ -56,7 +58,7 @@ namespace MyGame
                 {4, new FourthBoneAttack(player, enemy) },
                 {5, new FifthBoneAttack(player, enemy) },
             };
-            AdvanceAttackPhase();
+            currentAttackPattern = attackPatterns[selectAttack];
             attackPatterns[selectAttack].OnAttackEnd += AdvanceAttackPhase;
         }
         public void Update()
@@ -75,8 +77,8 @@ namespace MyGame
             //if (selectAttack == 1)
             //{
             //    currentAttackPattern.SpawnAttack(attackListUp.Concat(attackListLeft).ToList(), ref counter, ref duration, ref numOfAttacks, ref up, ref selectPosition);
-            //    currentAttackPattern.UpdateAttack((List<EnemyAttack>)attackListUp.Concat(attackListLeft), ref duration);
-            //    currentAttackPattern.RemoveAttack((List<EnemyAttack>)attackListUp.Concat(attackListLeft), ref numOfAttacks);
+            //    currentAttackPattern.UpdateAttack((List<WhiteBoneAttack>)attackListUp.Concat(attackListLeft), ref duration);
+            //    currentAttackPattern.RemoveAttack((List<WhiteBoneAttack>)attackListUp.Concat(attackListLeft), ref numOfAttacks);
             //}
         }
         public void FixedUpdate() => AttackBehavior();
@@ -201,7 +203,7 @@ namespace MyGame
                     break;
             }
         }
-        private void RemoveAttacks(List<EnemyAttack> list, System.Predicate<EnemyAttack> condition) //Remove unnecesary attacks from lists.
+        private void RemoveAttacks(List<BaseBoneAttack> list, System.Predicate<BaseBoneAttack> condition) //Remove unnecesary attacks from lists.
         {
             foreach (var attack in list.ToList())
             {
@@ -212,11 +214,11 @@ namespace MyGame
                 }
             }
         }
-        private void AddAttack(List<EnemyAttack> list, Vector2 position, Vector2 direction)
+        private void AddAttack(List<BaseBoneAttack> list, Vector2 position, Vector2 direction)
         {
-            list.Add(new EnemyAttack(position, direction, player.GetCollider(), player.healthController, enemy));
+            list.Add(new WhiteBoneAttack(position, direction, player.GetCollider(), player.healthController, enemy));
         }
-        private List<EnemyAttack> GetActiveAttackList()
+        private List<BaseBoneAttack> GetActiveAttackList()
         {
             return selectAttack switch //Upgraded to c# 8.0
             {
@@ -225,7 +227,7 @@ namespace MyGame
                 3 => attackListDown,
                 4 => attackListLeft,
                 5 => attackListUp,
-                _ => new List<EnemyAttack>()
+                _ => new List<BaseBoneAttack>()
             };
         }
         private void AdvanceAttackPhase()
