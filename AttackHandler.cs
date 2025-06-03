@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.OleDb;
 using System.Linq;
 using System.Runtime.Remoting.Channels;
@@ -33,7 +34,7 @@ namespace MyGame
         private int selectPosition = 0;
         private bool up = true;
 
-        private IAbstractFactory factory;
+        private IAbstractFactory whiteFactory, blueFactory, orangeFactory;
         private IAttackPatterns currentAttackPattern;
         private Dictionary<int, IAttackPatterns> attackPatterns;
 
@@ -48,17 +49,20 @@ namespace MyGame
             this.player = player;
             this.enemy = enemy;
             this.combatArea = combatArea;
-            factory = new WhiteBoneFactory();
+            whiteFactory = new WhiteBoneFactory();
+            blueFactory = new BlueBoneFactory();
+            orangeFactory = new OrangeBoneFactory();
             instance = GameManager.GetInstance();
             SetAreaRect();
 
             attackPatterns = new Dictionary<int, IAttackPatterns>()
             {
-                {1, new FirstBoneAttack(player, enemy, factory) },
-                {2, new SecondBoneAttack(player, enemy, factory) },
-                {3, new ThirdBoneAttack(player, enemy, factory) },
-                {4, new FourthBoneAttack(player, enemy, factory) },
-                {5, new FifthBoneAttack(player, enemy, factory) },
+                {1, new FirstBoneAttack(player, enemy, whiteFactory) },
+                {2, new SecondBoneAttack(player, enemy, whiteFactory) },
+                {3, new ThirdBoneAttack(player, enemy, whiteFactory) },
+                {4, new FourthBoneAttack(player, enemy, whiteFactory) },
+                {5, new FifthBoneAttack(player, enemy, whiteFactory) },
+                {6, new FirstBlueBoneAttack(player, enemy, blueFactory, orangeFactory) },
             };
             currentAttackPattern = attackPatterns[selectAttack];
             attackPatterns[selectAttack].OnAttackEnd += AdvanceAttackPhase;
@@ -66,7 +70,7 @@ namespace MyGame
         public void Update()
         {
             counter += Time.deltaTime; //Update timer.
-            if (selectAttack == 1)
+            if (selectAttack == 1 || selectAttack == 6)
             {
                 duration += Time.deltaTime; //Update duration timer.
             }
@@ -80,6 +84,10 @@ namespace MyGame
         private void SpawnAttack() //Spawner of attacks
         {
             if (selectAttack == 1)
+            {
+                currentAttackPattern.SpawnAttack(attackListRight, attackListLeft, ref counter, ref duration, ref numOfAttacks, ref up, ref selectPosition);
+            }
+            else if (selectAttack == 6)
             {
                 currentAttackPattern.SpawnAttack(attackListRight, attackListLeft, ref counter, ref duration, ref numOfAttacks, ref up, ref selectPosition);
             }
@@ -100,6 +108,10 @@ namespace MyGame
             {
                 currentAttackPattern.RemoveAttack(attackListRight, attackListLeft);
             }
+            else if (selectAttack == 6)
+            {
+                currentAttackPattern.RemoveAttack(attackListRight, attackListLeft);
+            }
             else
             {
                 currentAttackPattern.RemoveAttack(GetActiveAttackList(), null);
@@ -115,6 +127,7 @@ namespace MyGame
                 3 => attackListDown,
                 4 => attackListLeft,
                 5 => attackListUp,
+                6 => attackListRight.Concat(attackListLeft).ToList(),
                 _ => new List<BaseBoneAttack>()
             };
         }
@@ -123,12 +136,12 @@ namespace MyGame
             ResetLists();
             attackPatterns[selectAttack].OnAttackEnd -= AdvanceAttackPhase;
             numOfAttacks = 0;
+            duration = 0;
             lastAttack = selectAttack;
             while (selectAttack == lastAttack)
             {
-                selectAttack = rng.Next(1, 6);
+                selectAttack = rng.Next(1, 7);
             }
-            if (selectAttack == 1) duration = 0;
             instance.OnGameStateChanged(GameState.PlayerTurn);
 
             attackPatterns[selectAttack].OnAttackEnd += AdvanceAttackPhase;

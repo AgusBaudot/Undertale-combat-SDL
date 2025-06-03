@@ -55,6 +55,7 @@
     <Compile Include="AttackPatterns.cs" />
     <Compile Include="AttackPatternsInterface.cs" />
     <Compile Include="AttackPatternUtils.cs" />
+    <Compile Include="BaseAttackPatterns.cs" />
     <Compile Include="BoxCollider.cs" />
     <Compile Include="AttackButton.cs" />
     <Compile Include="Button.cs" />

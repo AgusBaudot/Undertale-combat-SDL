@@ -76,6 +76,30 @@ namespace MyGame
         {
             if (Math.Abs(transform.position.x - playerCollider.center.x) < (spriteRenderer.scaledWidth / 2 + Math.Abs(playerCollider.center.x - playerCollider.max.x)) &&
                 Math.Abs(transform.position.y - playerCollider.center.y) < (spriteRenderer.scaledHeight / 2 + Math.Abs(playerCollider.center.y - playerCollider.max.y)) &&
+                playerController.IsMoving())
+            {
+                playerHealth.TakeDamage(damage);
+            }
+        }
+    }
+    
+    public class OrangeBoneAttack : BaseBoneAttack
+    {
+        public OrangeBoneAttack(Vector2 position, Vector2 speed, BoxCollider playerCollider, HealthController playerHealth, PlayerController playerController, Enemy enemy)
+        {
+            base.speed = speed;
+            transform = new Transform(position);
+            spriteRenderer = new SpriteRenderer(transform, Engine.LoadImage("assets/Sprites/Orange bone attack.png"));
+            collider = new BoxCollider(transform, spriteRenderer);
+            base.playerCollider = playerCollider;
+            base.playerHealth = playerHealth;
+            base.playerController = playerController;
+        }
+
+        public override void CheckCollisions()
+        {
+            if (Math.Abs(transform.position.x - playerCollider.center.x) < (spriteRenderer.scaledWidth / 2 + Math.Abs(playerCollider.center.x - playerCollider.max.x)) &&
+                Math.Abs(transform.position.y - playerCollider.center.y) < (spriteRenderer.scaledHeight / 2 + Math.Abs(playerCollider.center.y - playerCollider.max.y)) &&
                 !playerController.IsMoving())
             {
                 playerHealth.TakeDamage(damage);

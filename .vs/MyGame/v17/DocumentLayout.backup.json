@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\attackhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:attackhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|c:\\users\\alu764\\documents\\github\\undertale-combat-sdl\\attackpatterns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:attackpatterns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|c:\\users\\alu764\\documents\\github\\undertale-combat-sdl\\baseattackpatterns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:baseattackpatterns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|c:\\users\\alu764\\documents\\github\\undertale-combat-sdl\\attackpatternutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:attackpatternutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\attackhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:attackhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\abstractfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,20 +27,20 @@
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:concretefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|c:\\users\\alu764\\documents\\github\\undertale-combat-sdl\\attackpatternutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:attackpatternutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\enemyattacks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:enemyattacks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\attackpatternsinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:attackpatternsinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\enemyattacks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:enemyattacks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\vector2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:vector2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\attackbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\vector2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:vector2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -109,11 +113,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -126,108 +130,86 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "AttackPatterns.cs",
+              "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\AttackPatterns.cs",
+              "RelativeDocumentMoniker": "AttackPatterns.cs",
+              "ToolTip": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\AttackPatterns.cs",
+              "RelativeToolTip": "AttackPatterns.cs",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAiwMIAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T18:00:34.715Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BaseAttackPatterns.cs",
+              "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\BaseAttackPatterns.cs",
+              "RelativeDocumentMoniker": "BaseAttackPatterns.cs",
+              "ToolTip": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\BaseAttackPatterns.cs",
+              "RelativeToolTip": "BaseAttackPatterns.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAmwG8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T18:29:49.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "AttackPatternUtils.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\AttackPatternUtils.cs",
               "RelativeDocumentMoniker": "AttackPatternUtils.cs",
               "ToolTip": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\AttackPatternUtils.cs",
               "RelativeToolTip": "AttackPatternUtils.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-03T16:53:54.746Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "ConcreteFactory.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\ConcreteFactory.cs",
               "RelativeDocumentMoniker": "ConcreteFactory.cs",
               "ToolTip": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\ConcreteFactory.cs",
               "RelativeToolTip": "ConcreteFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAACsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwB4AAABwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T19:01:37.448Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "AbstractFactory.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\AbstractFactory.cs",
               "RelativeDocumentMoniker": "AbstractFactory.cs",
               "ToolTip": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\AbstractFactory.cs",
               "RelativeToolTip": "AbstractFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAC0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T18:45:54.568Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AttackPatterns.cs",
-              "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\AttackPatterns.cs",
-              "RelativeDocumentMoniker": "AttackPatterns.cs",
-              "ToolTip": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\AttackPatterns.cs",
-              "RelativeToolTip": "AttackPatterns.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwHgAAABgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T18:00:34.715Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "AttackHandler.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\AttackHandler.cs",
               "RelativeDocumentMoniker": "AttackHandler.cs",
               "ToolTip": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\AttackHandler.cs",
               "RelativeToolTip": "AttackHandler.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAcwFwAAABTAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAQwEUAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T17:59:53.786Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Engine.cs",
-              "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\Engine\\Engine.cs",
-              "RelativeDocumentMoniker": "Engine\\Engine.cs",
-              "ToolTip": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\Engine\\Engine.cs",
-              "RelativeToolTip": "Engine\\Engine.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAqwFIAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T16:53:56.619Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EnemyAttacks.cs",
-              "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\EnemyAttacks.cs",
-              "RelativeDocumentMoniker": "EnemyAttacks.cs",
-              "ToolTip": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\EnemyAttacks.cs",
-              "RelativeToolTip": "EnemyAttacks.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T01:01:47.2Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PlayerController.cs",
-              "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\PlayerController.cs",
-              "RelativeDocumentMoniker": "PlayerController.cs",
-              "ToolTip": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\PlayerController.cs",
-              "RelativeToolTip": "PlayerController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAkwDAAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T21:16:31.823Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "SpriteRenderer.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\SpriteRenderer.cs",
               "RelativeDocumentMoniker": "SpriteRenderer.cs",
@@ -239,7 +221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Transform.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\Transform.cs",
               "RelativeDocumentMoniker": "Transform.cs",
@@ -251,19 +233,70 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Vector2.cs",
+              "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\Vector2.cs",
+              "RelativeDocumentMoniker": "Vector2.cs",
+              "ToolTip": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\Vector2.cs",
+              "RelativeToolTip": "Vector2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T20:48:16.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "EnemyAttacks.cs",
+              "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\EnemyAttacks.cs",
+              "RelativeDocumentMoniker": "EnemyAttacks.cs",
+              "ToolTip": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\EnemyAttacks.cs",
+              "RelativeToolTip": "EnemyAttacks.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAQwBkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T01:01:47.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\PlayerController.cs",
+              "RelativeDocumentMoniker": "PlayerController.cs",
+              "ToolTip": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\PlayerController.cs",
+              "RelativeToolTip": "PlayerController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAkwDAAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T21:16:31.823Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "AttackPatternsInterface.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\AttackPatternsInterface.cs",
               "RelativeDocumentMoniker": "AttackPatternsInterface.cs",
               "ToolTip": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\AttackPatternsInterface.cs",
               "RelativeToolTip": "AttackPatternsInterface.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T18:00:41.492Z"
+              "WhenOpened": "2025-06-02T18:00:41.492Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
+              "Title": "Engine.cs",
+              "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\Engine\\Engine.cs",
+              "RelativeDocumentMoniker": "Engine\\Engine.cs",
+              "ToolTip": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\Engine\\Engine.cs",
+              "RelativeToolTip": "Engine\\Engine.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAqwFIAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T16:53:56.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
@@ -276,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Button.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\Button.cs",
               "RelativeDocumentMoniker": "Button.cs",
@@ -288,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "AttackButton.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\AttackButton.cs",
               "RelativeDocumentMoniker": "AttackButton.cs",
@@ -300,7 +333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "BoxCollider.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\BoxCollider.cs",
               "RelativeDocumentMoniker": "BoxCollider.cs",
@@ -312,19 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Vector2.cs",
-              "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\Vector2.cs",
-              "RelativeDocumentMoniker": "Vector2.cs",
-              "ToolTip": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\Vector2.cs",
-              "RelativeToolTip": "Vector2.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAmwDgAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T20:48:16.205Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "ActButton.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\ActButton.cs",
               "RelativeDocumentMoniker": "ActButton.cs",
@@ -336,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\GameManager.cs",
               "RelativeDocumentMoniker": "GameManager.cs",
@@ -348,7 +369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Image.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\Engine\\Image.cs",
               "RelativeDocumentMoniker": "Engine\\Image.cs",
@@ -360,7 +381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Font.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\Engine\\Font.cs",
               "RelativeDocumentMoniker": "Engine\\Font.cs",
@@ -372,7 +393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "CombatArea.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\CombatArea.cs",
               "RelativeDocumentMoniker": "CombatArea.cs",
@@ -384,7 +405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Sound.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\Engine\\Sound.cs",
               "RelativeDocumentMoniker": "Engine\\Sound.cs",
@@ -396,7 +417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "AssemblyInfo.cs",
               "DocumentMoniker": "C:\\Users\\alu764\\Documents\\GitHub\\Undertale-combat-SDL\\Properties\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "Properties\\AssemblyInfo.cs",
@@ -408,7 +429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Sound.cs",
               "DocumentMoniker": "C:\\Users\\Consultoria\\Dropbox\\Facultad\\UTN\\Proyecto Base\\Sound.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Consultoria\\Dropbox\\Facultad\\UTN\\Proyecto Base\\Sound.cs",

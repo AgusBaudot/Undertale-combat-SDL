@@ -6,58 +6,7 @@ using System.Diagnostics;
 
 namespace MyGame
 {
-    public abstract class BaseAttackPattern : IAttackPatterns
-    {
-        protected Player player;
-        protected Enemy enemy;
-        protected IAbstractFactory factory;
-
-        public event Action OnAttackEnd;
-
-        protected BaseAttackPattern(Player player, Enemy enemy, IAbstractFactory factory)
-        {
-            this.player = player;
-            this.enemy = enemy;
-            this.factory = factory;
-        }
-
-        protected void AddAttack(List<BaseBoneAttack> list, Vector2 position, Vector2 direction)
-        {
-            list.Add(factory.CreateBoneAttack(position, direction, player.GetCollider(), player.healthController, player.GetPlayerController(), enemy));
-        }
-
-        protected void RenderAttacks(List<BaseBoneAttack> attackList, ref Tao.Sdl.Sdl.SDL_Rect clipRect)
-        {
-            Sdl.SDL_SetClipRect(Engine.screen, ref clipRect);
-            foreach (var attack in attackList)
-                attack.Render();
-            Sdl.SDL_Rect screenRect = new Sdl.SDL_Rect(0, 0, (short)Engine.width, (short)Engine.height);
-            Sdl.SDL_SetClipRect(Engine.screen, ref screenRect);
-        }
-
-        public abstract void SpawnAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB,
-            ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition);
-
-        public virtual void UpdateAttack(List<BaseBoneAttack> attackList, ref float duration)
-        {
-            attackList.ForEach(a => a.Update());
-        }
-
-        public abstract void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB);
-
-        public virtual void RenderList(List<BaseBoneAttack> attackList, ref Sdl.SDL_Rect clipRect)
-        {
-            RenderAttacks(attackList, ref clipRect);
-        }
-
-        protected void EndIfFinished(bool condition)
-        {
-            if (condition)
-                OnAttackEnd?.Invoke();
-        }
-    }
-
-    public class FirstBoneAttack : BaseAttackPattern //Attack for spawning left and right attacks at the same time.
+    public class FirstBoneAttack : BaseWhiteAttackPattern //Attack for spawning left and right attacks at the same time.
     {
         public FirstBoneAttack(Player player, Enemy enemy, IAbstractFactory factory) : base(player, enemy, factory) { }
 
@@ -95,7 +44,7 @@ namespace MyGame
         }
     }
 
-    public class SecondBoneAttack : BaseAttackPattern
+    public class SecondBoneAttack : BaseWhiteAttackPattern
     {
         public SecondBoneAttack(Player player, Enemy enemy, IAbstractFactory factory) : base (player, enemy, factory) { }
 
@@ -124,7 +73,7 @@ namespace MyGame
         }
     }
 
-    public class ThirdBoneAttack : BaseAttackPattern
+    public class ThirdBoneAttack : BaseWhiteAttackPattern
     {
         public ThirdBoneAttack (Player player, Enemy enemy, IAbstractFactory factory) : base (player, enemy, factory) { }
 
@@ -153,7 +102,7 @@ namespace MyGame
         }
     }
 
-    public class FourthBoneAttack : BaseAttackPattern
+    public class FourthBoneAttack : BaseWhiteAttackPattern
     {
         public FourthBoneAttack (Player player, Enemy enemy, IAbstractFactory factory) : base(player, enemy, factory) { }
 
@@ -182,7 +131,7 @@ namespace MyGame
         }
     }
 
-    public class FifthBoneAttack : BaseAttackPattern
+    public class FifthBoneAttack : BaseWhiteAttackPattern
     {
         public FifthBoneAttack(Player player, Enemy enemy, IAbstractFactory factory) : base(player, enemy, factory) { }
 
@@ -208,6 +157,51 @@ namespace MyGame
         public override void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB)
         {
             listA.RemoveAll(a => a.transform.position.y < 160);
+        }
+    }
+
+    public class FirstBlueBoneAttack : BaseBlueAttackPattern
+    {
+        public FirstBlueBoneAttack(Player player, Enemy enemy, IAbstractFactory factory, IAbstractFactory factory2) : base(player, enemy, factory, factory2) { }
+
+        public override void SpawnAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
+        {
+            if (numOfAttacks >= 16 && listA.Count == 0 && listB.Count == 0)
+            {
+                EndIfFinished(true);
+                return;
+            }
+            else if (numOfAttacks >= 16) return;
+            if (counter > 1.2f - (duration / 20) && numOfAttacks % 2 == 0) //If 1 - (duration/20)" have passed since last attack was thrown and we have to throw a white attack:
+            {
+                AddAttack(listA, new Vector2(160, Engine.center.y + 90), Vector2.right * 5, mainFactory);
+                AddAttack(listB, new Vector2(880, Engine.center.y - 90), Vector2.left * 5, mainFactory);
+                counter = 0; //Reset attack timer.
+                numOfAttacks ++;
+            }
+            else if (counter > 0.5f && numOfAttacks % 2 != 0) //If 0.5" have passed since last attack was thrown and we have to throw a blue attack:
+            {
+                AddAttack(listA, new Vector2(160, Engine.center.y + 90), Vector2.right * 5, secondaryFactory);
+                AddAttack(listB, new Vector2(880, Engine.center.y - 90), Vector2.left * 5, secondaryFactory);
+                counter = 0; //Reset attack timer.
+                numOfAttacks++;
+            }
+        }
+
+        public override void UpdateAttack(List<BaseBoneAttack> attackList, ref float duration)
+        {
+            foreach (BaseBoneAttack attack in attackList)
+            {
+                Vector2 currentDir = attack.speed.normalized;
+                attack.UpdateSpeed(currentDir * (3 + duration));
+                attack.Update();
+            }
+        }
+
+        public override void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB)
+        {
+            listA.RemoveAll(a => a.transform.position.x > 880);
+            listB.RemoveAll(a => a.transform.position.x < 160);
         }
     }
 }
