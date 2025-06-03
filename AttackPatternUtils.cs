@@ -21,9 +21,9 @@ namespace MyGame
             attackList.ForEach(a => a.Update());
         }
 
-        public static void AddAttack(List<BaseBoneAttack> list, Vector2 position, Vector2 direction, ConcreteFactory factory, Player player, Enemy enemy)
+        public static void AddAttack(List<BaseBoneAttack> list, Vector2 position, Vector2 direction, IAbstractFactory factory, Player player, Enemy enemy)
         {
-            list.Add(factory.CreateWhiteBoneAttack(position, direction, player.GetCollider(), player.healthController, enemy));
+            list.Add(factory.CreateBoneAttack(position, direction, player.GetCollider(), player.healthController, player.GetPlayerController(), enemy));
         }
     }
 

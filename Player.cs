@@ -66,6 +66,7 @@ namespace MyGame
             }
         }
         public BoxCollider GetCollider() => collider;
+        public PlayerController GetPlayerController() => playerController;
         public void Reset()
         {
             transform.position = Engine.center;

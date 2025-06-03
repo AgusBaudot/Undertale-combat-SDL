@@ -7,14 +7,17 @@ using MyGame.assets;
 
 namespace MyGame
 {
-    public class ConcreteFactory : IAbstractFactory
+    public class WhiteBoneFactory : IAbstractFactory
     {
-        public BaseBoneAttack CreateWhiteBoneAttack(Vector2 position, Vector2 speed, BoxCollider playerCollider, HealthController playerHealth, Enemy enemy)
+        public BaseBoneAttack CreateBoneAttack(Vector2 position, Vector2 speed, BoxCollider playerCollider, HealthController playerHealth, PlayerController playerController, Enemy enemy)
         {
             return new WhiteBoneAttack(position, speed, playerCollider, playerHealth, enemy);
         }
+    }
 
-        public BaseBoneAttack CreateBlueBoneAttack(Vector2 position, Vector2 speed, BoxCollider playerCollider, HealthController playerHealth, PlayerController playerController, Enemy enemy)
+    public class BlueBoneFactory : IAbstractFactory
+    {
+        public BaseBoneAttack CreateBoneAttack(Vector2 position, Vector2 speed, BoxCollider playerCollider, HealthController playerHealth, PlayerController playerController, Enemy enemy)
         {
             return new BlueBoneAttack(position, speed, playerCollider, playerHealth, playerController, enemy);
         }

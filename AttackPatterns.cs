@@ -6,26 +6,66 @@ using System.Diagnostics;
 
 namespace MyGame
 {
-    public class FirstBoneAttack : IAttackPatterns //Attack for spawning left and right attacks at the same time.
+    public abstract class BaseAttackPattern : IAttackPatterns
     {
-        private Player player;
-        private Enemy enemy;
-        private ConcreteFactory factory;
+        protected Player player;
+        protected Enemy enemy;
+        protected IAbstractFactory factory;
 
         public event Action OnAttackEnd;
 
-        public FirstBoneAttack(Player player, Enemy enemy, ConcreteFactory factory)
+        protected BaseAttackPattern(Player player, Enemy enemy, IAbstractFactory factory)
         {
             this.player = player;
             this.enemy = enemy;
             this.factory = factory;
         }
 
-        public void SpawnAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
+        protected void AddAttack(List<BaseBoneAttack> list, Vector2 position, Vector2 direction)
+        {
+            list.Add(factory.CreateBoneAttack(position, direction, player.GetCollider(), player.healthController, player.GetPlayerController(), enemy));
+        }
+
+        protected void RenderAttacks(List<BaseBoneAttack> attackList, ref Tao.Sdl.Sdl.SDL_Rect clipRect)
+        {
+            Sdl.SDL_SetClipRect(Engine.screen, ref clipRect);
+            foreach (var attack in attackList)
+                attack.Render();
+            Sdl.SDL_Rect screenRect = new Sdl.SDL_Rect(0, 0, (short)Engine.width, (short)Engine.height);
+            Sdl.SDL_SetClipRect(Engine.screen, ref screenRect);
+        }
+
+        public abstract void SpawnAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB,
+            ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition);
+
+        public virtual void UpdateAttack(List<BaseBoneAttack> attackList, ref float duration)
+        {
+            attackList.ForEach(a => a.Update());
+        }
+
+        public abstract void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB);
+
+        public virtual void RenderList(List<BaseBoneAttack> attackList, ref Sdl.SDL_Rect clipRect)
+        {
+            RenderAttacks(attackList, ref clipRect);
+        }
+
+        protected void EndIfFinished(bool condition)
+        {
+            if (condition)
+                OnAttackEnd?.Invoke();
+        }
+    }
+
+    public class FirstBoneAttack : BaseAttackPattern //Attack for spawning left and right attacks at the same time.
+    {
+        public FirstBoneAttack(Player player, Enemy enemy, IAbstractFactory factory) : base(player, enemy, factory) { }
+
+        public override void SpawnAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
         {
             if (numOfAttacks >= 16 && listA.Count == 0 && listB.Count == 0)
             {
-                OnAttackEnd?.Invoke();
+                EndIfFinished(true);
                 return;
             }
             else if (numOfAttacks >= 16) return;
@@ -38,7 +78,7 @@ namespace MyGame
             }
         }
 
-        public void UpdateAttack(List<BaseBoneAttack> attackList, ref float duration)
+        public override void UpdateAttack(List<BaseBoneAttack> attackList, ref float duration)
         {
             foreach (BaseBoneAttack attack in attackList)
             {
@@ -48,45 +88,23 @@ namespace MyGame
             }
         }
 
-        public void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB)
+        public override void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB)
         {
             listA.RemoveAll(a => a.transform.position.x > 880);
             listB.RemoveAll(a => a.transform.position.x < 160);
         }
-
-        public void RenderList(List<BaseBoneAttack> attackList, ref Sdl.SDL_Rect clipRect)
-        {
-            AttackPatternUtils.RenderList(attackList, ref clipRect);
-        }
-
-        private void AddAttack(List<BaseBoneAttack> list, Vector2 position, Vector2 direction)
-        {
-            AttackPatternUtils.AddAttack(list, position, direction, factory, player, enemy);
-        }
     }
 
-    public class SecondBoneAttack : IAttackPatterns
+    public class SecondBoneAttack : BaseAttackPattern
     {
+        public SecondBoneAttack(Player player, Enemy enemy, IAbstractFactory factory) : base (player, enemy, factory) { }
 
-        private Player player;
-        private Enemy enemy;
-        private ConcreteFactory factory;
-
-        public event Action OnAttackEnd;
-
-        public SecondBoneAttack(Player player, Enemy enemy, ConcreteFactory factory)
-        {
-            this.player = player;
-            this.enemy = enemy;
-            this.factory = factory;
-        }
-
-        public void SpawnAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
+        public override void SpawnAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
         {
             if (numOfAttacks >= 12 && listA.Count == 0)
             {
                 up = true;
-                OnAttackEnd?.Invoke();
+                EndIfFinished(true);
                 return;
             }
             else if (numOfAttacks >= 12) return;
@@ -100,48 +118,22 @@ namespace MyGame
             }
         }
 
-        public void UpdateAttack(List<BaseBoneAttack> attackList, ref float duration)
-        {
-            AttackPatternUtils.UpdateBasic(attackList);
-        }
-
-        public void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB)
+        public override void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB)
         {
             listA.RemoveAll(a => a.transform.position.x > 880);
         }
-
-        public void RenderList(List<BaseBoneAttack> attackList , ref Sdl.SDL_Rect clipRect)
-        {
-            AttackPatternUtils.RenderList(attackList, ref clipRect);
-        }
-
-        private void AddAttack(List<BaseBoneAttack> list, Vector2 position, Vector2 direction)
-        {
-            AttackPatternUtils.AddAttack(list, position, direction, factory, player, enemy);
-        }
     }
 
-    public class ThirdBoneAttack : IAttackPatterns
+    public class ThirdBoneAttack : BaseAttackPattern
     {
-        private Player player;
-        private Enemy enemy;
-        private ConcreteFactory factory;
+        public ThirdBoneAttack (Player player, Enemy enemy, IAbstractFactory factory) : base (player, enemy, factory) { }
 
-        public event Action OnAttackEnd;
-
-        public ThirdBoneAttack(Player player, Enemy enemy, ConcreteFactory factory)
-        {
-            this.player = player;
-            this.enemy = enemy;
-            this.factory = factory;
-        }
-
-        public void SpawnAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
+        public override void SpawnAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
         {
             if (numOfAttacks >= 18 && listA.Count == 0)
             {
                 selectPosition = 0;
-                OnAttackEnd?.Invoke();
+                EndIfFinished(true);
                 return;
             }
             else if (numOfAttacks >= 18) return;
@@ -155,48 +147,22 @@ namespace MyGame
             }
         }
 
-        public void UpdateAttack(List<BaseBoneAttack> attackList, ref float duration)
-        {
-            AttackPatternUtils.UpdateBasic(attackList);
-        }
-
-        public void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB)
+        public override void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB)
         {
             listA.RemoveAll(a => a.transform.position.y > 500);
         }
-
-        public void RenderList(List<BaseBoneAttack> attackList, ref Sdl.SDL_Rect clipRect)
-        {
-            AttackPatternUtils.RenderList(attackList, ref clipRect);
-        }
-
-        private void AddAttack(List<BaseBoneAttack> list, Vector2 position, Vector2 direction)
-        {
-            AttackPatternUtils.AddAttack(list, position, direction, factory, player, enemy);
-        }
     }
 
-    public class FourthBoneAttack : IAttackPatterns
+    public class FourthBoneAttack : BaseAttackPattern
     {
-        private Player player;
-        private Enemy enemy;
-        private ConcreteFactory factory;
+        public FourthBoneAttack (Player player, Enemy enemy, IAbstractFactory factory) : base(player, enemy, factory) { }
 
-        public event Action OnAttackEnd;
-
-        public FourthBoneAttack(Player player, Enemy enemy, ConcreteFactory factory)
-        {
-            this.player = player;
-            this.enemy = enemy;
-            this.factory = factory;
-        }
-
-        public void SpawnAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
+        public override void SpawnAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
         {
             if (numOfAttacks >= 12 && listA.Count == 0)
             {
                 up = true;
-                OnAttackEnd?.Invoke();
+                EndIfFinished(true);
                 return;
             }
             else if (numOfAttacks >= 12) return;
@@ -210,48 +176,22 @@ namespace MyGame
             }
         }
 
-        public void UpdateAttack(List<BaseBoneAttack> attackList, ref float duration)
-        {
-            AttackPatternUtils.UpdateBasic(attackList);
-        }
-
-        public void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB)
+        public override void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB)
         {
             listA.RemoveAll(a => a.transform.position.x < 160);
         }
-
-        public void RenderList(List<BaseBoneAttack> attackList, ref Sdl.SDL_Rect clipRect)
-        {
-            AttackPatternUtils.RenderList(attackList, ref clipRect);
-        }
-
-        private void AddAttack(List<BaseBoneAttack> list, Vector2 position, Vector2 direction)
-        {
-            AttackPatternUtils.AddAttack(list, position, direction, factory, player, enemy);
-        }
     }
 
-    public class FifthBoneAttack : IAttackPatterns
+    public class FifthBoneAttack : BaseAttackPattern
     {
-        private Player player;
-        private Enemy enemy;
-        private ConcreteFactory factory;
+        public FifthBoneAttack(Player player, Enemy enemy, IAbstractFactory factory) : base(player, enemy, factory) { }
 
-        public event Action OnAttackEnd;
-
-        public FifthBoneAttack(Player player, Enemy enemy, ConcreteFactory factory)
-        {
-            this.player = player;
-            this.enemy = enemy;
-            this.factory = factory;
-        }
-
-        public void SpawnAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
+        public override void SpawnAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
         {
             if (numOfAttacks >= 18 && listA.Count == 0)
             {
                 selectPosition = 0;
-                OnAttackEnd?.Invoke();
+                EndIfFinished(true);
                 return;
             }
             else if (numOfAttacks >= 18) return;
@@ -265,26 +205,9 @@ namespace MyGame
             }
         }
 
-        public void UpdateAttack(List<BaseBoneAttack> attackList, ref float duration)
-        {
-            AttackPatternUtils.UpdateBasic(attackList);
-        }
-
-        public void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB)
+        public override void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB)
         {
             listA.RemoveAll(a => a.transform.position.y < 160);
         }
-
-        public void RenderList(List<BaseBoneAttack> attackList, ref Sdl.SDL_Rect clipRect)
-        {
-            AttackPatternUtils.RenderList(attackList, ref clipRect);
-        }
-
-        private void AddAttack(List<BaseBoneAttack> list, Vector2 position, Vector2 direction)
-        {
-            AttackPatternUtils.AddAttack(list, position, direction, factory, player, enemy);
-        }
     }
-
-    //More attacks added later. (Lasers).
 }
