@@ -10,6 +10,7 @@ namespace MyGame
     {
         private Player player;
         private Enemy enemy;
+        private ConcreteFactory factory;
 
         public event Action OnAttackEnd;
 
@@ -17,6 +18,7 @@ namespace MyGame
         {
             this.player = player;
             this.enemy = enemy;
+            this.factory = factory;
         }
 
         public void SpawnAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
@@ -54,19 +56,12 @@ namespace MyGame
 
         public void RenderList(List<BaseBoneAttack> attackList, ref Sdl.SDL_Rect clipRect)
         {
-            Sdl.SDL_SetClipRect(Engine.screen, ref clipRect);
-            foreach (var attack in attackList)
-            {
-                attack.Render();
-            }
-            Sdl.SDL_Rect screenRect =
-                new Sdl.SDL_Rect(0, 0, (short)Engine.width, (short)Engine.height);
-            Sdl.SDL_SetClipRect(Engine.screen, ref screenRect);
+            AttackPatternUtils.RenderList(attackList, ref clipRect);
         }
 
         private void AddAttack(List<BaseBoneAttack> list, Vector2 position, Vector2 direction)
         {
-            list.Add(new WhiteBoneAttack(position, direction, player.GetCollider(), player.healthController, enemy));
+            AttackPatternUtils.AddAttack(list, position, direction, factory, player, enemy);
         }
     }
 
@@ -75,6 +70,7 @@ namespace MyGame
 
         private Player player;
         private Enemy enemy;
+        private ConcreteFactory factory;
 
         public event Action OnAttackEnd;
 
@@ -82,6 +78,7 @@ namespace MyGame
         {
             this.player = player;
             this.enemy = enemy;
+            this.factory = factory;
         }
 
         public void SpawnAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
@@ -105,7 +102,7 @@ namespace MyGame
 
         public void UpdateAttack(List<BaseBoneAttack> attackList, ref float duration)
         {
-            attackList.ForEach(a => a.Update());
+            AttackPatternUtils.UpdateBasic(attackList);
         }
 
         public void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB)
@@ -115,19 +112,12 @@ namespace MyGame
 
         public void RenderList(List<BaseBoneAttack> attackList , ref Sdl.SDL_Rect clipRect)
         {
-            Sdl.SDL_SetClipRect(Engine.screen, ref clipRect);
-            foreach (var attack in attackList)
-            {
-                attack.Render();
-            }
-            Sdl.SDL_Rect screenRect =
-                new Sdl.SDL_Rect(0, 0, (short)Engine.width, (short)Engine.height);
-            Sdl.SDL_SetClipRect(Engine.screen, ref screenRect);
+            AttackPatternUtils.RenderList(attackList, ref clipRect);
         }
 
         private void AddAttack(List<BaseBoneAttack> list, Vector2 position, Vector2 direction)
         {
-            list.Add(new WhiteBoneAttack(position, direction, player.GetCollider(), player.healthController, enemy));
+            AttackPatternUtils.AddAttack(list, position, direction, factory, player, enemy);
         }
     }
 
@@ -135,6 +125,7 @@ namespace MyGame
     {
         private Player player;
         private Enemy enemy;
+        private ConcreteFactory factory;
 
         public event Action OnAttackEnd;
 
@@ -142,6 +133,7 @@ namespace MyGame
         {
             this.player = player;
             this.enemy = enemy;
+            this.factory = factory;
         }
 
         public void SpawnAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB, ref float counter, ref float duration, ref int numOfAttacks, ref bool up, ref int selectPosition)
@@ -165,7 +157,7 @@ namespace MyGame
 
         public void UpdateAttack(List<BaseBoneAttack> attackList, ref float duration)
         {
-            attackList.ForEach(a => a.Update());
+            AttackPatternUtils.UpdateBasic(attackList);
         }
 
         public void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB)
@@ -175,19 +167,12 @@ namespace MyGame
 
         public void RenderList(List<BaseBoneAttack> attackList, ref Sdl.SDL_Rect clipRect)
         {
-            Sdl.SDL_SetClipRect(Engine.screen, ref clipRect);
-            foreach (var attack in attackList)
-            {
-                attack.Render();
-            }
-            Sdl.SDL_Rect screenRect =
-                new Sdl.SDL_Rect(0, 0, (short)Engine.width, (short)Engine.height);
-            Sdl.SDL_SetClipRect(Engine.screen, ref screenRect);
+            AttackPatternUtils.RenderList(attackList, ref clipRect);
         }
 
         private void AddAttack(List<BaseBoneAttack> list, Vector2 position, Vector2 direction)
         {
-            list.Add(new WhiteBoneAttack(position, direction, player.GetCollider(), player.healthController, enemy));
+            AttackPatternUtils.AddAttack(list, position, direction, factory, player, enemy);
         }
     }
 
@@ -227,7 +212,7 @@ namespace MyGame
 
         public void UpdateAttack(List<BaseBoneAttack> attackList, ref float duration)
         {
-            attackList.ForEach(a => a.Update());
+            AttackPatternUtils.UpdateBasic(attackList);
         }
 
         public void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB)
@@ -237,19 +222,12 @@ namespace MyGame
 
         public void RenderList(List<BaseBoneAttack> attackList, ref Sdl.SDL_Rect clipRect)
         {
-            Sdl.SDL_SetClipRect(Engine.screen, ref clipRect);
-            foreach (var attack in attackList)
-            {
-                attack.Render();
-            }
-            Sdl.SDL_Rect screenRect =
-                new Sdl.SDL_Rect(0, 0, (short)Engine.width, (short)Engine.height);
-            Sdl.SDL_SetClipRect(Engine.screen, ref screenRect);
+            AttackPatternUtils.RenderList(attackList, ref clipRect);
         }
 
         private void AddAttack(List<BaseBoneAttack> list, Vector2 position, Vector2 direction)
         {
-            list.Add(new WhiteBoneAttack(position, direction, player.GetCollider(), player.healthController, enemy));
+            AttackPatternUtils.AddAttack(list, position, direction, factory, player, enemy);
         }
     }
 
@@ -289,7 +267,7 @@ namespace MyGame
 
         public void UpdateAttack(List<BaseBoneAttack> attackList, ref float duration)
         {
-            attackList.ForEach(a => a.Update());
+            AttackPatternUtils.UpdateBasic(attackList);
         }
 
         public void RemoveAttack(List<BaseBoneAttack> listA, List<BaseBoneAttack> listB)
@@ -299,19 +277,12 @@ namespace MyGame
 
         public void RenderList(List<BaseBoneAttack> attackList, ref Sdl.SDL_Rect clipRect)
         {
-            Sdl.SDL_SetClipRect(Engine.screen, ref clipRect);
-            foreach (var attack in attackList)
-            {
-                attack.Render();
-            }
-            Sdl.SDL_Rect screenRect =
-                new Sdl.SDL_Rect(0, 0, (short)Engine.width, (short)Engine.height);
-            Sdl.SDL_SetClipRect(Engine.screen, ref screenRect);
+            AttackPatternUtils.RenderList(attackList, ref clipRect);
         }
 
         private void AddAttack(List<BaseBoneAttack> list, Vector2 position, Vector2 direction)
         {
-            list.Add(new WhiteBoneAttack(position, direction, player.GetCollider(), player.healthController, enemy));
+            AttackPatternUtils.AddAttack(list, position, direction, factory, player, enemy);
         }
     }
 

@@ -34,7 +34,7 @@ namespace MyGame
         #endregion
         #endregion
 
-        private IAbstractFactory factory;
+        private ConcreteFactory factory;
         private IAttackPatterns currentAttackPattern;
         private Dictionary<int, IAttackPatterns> attackPatterns;
 
@@ -47,16 +47,17 @@ namespace MyGame
             this.player = player;
             this.enemy = enemy;
             this.combatArea = combatArea;
+            factory = new ConcreteFactory();
             instance = GameManager.GetInstance();
             SetAreaRect();
 
             attackPatterns = new Dictionary<int, IAttackPatterns>()
             {
-                {1, new FirstBoneAttack(player, enemy) },
-                {2, new SecondBoneAttack(player, enemy) },
-                {3, new ThirdBoneAttack(player, enemy) },
-                {4, new FourthBoneAttack(player, enemy) },
-                {5, new FifthBoneAttack(player, enemy) },
+                {1, new FirstBoneAttack(player, enemy, factory) },
+                {2, new SecondBoneAttack(player, enemy, factory) },
+                {3, new ThirdBoneAttack(player, enemy, factory) },
+                {4, new FourthBoneAttack(player, enemy, factory) },
+                {5, new FifthBoneAttack(player, enemy, factory) },
             };
             currentAttackPattern = attackPatterns[selectAttack];
             attackPatterns[selectAttack].OnAttackEnd += AdvanceAttackPhase;
@@ -282,5 +283,3 @@ namespace MyGame
         #endregion
     }
 }
-
-//CHANGE HARDCODED POSITIONS TO COMBAT AREA WIDTH AND HEIGHT.
