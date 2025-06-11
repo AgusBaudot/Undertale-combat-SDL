@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    public class PlayButton : Button
+    public class PlayButton : IButton
     {
+        private Transform transform;
+        private bool leftButton = true;
         private string normalSprite, selectedSprite;
         private SpriteRenderer renderer;
         private GameManager instance;
@@ -21,9 +23,9 @@ namespace MyGame
             instance = GameManager.GetInstance();
         }
 
-        public override void Update()
+        public void Update()
         {
-            base.Update();
+            Inputs();
 
             if (leftButton && Engine.GetKeyDown(Engine.KEY_ESP))
             {
@@ -31,7 +33,21 @@ namespace MyGame
             }
         }
 
-        private void Pressed()
+        public void Inputs()
+        {
+
+            if (Engine.GetKeyDown(Engine.KEY_A))
+            {
+                leftButton = !leftButton;
+            }
+
+            else if (Engine.GetKeyDown(Engine.KEY_D))
+            {
+                leftButton = !leftButton;
+            }
+        }
+
+        public void Pressed()
         {
             instance.OnGameStateChanged(GameState.PlayerTurn);
         }

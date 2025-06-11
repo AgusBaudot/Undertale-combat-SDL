@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    public class AttackButton : Button //See ActButton class for logic.
+    public class AttackButton : IButton //See ActButton class for logic.
     {
         #region Classes
+        private Transform transform;
+        private bool leftButton = true;
         private SpriteRenderer spriteRenderer;
         private HealthController enemyHealth;
         private GameManager instance;
@@ -27,9 +29,9 @@ namespace MyGame
             instance = GameManager.GetInstance();
         }
 
-        public override void Update()
+        public void Update()
         {
-            base.Update();
+            Inputs();
 
             if (leftButton && Engine.GetKeyDown(Engine.KEY_ESP)) //To see if this button is pressed, check if leftButton is true instead of false.
             {
@@ -37,7 +39,21 @@ namespace MyGame
             }
         }
 
-        private void Pressed()
+        public void Inputs()
+        {
+
+            if (Engine.GetKeyDown(Engine.KEY_A))
+            {
+                leftButton = !leftButton;
+            }
+
+            else if (Engine.GetKeyDown(Engine.KEY_D))
+            {
+                leftButton = !leftButton;
+            }
+        }
+
+        public void Pressed()
         {
             enemyHealth.TakeDamage(10); //Instead of healing the player, the attack button will do damage to the enemy.
             instance.OnGameStateChanged(GameState.EnemyTurn);

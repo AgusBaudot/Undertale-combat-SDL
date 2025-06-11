@@ -7,8 +7,10 @@ using Tao.Sdl;
 
 namespace MyGame
 {
-    public class QuitButton : Button
+    public class QuitButton : IButton
     {
+        private Transform transform;
+        private bool leftButton = true;
         private string normalSprite, selectedSprite;
         private SpriteRenderer renderer;
 
@@ -20,9 +22,9 @@ namespace MyGame
             renderer = new SpriteRenderer(transform, Engine.LoadImage(normalSprite));
         }
 
-        public override void Update()
+        public void Update()
         {
-            base.Update();
+            Inputs();
 
             if (!leftButton && Engine.GetKeyDown(Engine.KEY_ESP))
             {
@@ -30,7 +32,20 @@ namespace MyGame
             }
         }
 
-        private void Pressed()
+        public void Inputs()
+        {
+            if (Engine.GetKeyDown(Engine.KEY_A))
+            {
+                leftButton = !leftButton;
+            }
+
+            else if (Engine.GetKeyDown(Engine.KEY_D))
+            {
+                leftButton = !leftButton;
+            }
+        }
+
+        public void Pressed()
         {
             //SdlMixer.Mix_FreeChunk();
             SdlMixer.Mix_CloseAudio();

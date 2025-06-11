@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    public class ActButton : Button
+    public class ActButton : IButton
     {
         #region Classes
+        private Transform transform;
+        private bool leftButton = true;
         private SpriteRenderer spriteRenderer;
         private HealthController playerHealth;
         private GameManager instance;
@@ -28,9 +30,9 @@ namespace MyGame
             instance = GameManager.GetInstance(); //Get instance of GameManager.
         }
 
-        public override void Update()
+        public void Update()
         {
-            base.Update(); //Call Button's Update.
+            Inputs();
 
             if (!leftButton && Engine.GetKeyDown(Engine.KEY_ESP)) //If left button isn't selected and player presses space:
             {
@@ -38,7 +40,21 @@ namespace MyGame
             }
         }
 
-        private void Pressed() //Pressed method:
+        public void Inputs()
+        {
+
+            if (Engine.GetKeyDown(Engine.KEY_A))
+            {
+                leftButton = !leftButton;
+            }
+
+            else if (Engine.GetKeyDown(Engine.KEY_D))
+            {
+                leftButton = !leftButton;
+            }
+        }
+
+        public void Pressed() //Pressed method:
         {
             playerHealth.Recover(heal); //Act button heals player heal amount.
             instance.OnGameStateChanged(GameState.EnemyTurn); //Since player acted, change turns.

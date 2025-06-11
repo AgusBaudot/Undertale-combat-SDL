@@ -16,7 +16,7 @@ namespace MyGame
         private CombatArea combatArea;
         private GameManager instance;
         #endregion
-        #region Internal variables
+    #region Internal variables
         #region Attack lists
         private List<BaseBoneAttack> attackListRight = new List<BaseBoneAttack >();
         private List<BaseBoneAttack> attackListLeft = new List<BaseBoneAttack>();

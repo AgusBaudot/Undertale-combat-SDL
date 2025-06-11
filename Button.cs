@@ -6,28 +6,15 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    public class Button
+    public interface IButton
     {
-        protected Transform transform;
-        protected bool leftButton = true;
 
-        public virtual void Update()
-        {
-            Inputs();
-        }
+        public void Update();
 
-        public void Inputs()
-        {
+        public void Inputs();
 
-            if (Engine.GetKeyDown(Engine.KEY_A))
-            {
-                leftButton = !leftButton;
-            }
+        public void Pressed();
 
-            else if (Engine.GetKeyDown(Engine.KEY_D))
-            {
-                leftButton = !leftButton;
-            }
-        }
+        public void Render();
     }
 }
