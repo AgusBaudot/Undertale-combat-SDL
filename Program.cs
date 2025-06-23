@@ -1,7 +1,4 @@
-﻿using System;
-using Tao.Sdl;
-
-namespace MyGame
+﻿namespace MyGame
 {
     class Program
     {

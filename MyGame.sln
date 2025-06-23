@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.5.33516.290
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34902.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGame", "MyGame.csproj", "{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "..\UnitTestProject1\UnitTestProject1.csproj", "{79AE1C14-FE58-4EA9-95B3-B4F5776E155F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Undertale unit testing", "Undertale unit testing\Undertale unit testing.csproj", "{D74EB3E5-6EDD-424C-A6CE-F717EED9E169}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79AE1C14-FE58-4EA9-95B3-B4F5776E155F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79AE1C14-FE58-4EA9-95B3-B4F5776E155F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79AE1C14-FE58-4EA9-95B3-B4F5776E155F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79AE1C14-FE58-4EA9-95B3-B4F5776E155F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D74EB3E5-6EDD-424C-A6CE-F717EED9E169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D74EB3E5-6EDD-424C-A6CE-F717EED9E169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D74EB3E5-6EDD-424C-A6CE-F717EED9E169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D74EB3E5-6EDD-424C-A6CE-F717EED9E169}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

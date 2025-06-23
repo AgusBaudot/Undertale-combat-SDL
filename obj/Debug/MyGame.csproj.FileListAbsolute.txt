@@ -96,7 +96,6 @@ C:\Users\mamui\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.pdb
 D:\My games\Visual\Undertale-combat\bin\Debug\MyGame.exe.config
 D:\My games\Visual\Undertale-combat\bin\Debug\MyGame.exe
 D:\My games\Visual\Undertale-combat\bin\Debug\MyGame.pdb
-D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.csproj.AssemblyReference.cache
 D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.csproj.CoreCompileInputs.cache
 D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.csproj.CopyComplete
 D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.exe
@@ -345,3 +344,4 @@ C:\Users\alu765\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.csproj.CoreCompileInp
 C:\Users\alu765\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.csproj.Up2Date
 C:\Users\alu765\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.exe
 C:\Users\alu765\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.pdb
+D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.csproj.AssemblyReference.cache
