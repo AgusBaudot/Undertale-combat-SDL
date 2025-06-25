@@ -1,98 +1,97 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Diagnostics.Eventing.Reader;
-using System.Net.NetworkInformation;
-using Tao.Sdl;
-
-
-
-namespace MyGame
+﻿namespace MyGame
 {
-
     class Program
     {
-        #region Time
-        static private float deltaTime;
-        static private float timeLastFrame;
-        static private DateTime initialTime;
-        static private float fixedDeltatime = 0.02f;
-        static public float DeltaTime => deltaTime;
-        #endregion
-        #region Level
-        static private Image fondo = Engine.LoadImage("assets/fondo.png");
-        static private Player player1;
-        static private CombatArea combatArea;
-        #endregion
-        #region UI
-        static private AttackButton attackButton;
-        static private ActButton actButton;
-        #endregion
-        #region Enemy
-        static private EnemyAttack attacktest;
-        #endregion
-
+        static private Time time;
         static private GameManager instance;
+        static private LevelManager level;
+        static private MainMenu mainMenu;
+        static private WinScreen win;
+        static private LoseScreen lose;
+        static private Music music;
+        static private Font normalFont;
 
         static void Main(string[] args)
         {
             Engine.Initialize(1080, 720);
-            player1 = new Player(Engine.center);
-            combatArea = new CombatArea();
+
+            level = new LevelManager();
+            time = new Time();
+            mainMenu = new MainMenu();
+            win = new WinScreen();
+            lose = new LoseScreen();
+            music = new Music();
             instance = GameManager.GetInstance();
-            attackButton = new AttackButton(360, 600);
-            actButton = new ActButton(720, 600);
-            initialTime = DateTime.Now;
-            
+            normalFont = new Font("assets/Fonts/UndertaleFont.ttf", 24);
+
+            instance.OnLevelReset += ResetLevel;
 
             while (true)
             {
-                float currentTime = (float)(DateTime.Now - initialTime).TotalSeconds;
-                deltaTime = currentTime - timeLastFrame;
-                timeLastFrame = currentTime;
-                if (Engine.GetKey(Engine.KEY_P))
-                {
-                    instance.OnGameStateChanged((instance.GetGameState() == (GameState)2) ? (GameState)3 : (GameState)2); //Toggle between gamestate 2 & 3
-                }
+                time.UpdateTime();
+                Engine.UpdateInput(); //Update input.
 
                 Update();
                 Render();
             }
-
         }
 
         static void Update()
         {
-            if (attacktest == null)
+            switch (instance.GetGameState())
             {
-                attacktest = new EnemyAttack(new Vector2(0, Engine.center.y), Vector2.right * 5, player1.GetCollider());
+                case GameState.MainMenu:
+                    mainMenu.Update();
+                    break;
+                case GameState.EnterBattle:
+                    break;
+                case GameState.EnemyTurn:
+                    level.Update();
+                    break;
+                case GameState.PlayerTurn:
+                    level.SetPosition();
+                    level.Update();
+                    break;
+                case GameState.Win:
+                    win.Update();
+                    break;
+                case GameState.Lose:
+                    lose.Update();
+                    break;
             }
-            if (instance.GetGameState() == GameState.EnemyTurn)
-            {
-                player1.Update();
-                attacktest.Update();
-            }
-            if (instance.GetGameState() == GameState.PlayerTurn)
-            {
-                attackButton.Update();
-                actButton.Update();
-            }
-
         }
         
         static void Render()
         {
             Engine.Clear();
-            Engine.Draw(fondo, 0, 0);
-            combatArea.Render();
-            if (instance.GetGameState() == GameState.EnemyTurn)
+            switch (instance.GetGameState())
             {
-                player1.Render();
+                case GameState.MainMenu:
+                    mainMenu.Render();
+                    break;
+                case GameState.EnterBattle:
+                    break;
+                case GameState.EnemyTurn:
+                    level.Render(); //Level already manages difference between enemy and player turn.
+                    break;
+                case GameState.PlayerTurn:
+                    level.Render(); //Level already manager difference between enemy and player turn.
+                    break;
+                case GameState.Win:
+                    win.Render();
+                    break;
+                case GameState.Lose:
+                    lose.Render();
+                    break;
             }
-            attackButton.Render();
-            actButton.Render();
-            attacktest.Render();
             Engine.Show();
+        }
+
+        static public Font GetFont() => normalFont;
+
+        static private void ResetLevel()
+        {
+            level.ResetLevel();
         }
     }
 }

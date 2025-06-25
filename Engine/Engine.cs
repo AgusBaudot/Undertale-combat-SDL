@@ -1,18 +1,20 @@
-﻿using System;
-using System.Threading;
-using System.Drawing;
-using Tao.Sdl;
-using static System.Net.Mime.MediaTypeNames;
+﻿using MyGame;
+using System;
 using System.Collections.Generic;
-using MyGame;
+using System.Runtime.InteropServices;
+using Tao.Sdl;
 
 class Engine
 {
-    static IntPtr screen;
+    public static IntPtr screen { get; private set; }
     public static int width {get; private set;}
     public static int height {get; private set;}
 
     public static Vector2 center { get; private set;}
+
+    private static byte[] previousKeys; //Array storing state of keys in last frame
+    private static byte[] currentKeys; //Array storing state of keys in current frame
+    private static int numKeys; //
 
     public static void Initialize()
     {
@@ -35,6 +37,9 @@ class Engine
         Sdl.SDL_SetClipRect(screen, ref rect2);
 
         SdlTtf.TTF_Init();
+        SdlMixer.Mix_OpenAudio(44100, (short)SdlMixer.MIX_DEFAULT_FORMAT, 2, 2048);
+
+        InitInput();
     }
 
     public static void Initialize(int an, int al)
@@ -58,6 +63,14 @@ class Engine
         Sdl.SDL_SetClipRect(screen, ref rect2);
 
         SdlTtf.TTF_Init();
+        SdlMixer.Mix_OpenAudio(44100, (short)SdlMixer.MIX_DEFAULT_FORMAT, 2, 2048);
+
+        InitInput();
+    }
+
+    public static void Debug<T>(ref T text)
+    {
+        System.Console.Write(text.ToString() + "\n");
     }
 
     public static void Debug(string text)
@@ -89,24 +102,6 @@ class Engine
         Sdl.SDL_BlitSurface(image.Pointer, ref origen, screen, ref dest);
     }
 
-    //public static void Draw(string tempimage, float x, float y)
-    //{
-    //    IntPtr image = LoadImage(tempimage);
-
-    //    Sdl.SDL_Rect origin = new Sdl.SDL_Rect(0, 0, (short)width, (short)height);
-    //    Sdl.SDL_Rect dest = new Sdl.SDL_Rect((short)x, (short)y, (short)width, (short)height);
-    //    Sdl.SDL_BlitSurface(image, ref origin, screen, ref dest);
-    //}
-
-    //public static void Draw(string tempimage, float x, float y, float width, float height)
-    //{
-    //    IntPtr image = LoadImage(tempimage);
-
-    //    Sdl.SDL_Rect origin = new Sdl.SDL_Rect(0, 0, (short)width, (short)height);
-    //    Sdl.SDL_Rect dest = new Sdl.SDL_Rect((short)x, (short)y, (short)width, (short)height);
-    //    Sdl.SDL_BlitSurface(image, ref origin, screen, ref dest);
-    //}
-
     public static void Draw(Image image, float x, float y, float width, float height)
     {
         Sdl.SDL_Rect origin = new Sdl.SDL_Rect(0, 0, (short)width, (short)height);
@@ -118,19 +113,6 @@ class Engine
     {
         Sdl.SDL_Flip(screen);
     }
-
-
-    //public static IntPtr LoadImage(string image)
-    //{
-    //    IntPtr imagen;
-    //    imagen = SdlImage.IMG_Load(image);
-    //    if (imagen == IntPtr.Zero)
-    //    {
-    //        System.Console.WriteLine("Imagen inexistente: {0}", image);
-    //        Environment.Exit(4);
-    //    }
-    //    return imagen;
-    //}
 
     public static Image LoadImage(string imagePath)
     {
@@ -147,14 +129,17 @@ class Engine
         int x, int y, byte r, byte g, byte b, IntPtr fuente)
     {
         Sdl.SDL_Color color = new Sdl.SDL_Color(r, g, b);
-        IntPtr textAsImage = SdlTtf.TTF_RenderText_Solid(
-            fuente, texto, color);
+        IntPtr textAsImage = SdlTtf.TTF_RenderText_Blended(fuente, texto, color);
         if (textAsImage == IntPtr.Zero)
             Environment.Exit(5);
 
-        Sdl.SDL_Rect origen = new Sdl.SDL_Rect(0, 0, (short)width, (short)height);
-        Sdl.SDL_Rect dest = new Sdl.SDL_Rect((short)x, (short)y, (short)width, (short)height);
+        Sdl.SDL_Surface surface = (Sdl.SDL_Surface)Marshal.PtrToStructure(textAsImage, typeof(Sdl.SDL_Surface));
 
+        Vector2 textSize = new Vector2(surface.w, surface.h);
+        Vector2 centeredPos = new Vector2(x - textSize.x / 2, y - textSize.y / 2);
+
+        Sdl.SDL_Rect origen = new Sdl.SDL_Rect(0, 0, (short)width, (short)height);
+        Sdl.SDL_Rect dest = new Sdl.SDL_Rect((short)centeredPos.x, (short)centeredPos.y, (short)width, (short)height);
         Sdl.SDL_BlitSurface(textAsImage, ref origen,
             screen, ref dest);
         Sdl.SDL_FreeSurface(textAsImage);
@@ -188,6 +173,29 @@ class Engine
         if (keys[c] == 1)
             press = true;
         return press;
+    }
+
+    private static void InitInput()
+    {
+        currentKeys = Tao.Sdl.Sdl.SDL_GetKeyState(out numKeys);
+        previousKeys = new byte[numKeys];
+    }
+
+    public static void UpdateInput()
+    {
+        Sdl.SDL_PumpEvents(); //Fetch queue from input device used.
+        Array.Copy(currentKeys, previousKeys, numKeys); //Copy current keys array into previous keys array.
+        currentKeys = Tao.Sdl.Sdl.SDL_GetKeyState(out numKeys); //Update current keys to match player's input.
+    }
+
+    public static bool GetKeyDown(int key)
+    {
+        return currentKeys[key] != 0 && previousKeys[key] == 0; //returns true whenever key is being pressed now, but last frame wasn't.
+    }
+
+    public static bool GetKeyUp (int key)
+    {
+        return currentKeys[key] == 0 && previousKeys[key] != 0; //returns true whenever key is not being pressed now, but last frame was.
     }
 
     private static List<Sdl.SDL_Event> eventQueue = new List<Sdl.SDL_Event>();
