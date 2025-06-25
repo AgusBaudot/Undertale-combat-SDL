@@ -93,13 +93,6 @@ C:\Users\mamui\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.csproj.CoreCompileInpu
 C:\Users\mamui\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.csproj.CopyComplete
 C:\Users\mamui\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.exe
 C:\Users\mamui\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.pdb
-D:\My games\Visual\Undertale-combat\bin\Debug\MyGame.exe.config
-D:\My games\Visual\Undertale-combat\bin\Debug\MyGame.exe
-D:\My games\Visual\Undertale-combat\bin\Debug\MyGame.pdb
-D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.csproj.CoreCompileInputs.cache
-D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.csproj.CopyComplete
-D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.exe
-D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.pdb
 C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\fondo.png
 C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\player.png
 C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\MyGame.exe.config
@@ -177,7 +170,6 @@ C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\lose.png
 C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\win.png
 C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\MenuButton.png
 C:\Users\Usuario\Downloads\Undertale-combat-SDL\bin\Debug\assets\MenuButtonPressed.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Music\DeathByGlamour.wav
 C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Music\DeathByGlamour.wav
 C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Fonts\UndertaleFont.ttf
 C:\Users\alu765\Downloads\Undertale-combat-SDL\bin\Debug\assets\Sprites\ActButton.png
@@ -275,36 +267,6 @@ C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\Sprites\w
 C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\Sprites\Blue bone attack.png
 C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\Sprites\Orange bone attack.png
 C:\Users\alu764\Documents\GitHub\Undertale-combat-SDL\bin\Debug\assets\Sprites\White bone attack.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Fonts\UndertaleFont.ttf
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\ActButton.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\ActButtonPressed.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\AtkButton.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\AtkButtonPressed.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Blue bone attack.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Combat area.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\combatArea.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\combatAreaBack.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Enemy.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\ExitButton.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\ExitButtonPressed.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\fondo.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\lose.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\MenuButton.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\MenuButtonPressed.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Orange bone attack.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\player.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Spritesheet_1.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Spritesheet_2.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Spritesheet_3.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Spritesheet_4.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Spritesheet_5.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Spritesheet_6.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Spritesheet_7.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Spritesheet_8.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\StartButton.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\StartButtonPressed.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\White bone attack.png
-D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\win.png
 C:\Users\alu765\Downloads\Clase 1\Clase 1\bin\Debug\assets\Fonts\UndertaleFont.ttf
 C:\Users\alu765\Downloads\Clase 1\Clase 1\bin\Debug\assets\Sprites\ActButton.png
 C:\Users\alu765\Downloads\Clase 1\Clase 1\bin\Debug\assets\Sprites\ActButtonPressed.png
@@ -344,4 +306,41 @@ C:\Users\alu765\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.csproj.CoreCompileInp
 C:\Users\alu765\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.csproj.Up2Date
 C:\Users\alu765\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.exe
 C:\Users\alu765\Downloads\Clase 1\Clase 1\obj\Debug\MyGame.pdb
-D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.csproj.AssemblyReference.cache
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Fonts\UndertaleFont.ttf
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\ActButton.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\ActButtonPressed.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\AtkButton.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\AtkButtonPressed.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Blue bone attack.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Combat area.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\combatArea.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\combatAreaBack.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Enemy.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\ExitButton.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\ExitButtonPressed.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\fondo.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\lose.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\MenuButton.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\MenuButtonPressed.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Music\DeathByGlamour.wav
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Orange bone attack.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\player.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Spritesheet_1.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Spritesheet_2.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Spritesheet_3.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Spritesheet_4.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Spritesheet_5.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Spritesheet_6.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Spritesheet_7.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\Spritesheet_8.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\StartButton.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\StartButtonPressed.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\White bone attack.png
+D:\My games\Visual\Undertale-combat\bin\Debug\assets\Sprites\win.png
+D:\My games\Visual\Undertale-combat\bin\Debug\MyGame.exe.config
+D:\My games\Visual\Undertale-combat\bin\Debug\MyGame.exe
+D:\My games\Visual\Undertale-combat\bin\Debug\MyGame.pdb
+D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.csproj.CoreCompileInputs.cache
+D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.csproj.CopyComplete
+D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.exe
+D:\My games\Visual\Undertale-combat\obj\Debug\MyGame.pdb

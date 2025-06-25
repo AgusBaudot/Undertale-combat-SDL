@@ -32,22 +32,12 @@ D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\assets\Spri
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\assets\Sprites\StartButtonPressed.png
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\assets\Sprites\White bone attack.png
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\assets\Sprites\win.png
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\Undertale unit testing.dll.config
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\Undertale unit testing.dll
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\Undertale unit testing.pdb
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\MyGame.exe
-D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\Tao.Sdl.dll
-D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\MyGame.pdb
-D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\MyGame.exe.config
-D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
-D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
-D:\My games\Visual\Undertale-combat\Undertale unit testing\obj\Debug\Undertale unit testing.csproj.AssemblyReference.cache
-D:\My games\Visual\Undertale-combat\Undertale unit testing\obj\Debug\Undertale unit testing.csproj.CoreCompileInputs.cache
-D:\My games\Visual\Undertale-combat\Undertale unit testing\obj\Debug\Undertale unit testing.csproj.CopyComplete
-D:\My games\Visual\Undertale-combat\Undertale unit testing\obj\Debug\Undertale unit testing.dll
-D:\My games\Visual\Undertale-combat\Undertale unit testing\obj\Debug\Undertale unit testing.pdb
-D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\Undertale unit testing.dll.config
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\nunit.framework.dll
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\nunit.framework.legacy.dll
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Buffers.dll
@@ -56,6 +46,11 @@ D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Nume
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Threading.Tasks.Extensions.dll
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.ValueTuple.dll
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\Tao.Sdl.dll
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\MyGame.pdb
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\MyGame.exe.config
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\nunit.framework.xml
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\nunit.framework.legacy.xml
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Buffers.xml
@@ -64,3 +59,8 @@ D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Nume
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.ValueTuple.xml
+D:\My games\Visual\Undertale-combat\Undertale unit testing\obj\Debug\Undertale unit testing.csproj.AssemblyReference.cache
+D:\My games\Visual\Undertale-combat\Undertale unit testing\obj\Debug\Undertale unit testing.csproj.CoreCompileInputs.cache
+D:\My games\Visual\Undertale-combat\Undertale unit testing\obj\Debug\Undertale unit testing.csproj.CopyComplete
+D:\My games\Visual\Undertale-combat\Undertale unit testing\obj\Debug\Undertale unit testing.dll
+D:\My games\Visual\Undertale-combat\Undertale unit testing\obj\Debug\Undertale unit testing.pdb
