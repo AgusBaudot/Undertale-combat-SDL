@@ -47,3 +47,20 @@ D:\My games\Visual\Undertale-combat\Undertale unit testing\obj\Debug\Undertale u
 D:\My games\Visual\Undertale-combat\Undertale unit testing\obj\Debug\Undertale unit testing.csproj.CopyComplete
 D:\My games\Visual\Undertale-combat\Undertale unit testing\obj\Debug\Undertale unit testing.dll
 D:\My games\Visual\Undertale-combat\Undertale unit testing\obj\Debug\Undertale unit testing.pdb
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\Undertale unit testing.dll.config
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\nunit.framework.dll
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\nunit.framework.legacy.dll
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Buffers.dll
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Memory.dll
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Numerics.Vectors.dll
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.ValueTuple.dll
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\nunit.framework.xml
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\nunit.framework.legacy.xml
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Buffers.xml
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Memory.xml
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Numerics.Vectors.xml
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\My games\Visual\Undertale-combat\Undertale unit testing\bin\Debug\System.ValueTuple.xml
